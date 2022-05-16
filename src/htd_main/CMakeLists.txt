@@ -28,22 +28,22 @@ set_target_properties(htd_main PROPERTIES VERSION ${HTD_MAIN_VERSION})
 if(UNIX)
     set_target_properties(htd_main
         PROPERTIES
-        ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
-        LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
-        RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
+        ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib"
+        LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib"
+        RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin"
     )
 
-    configure_file("${CMAKE_SOURCE_DIR}/scripts/htd_gr2td_exhaustive.sh"
-                   "${CMAKE_BINARY_DIR}/bin/htd_gr2td_exhaustive.sh" COPYONLY)
+    configure_file("${PROJECT_SOURCE_DIR}/scripts/htd_gr2td_exhaustive.sh"
+                   "${PROJECT_BINARY_DIR}/bin/htd_gr2td_exhaustive.sh" COPYONLY)
 
-    configure_file("${CMAKE_SOURCE_DIR}/scripts/htd_gr2td_exhaustive_minfill.sh"
-                   "${CMAKE_BINARY_DIR}/bin/htd_gr2td_exhaustive_minfill.sh" COPYONLY)
+    configure_file("${PROJECT_SOURCE_DIR}/scripts/htd_gr2td_exhaustive_minfill.sh"
+                   "${PROJECT_BINARY_DIR}/bin/htd_gr2td_exhaustive_minfill.sh" COPYONLY)
 
-    configure_file("${CMAKE_SOURCE_DIR}/scripts/htd_gr2td_exhaustive_mindegree.sh"
-                   "${CMAKE_BINARY_DIR}/bin/htd_gr2td_exhaustive_mindegree.sh" COPYONLY)
+    configure_file("${PROJECT_SOURCE_DIR}/scripts/htd_gr2td_exhaustive_mindegree.sh"
+                   "${PROJECT_BINARY_DIR}/bin/htd_gr2td_exhaustive_mindegree.sh" COPYONLY)
 
-    configure_file("${CMAKE_SOURCE_DIR}/scripts/pace16_build_test.sh"
-                   "${CMAKE_BINARY_DIR}/bin/pace16_build_test.sh" COPYONLY)
+    configure_file("${PROJECT_SOURCE_DIR}/scripts/pace16_build_test.sh"
+                   "${PROJECT_BINARY_DIR}/bin/pace16_build_test.sh" COPYONLY)
 endif(UNIX)
 
 target_link_libraries(htd_main htd htd_io htd_cli)
