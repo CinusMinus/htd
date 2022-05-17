@@ -39,7 +39,7 @@ namespace htd
     class IteratorBase
     {
         public:
-            virtual ~IteratorBase<T>() = 0;
+            virtual ~IteratorBase() = 0;
 
             /**
              *  Increment the iterator.

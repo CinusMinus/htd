@@ -36,7 +36,7 @@ namespace htd
     class ConstIteratorBase
     {
         public:
-            virtual ~ConstIteratorBase<T>() = 0;
+            virtual ~ConstIteratorBase() = 0;
 
             /**
              *  Increment the iterator.
