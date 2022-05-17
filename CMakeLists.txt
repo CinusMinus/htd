@@ -14,7 +14,6 @@ set(CPACK_PACKAGE_VERSION_PATCH "0")
 
 include(CPack)
 include(CheckIncludeFileCXX)
-include(WriteCompilerDetectionHeader)
 
 find_package(Git)
 if(GIT_FOUND)

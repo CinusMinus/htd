@@ -1,9 +1,3 @@
-write_compiler_detection_header(
-  FILE "${PROJECT_BINARY_DIR}/include/htd/CompilerDetection.hpp"
-  PREFIX HTD
-  COMPILERS GNU Clang AppleClang MSVC
-  FEATURES cxx_noexcept cxx_override cxx_lambdas
-)
 
 if (BUILD_SHARED_LIBS)
     set(HTD_SHARED_LIBRARY ON)
