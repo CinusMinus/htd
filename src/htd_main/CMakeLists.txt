@@ -18,7 +18,7 @@ if(APPLE)
     endif(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 endif(APPLE)
 
-add_executable(htd_main ${HTD_MAIN_SRC_LIST} ${HTD_MAIN_HEADER_LIST})
+add_executable(htd_main ${HTD_MAIN_SRC_LIST})
 
 set_property(TARGET htd_main PROPERTY CXX_STANDARD 11)
 set_property(TARGET htd_main PROPERTY CXX_STANDARD_REQUIRED ON)
@@ -46,6 +46,6 @@ if(UNIX)
                    "${PROJECT_BINARY_DIR}/bin/pace16_build_test.sh" COPYONLY)
 endif(UNIX)
 
-target_link_libraries(htd_main htd htd_io htd_cli)
+target_link_libraries(htd_main PRIVATE htd htd_io htd_cli)
 
 install(TARGETS htd_main DESTINATION bin)

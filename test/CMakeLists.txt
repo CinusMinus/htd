@@ -1,13 +1,14 @@
 if(BUILD_TESTING)
-    enable_testing()
+        enable_testing()
 
-    set(GTEST_ROOT "${PROJECT_SOURCE_DIR}/test/googletest/googletest-release-1.10.0")
+        include(FetchContent)
+        FetchContent_Declare(
+            googletest
+            GIT_REPOSITORY https://github.com/google/googletest.git
+            GIT_TAG release-1.11.0
+        ) # release-1.10.0 )
 
-    set(GTEST_INCLUDE_DIR "${GTEST_ROOT}/googletest/include")
+        FetchContent_MakeAvailable(googletest)
 
-    add_subdirectory("${GTEST_ROOT}")
-
-    add_subdirectory("${PROJECT_SOURCE_DIR}/test/htd")
-
-    add_dependencies(gtest htd)
+        add_subdirectory(htd)
 endif()

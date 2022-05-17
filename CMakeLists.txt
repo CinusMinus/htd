@@ -13,7 +13,6 @@ set(CPACK_PACKAGE_VERSION_MINOR "2")
 set(CPACK_PACKAGE_VERSION_PATCH "0")
 
 include(CPack)
-include(CTest)
 include(CheckIncludeFileCXX)
 include(WriteCompilerDetectionHeader)
 
@@ -46,7 +45,7 @@ if(DEFINED HTD_DEBUG_OUTPUT)
     if(HTD_DEBUG_OUTPUT)
         message("Debugging output is enabled!")
 
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DHTD_DEBUG_OUTPUT" )
+        add_compile_definitions(HTD_DEBUG_OUTPUT)
     endif()
 endif()
 
@@ -68,12 +67,12 @@ if(NOT DEFINED BUILD_TESTING)
     set(BUILD_TESTING OFF)
 endif()
 
-subdirs(src/htd)
-subdirs(src/htd_io)
-subdirs(src/htd_cli)
-subdirs(src/htd_main)
+add_subdirectory(src/htd)
+add_subdirectory(src/htd_io)
+add_subdirectory(src/htd_cli)
+add_subdirectory(src/htd_main)
 
-subdirs(test)
+add_subdirectory(test)
 
 configure_file(
     "${PROJECT_SOURCE_DIR}/cmake/templates/cmake_uninstall.cmake.in"

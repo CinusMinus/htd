@@ -1,5 +1,5 @@
 write_compiler_detection_header(
-  FILE "${PROJECT_SOURCE_DIR}/include/htd/CompilerDetection.hpp"
+  FILE "${PROJECT_BINARY_DIR}/include/htd/CompilerDetection.hpp"
   PREFIX HTD
   COMPILERS GNU Clang AppleClang MSVC
   FEATURES cxx_noexcept cxx_override cxx_lambdas
@@ -23,15 +23,15 @@ else()
 endif(HTD_GIT_COMMIT_ID)
 
 configure_file("${PROJECT_SOURCE_DIR}/cmake/templates/htd/AssemblyInfo.cpp.in"
-               "${PROJECT_SOURCE_DIR}/src/htd/AssemblyInfo.cpp")
+               "${PROJECT_BINARY_DIR}/src/htd/AssemblyInfo.cpp")
 
 configure_file("${PROJECT_SOURCE_DIR}/cmake/templates/htd/Id.hpp.in"
-               "${PROJECT_SOURCE_DIR}/include/htd/Id.hpp")
+               "${PROJECT_BINARY_DIR}/include/htd/Id.hpp")
 
 configure_file("${PROJECT_SOURCE_DIR}/cmake/templates/htd/PreprocessorDefinitions.hpp.in"
-               "${PROJECT_SOURCE_DIR}/include/htd/PreprocessorDefinitions.hpp")
+               "${PROJECT_BINARY_DIR}/include/htd/PreprocessorDefinitions.hpp")
 
-set(CMAKE_REQUIRED_INCLUDES "${PROJECT_SOURCE_DIR}/include")
+set(CMAKE_REQUIRED_INCLUDES "${PROJECT_BINARY_DIR}/include")
 
 check_include_file_cxx(htd/CompilerDetection.hpp HTD_HAVE_COMPILER_DETECTION)
 
@@ -42,31 +42,30 @@ set(HTD_SOVERSION ${HTD_SOVERSION_INTERFACE}.${HTD_SOVERSION_REVISION}.${HTD_SOV
 
 file(GLOB_RECURSE HTD_HEADER_LIST ${PROJECT_SOURCE_DIR}/include/htd/*.hpp)
 
-if(UNIX)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -pedantic -Wextra")
+aux_source_directory(. SRC_LIST)
+add_library(htd ${SRC_LIST} ${PROJECT_BINARY_DIR}/src/htd/AssemblyInfo.cpp)
+target_include_directories(htd PUBLIC ${PROJECT_SOURCE_DIR}/include ${PROJECT_BINARY_DIR}/include)
 
-    if(HTD_SHARED_LIBRARY)
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fvisibility=hidden")
-    endif(HTD_SHARED_LIBRARY)
-endif(UNIX)
+set_target_properties(htd PROPERTIES
+    CXX_STANDARD 11
+    CXX_STANDARD_REQUIRED ON
+    POSITION_INDEPENDENT_CODE 1
+    VERSION ${HTD_SOVERSION}
+    SOVERSION ${HTD_SOVERSION_INTERFACE}
+)
+
+# https://www.foonathan.net/2018/10/cmake-warnings/
+target_compile_options(htd PRIVATE
+     $<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>,$<CXX_COMPILER_ID:GNU>>:
+          -Wall>
+     $<$<CXX_COMPILER_ID:MSVC>:
+          /W4>)
 
 if(APPLE)
     if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
     endif(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 endif(APPLE)
-
-include_directories(${PROJECT_SOURCE_DIR}/include)
-aux_source_directory(. SRC_LIST)
-
-add_library(htd ${SRC_LIST} ${HTD_HEADER_LIST})
-
-set_property(TARGET htd PROPERTY CXX_STANDARD 11)
-set_property(TARGET htd PROPERTY CXX_STANDARD_REQUIRED ON)
-
-set_property(TARGET htd PROPERTY POSITION_INDEPENDENT_CODE 1)
-
-set_target_properties(htd PROPERTIES VERSION ${HTD_SOVERSION} SOVERSION ${HTD_SOVERSION_INTERFACE})
 
 if(UNIX)
     set_target_properties(htd
@@ -77,5 +76,5 @@ if(UNIX)
     )
 endif(UNIX)
 
-install(TARGETS htd DESTINATION lib)
+install(TARGETS htd ARCHIVE LIBRARY DESTINATION lib)
 install(DIRECTORY "${PROJECT_SOURCE_DIR}/include/htd" DESTINATION include)
