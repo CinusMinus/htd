@@ -86,7 +86,7 @@ namespace htd
     };
 
     template <typename T>
-    inline htd::ConstIteratorBase<T>::~ConstIteratorBase() { }
+    inline ConstIteratorBase<T>::~ConstIteratorBase<T>() { }
 }
 
 #endif /* HTD_HTD_CONSTITERATORBASE_HPP */
