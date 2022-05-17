@@ -68,7 +68,7 @@ namespace htd
              *
              *  @return A new IOrderingAlgorithm object.
              */
-            HTD_API htd::IOrderingAlgorithm * createInstance(void) const HTD_OVERRIDE;
+            HTD_API htd::IOrderingAlgorithm * createInstance(void) const override;
     };
 }
 

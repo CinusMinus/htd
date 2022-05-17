@@ -68,7 +68,7 @@ struct htd::EnhancedMaximumCardinalitySearchOrderingAlgorithm::Implementation
      *  @param[in] weights  A vector containing the weights associated with each of the vertices.
      *  @param[out] pool    The vertex pool which shall be filled with all vertices of maximum weight.
      */
-    void fillMaxCardinalityPool(const std::unordered_set<htd::vertex_t> & vertices, const std::vector<std::size_t> & weights, std::vector<htd::vertex_t> & pool) const HTD_NOEXCEPT
+    void fillMaxCardinalityPool(const std::unordered_set<htd::vertex_t> & vertices, const std::vector<std::size_t> & weights, std::vector<htd::vertex_t> & pool) const noexcept
     {
         std::size_t max = 0;
 
@@ -163,7 +163,7 @@ htd::EnhancedMaximumCardinalitySearchOrderingAlgorithm::~EnhancedMaximumCardinal
     
 }
 
-htd::IVertexOrdering * htd::EnhancedMaximumCardinalitySearchOrderingAlgorithm::computeOrdering(const htd::IMultiHypergraph & graph) const HTD_NOEXCEPT
+htd::IVertexOrdering * htd::EnhancedMaximumCardinalitySearchOrderingAlgorithm::computeOrdering(const htd::IMultiHypergraph & graph) const noexcept
 {
     htd::IGraphPreprocessor * preprocessor = implementation_->managementInstance_->graphPreprocessorFactory().createInstance();
 
@@ -177,7 +177,7 @@ htd::IVertexOrdering * htd::EnhancedMaximumCardinalitySearchOrderingAlgorithm::c
     return ret;
 }
 
-htd::IVertexOrdering * htd::EnhancedMaximumCardinalitySearchOrderingAlgorithm::computeOrdering(const htd::IMultiHypergraph & graph, const htd::IPreprocessedGraph & preprocessedGraph) const HTD_NOEXCEPT
+htd::IVertexOrdering * htd::EnhancedMaximumCardinalitySearchOrderingAlgorithm::computeOrdering(const htd::IMultiHypergraph & graph, const htd::IPreprocessedGraph & preprocessedGraph) const noexcept
 {
     HTD_UNUSED(graph)
 
@@ -228,7 +228,7 @@ htd::IVertexOrdering * htd::EnhancedMaximumCardinalitySearchOrderingAlgorithm::c
     return new htd::VertexOrdering(std::move(ordering), 1);
 }
 
-const htd::LibraryInstance * htd::EnhancedMaximumCardinalitySearchOrderingAlgorithm::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::EnhancedMaximumCardinalitySearchOrderingAlgorithm::managementInstance(void) const noexcept
 {
     return implementation_->managementInstance_;
 }

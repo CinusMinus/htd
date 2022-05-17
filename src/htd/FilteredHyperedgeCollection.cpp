@@ -34,7 +34,7 @@
 #include <algorithm>
 #include <stdexcept>
 
-htd::FilteredHyperedgeCollection::FilteredHyperedgeCollection(void) HTD_NOEXCEPT : baseCollection_(new htd::HyperedgeVector(std::make_shared<std::vector<htd::Hyperedge>>())), relevantIndices_(std::make_shared<std::vector<htd::index_t>>())
+htd::FilteredHyperedgeCollection::FilteredHyperedgeCollection(void) noexcept : baseCollection_(new htd::HyperedgeVector(std::make_shared<std::vector<htd::Hyperedge>>())), relevantIndices_(std::make_shared<std::vector<htd::index_t>>())
 {
 
 }
@@ -59,12 +59,12 @@ htd::FilteredHyperedgeCollection::FilteredHyperedgeCollection(std::shared_ptr<ht
 
 }
 
-htd::FilteredHyperedgeCollection::FilteredHyperedgeCollection(const htd::FilteredHyperedgeCollection & original) HTD_NOEXCEPT : baseCollection_(original.baseCollection_), relevantIndices_(std::make_shared<std::vector<htd::index_t>>(*(original.relevantIndices_)))
+htd::FilteredHyperedgeCollection::FilteredHyperedgeCollection(const htd::FilteredHyperedgeCollection & original) noexcept : baseCollection_(original.baseCollection_), relevantIndices_(std::make_shared<std::vector<htd::index_t>>(*(original.relevantIndices_)))
 {
 
 }
 
-htd::FilteredHyperedgeCollection::FilteredHyperedgeCollection(htd::FilteredHyperedgeCollection && original) HTD_NOEXCEPT : baseCollection_(std::move(original.baseCollection_)), relevantIndices_(std::move(original.relevantIndices_))
+htd::FilteredHyperedgeCollection::FilteredHyperedgeCollection(htd::FilteredHyperedgeCollection && original) noexcept : baseCollection_(std::move(original.baseCollection_)), relevantIndices_(std::move(original.relevantIndices_))
 {
 
 }
@@ -74,12 +74,12 @@ htd::FilteredHyperedgeCollection::~FilteredHyperedgeCollection()
 
 }
 
-std::size_t htd::FilteredHyperedgeCollection::size(void) const HTD_NOEXCEPT
+std::size_t htd::FilteredHyperedgeCollection::size(void) const noexcept
 {
     return relevantIndices_->size();
 }
 
-htd::FilteredHyperedgeCollection & htd::FilteredHyperedgeCollection::operator=(const htd::FilteredHyperedgeCollection & original) HTD_NOEXCEPT
+htd::FilteredHyperedgeCollection & htd::FilteredHyperedgeCollection::operator=(const htd::FilteredHyperedgeCollection & original) noexcept
 {
     if (this != &original)
     {
@@ -91,7 +91,7 @@ htd::FilteredHyperedgeCollection & htd::FilteredHyperedgeCollection::operator=(c
     return *this;
 }
 
-htd::FilteredHyperedgeCollection & htd::FilteredHyperedgeCollection::operator=(htd::FilteredHyperedgeCollection && original) HTD_NOEXCEPT
+htd::FilteredHyperedgeCollection & htd::FilteredHyperedgeCollection::operator=(htd::FilteredHyperedgeCollection && original) noexcept
 {
     baseCollection_ = std::move(original.baseCollection_);
 
@@ -100,12 +100,12 @@ htd::FilteredHyperedgeCollection & htd::FilteredHyperedgeCollection::operator=(h
     return *this;
 }
 
-bool htd::FilteredHyperedgeCollection::operator==(const htd::FilteredHyperedgeCollection & rhs) const HTD_NOEXCEPT
+bool htd::FilteredHyperedgeCollection::operator==(const htd::FilteredHyperedgeCollection & rhs) const noexcept
 {
     return *baseCollection_ == *(rhs.baseCollection_) && *relevantIndices_ == *(rhs.relevantIndices_);
 }
 
-bool htd::FilteredHyperedgeCollection::operator!=(const htd::FilteredHyperedgeCollection & rhs) const HTD_NOEXCEPT
+bool htd::FilteredHyperedgeCollection::operator!=(const htd::FilteredHyperedgeCollection & rhs) const noexcept
 {
     return *baseCollection_ != *(rhs.baseCollection_) || *relevantIndices_ != *(rhs.relevantIndices_);
 }
@@ -154,12 +154,12 @@ void htd::FilteredHyperedgeCollection::swap(FilteredHyperedgeCollection & other)
     relevantIndices_.swap(other.relevantIndices_);
 }
 
-htd::FilteredHyperedgeCollection::FilteredHyperedgeCollectionConstIterator htd::FilteredHyperedgeCollection::begin(void) const HTD_NOEXCEPT
+htd::FilteredHyperedgeCollection::FilteredHyperedgeCollectionConstIterator htd::FilteredHyperedgeCollection::begin(void) const noexcept
 {
     return htd::FilteredHyperedgeCollection::FilteredHyperedgeCollectionConstIterator(*this, 0);
 }
 
-htd::FilteredHyperedgeCollection::FilteredHyperedgeCollectionConstIterator htd::FilteredHyperedgeCollection::end(void) const HTD_NOEXCEPT
+htd::FilteredHyperedgeCollection::FilteredHyperedgeCollectionConstIterator htd::FilteredHyperedgeCollection::end(void) const noexcept
 {
     return htd::FilteredHyperedgeCollection::FilteredHyperedgeCollectionConstIterator(*this, relevantIndices_->size());
 }

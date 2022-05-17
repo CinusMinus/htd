@@ -76,7 +76,7 @@ namespace htd
              *
              *  @return A new ILabelingFunction object identical to the current labeling function.
              */
-            virtual ILabelingFunction * clone(void) const HTD_OVERRIDE = 0;
+            virtual ILabelingFunction * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current labeling function.

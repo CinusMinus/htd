@@ -70,7 +70,7 @@ namespace htd
              *
              *  @return A new IMutableMultiHypergraph object.
              */
-            HTD_API htd::IMutableMultiHypergraph * createInstance(void) const HTD_OVERRIDE;
+            HTD_API htd::IMutableMultiHypergraph * createInstance(void) const override;
 
             /**
              *  Create a new IMutableMultiHypergraph object.

@@ -45,7 +45,7 @@ namespace htd
 
             virtual ~DepthFirstGraphTraversal();
             
-            void traverse(const htd::IGraphStructure & graph, htd::vertex_t startingVertex, const std::function<void(htd::vertex_t, htd::vertex_t, std::size_t)> & targetFunction) const HTD_OVERRIDE;
+            void traverse(const htd::IGraphStructure & graph, htd::vertex_t startingVertex, const std::function<void(htd::vertex_t, htd::vertex_t, std::size_t)> & targetFunction) const override;
 
         private:
             struct Implementation;

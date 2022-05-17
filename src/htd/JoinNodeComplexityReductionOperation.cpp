@@ -224,7 +224,7 @@ bool htd::JoinNodeComplexityReductionOperation::createsLocationDependendLabels(v
     return false;
 }
 
-const htd::LibraryInstance * htd::JoinNodeComplexityReductionOperation::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::JoinNodeComplexityReductionOperation::managementInstance(void) const noexcept
 {
     return implementation_->managementInstance_;
 }

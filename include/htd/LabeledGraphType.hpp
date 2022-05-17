@@ -80,7 +80,7 @@ namespace htd
              *
              *  @param[in] vertex   The ID of the vertex which shall be removed.
              */
-            void removeVertex(htd::vertex_t vertex) HTD_OVERRIDE
+            void removeVertex(htd::vertex_t vertex) override
             {
                 GraphType::removeVertex(vertex);
 
@@ -351,7 +351,7 @@ namespace htd
              *
              *  @return A new htd::LabeledGraphType object identical to the current htd::LabeledGraphType object.
              */
-            LabeledGraphType<GraphType> * clone(void) const HTD_OVERRIDE
+            LabeledGraphType<GraphType> * clone(void) const override
             {
                 return new LabeledGraphType<GraphType>(*this);
             }

@@ -1317,7 +1317,7 @@ void htd::Tree::setParent(htd::vertex_t vertex, htd::vertex_t newParent)
     }
 }
 
-std::size_t htd::Tree::leafCount(void) const HTD_NOEXCEPT
+std::size_t htd::Tree::leafCount(void) const noexcept
 {
     std::size_t ret = 0;
 
@@ -1436,7 +1436,7 @@ void htd::Tree::Implementation::deleteNode(Node * node)
     size_--;
 }
 
-const htd::LibraryInstance * htd::Tree::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::Tree::managementInstance(void) const noexcept
 {
     return implementation_->managementInstance_;
 }

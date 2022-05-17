@@ -72,7 +72,7 @@ namespace htd
              *
              *  @return A new IHypertreeDecomposition object identical to the current hypertree decomposition.
              */
-            virtual IHypertreeDecomposition * clone(void) const HTD_OVERRIDE = 0;
+            virtual IHypertreeDecomposition * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current hypertree decomposition.

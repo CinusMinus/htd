@@ -68,7 +68,7 @@ namespace htd
              *
              *  @return A new IGraphSeparatorAlgorithm object.
              */
-            HTD_API htd::IGraphSeparatorAlgorithm * createInstance(void) const HTD_OVERRIDE;
+            HTD_API htd::IGraphSeparatorAlgorithm * createInstance(void) const override;
     };
 }
 

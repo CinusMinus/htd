@@ -98,44 +98,44 @@ struct htd::CliqueMinimalSeparatorAlgorithm::Implementation
 
             }
 
-            std::size_t vertexCount(void) const HTD_NOEXCEPT HTD_OVERRIDE
+            std::size_t vertexCount(void) const noexcept override
             {
                 return neighborhood_.size();
             }
 
-            std::size_t edgeCount(void) const HTD_NOEXCEPT HTD_OVERRIDE
+            std::size_t edgeCount(void) const noexcept override
             {
                 return edgeCount_;
             }
 
-            std::size_t edgeCount(htd::vertex_t vertex) const HTD_OVERRIDE
+            std::size_t edgeCount(htd::vertex_t vertex) const override
             {
                 return neighborCount(vertex);
             }
 
-            htd::ConstCollection<htd::vertex_t> vertices(void) const HTD_OVERRIDE
+            htd::ConstCollection<htd::vertex_t> vertices(void) const override
             {
                 return htd::ConstCollection<htd::vertex_t>::getInstance(vertices_);
             }
 
-            void copyVerticesTo(std::vector<htd::vertex_t> & target) const HTD_OVERRIDE
+            void copyVerticesTo(std::vector<htd::vertex_t> & target) const override
             {
                 target.insert(target.end(), vertices_.begin(), vertices_.end());
             }
 
-            htd::vertex_t vertexAtPosition(htd::index_t index) const HTD_OVERRIDE
+            htd::vertex_t vertexAtPosition(htd::index_t index) const override
             {
                 HTD_ASSERT(index < vertices_.size())
 
                 return vertices_[index];
             }
 
-            bool isVertex(htd::vertex_t vertex) const HTD_OVERRIDE
+            bool isVertex(htd::vertex_t vertex) const override
             {
                 return vertex < vertexCount();
             }
 
-            std::size_t isolatedVertexCount(void) const HTD_OVERRIDE
+            std::size_t isolatedVertexCount(void) const override
             {
                 std::size_t ret = 0;
 
@@ -150,7 +150,7 @@ struct htd::CliqueMinimalSeparatorAlgorithm::Implementation
                 return ret;
             }
 
-            htd::ConstCollection<htd::vertex_t> isolatedVertices(void) const HTD_OVERRIDE
+            htd::ConstCollection<htd::vertex_t> isolatedVertices(void) const override
             {
                 htd::VectorAdapter<htd::vertex_t> ret;
 
@@ -167,7 +167,7 @@ struct htd::CliqueMinimalSeparatorAlgorithm::Implementation
                 return htd::ConstCollection<htd::vertex_t>::getInstance(ret);
             }
 
-            htd::vertex_t isolatedVertexAtPosition(htd::index_t index) const HTD_OVERRIDE
+            htd::vertex_t isolatedVertexAtPosition(htd::index_t index) const override
             {
                 const htd::ConstCollection<htd::vertex_t> & isolatedVertexCollection = isolatedVertices();
 
@@ -180,28 +180,28 @@ struct htd::CliqueMinimalSeparatorAlgorithm::Implementation
                 return *it;
             }
 
-            bool isIsolatedVertex(htd::vertex_t vertex) const HTD_OVERRIDE
+            bool isIsolatedVertex(htd::vertex_t vertex) const override
             {
                 HTD_ASSERT(isVertex(vertex))
 
                 return neighborhood_[vertex].empty();
             }
 
-            std::size_t neighborCount(htd::vertex_t vertex) const HTD_OVERRIDE
+            std::size_t neighborCount(htd::vertex_t vertex) const override
             {
                 HTD_ASSERT(isVertex(vertex))
 
                 return neighborhood_[vertex].size();
             }
 
-            htd::ConstCollection<htd::vertex_t> neighbors(htd::vertex_t vertex) const HTD_OVERRIDE
+            htd::ConstCollection<htd::vertex_t> neighbors(htd::vertex_t vertex) const override
             {
                 HTD_ASSERT(isVertex(vertex))
 
                 return htd::ConstCollection<htd::vertex_t>::getInstance(neighborhood_[vertex]);
             }
 
-            void copyNeighborsTo(htd::vertex_t vertex, std::vector<htd::vertex_t> & target) const HTD_OVERRIDE
+            void copyNeighborsTo(htd::vertex_t vertex, std::vector<htd::vertex_t> & target) const override
             {
                 HTD_ASSERT(isVertex(vertex))
 
@@ -210,7 +210,7 @@ struct htd::CliqueMinimalSeparatorAlgorithm::Implementation
                 target.insert(target.end(), currentNeighborhood.begin(), currentNeighborhood.end());
             }
 
-            htd::vertex_t neighborAtPosition(htd::vertex_t vertex, htd::index_t index) const HTD_OVERRIDE
+            htd::vertex_t neighborAtPosition(htd::vertex_t vertex, htd::index_t index) const override
             {
                 HTD_ASSERT(isVertex(vertex))
 
@@ -221,7 +221,7 @@ struct htd::CliqueMinimalSeparatorAlgorithm::Implementation
                 return currentNeighborhood[index];
             }
 
-            bool isNeighbor(htd::vertex_t vertex, htd::vertex_t neighbor) const HTD_OVERRIDE
+            bool isNeighbor(htd::vertex_t vertex, htd::vertex_t neighbor) const override
             {
                 HTD_ASSERT(isVertex(vertex) && isVertex(neighbor))
 
@@ -230,7 +230,7 @@ struct htd::CliqueMinimalSeparatorAlgorithm::Implementation
                 return std::binary_search(currentNeighborhood.begin(), currentNeighborhood.end(), neighbor);
             }
 
-            bool isConnected(void) const HTD_OVERRIDE
+            bool isConnected(void) const override
             {
                 bool ret = true;
 
@@ -278,7 +278,7 @@ struct htd::CliqueMinimalSeparatorAlgorithm::Implementation
                 return ret;
             }
 
-            bool isConnected(htd::vertex_t vertex1, htd::vertex_t vertex2) const HTD_OVERRIDE
+            bool isConnected(htd::vertex_t vertex1, htd::vertex_t vertex2) const override
             {
                 HTD_ASSERT(isVertex(vertex1) && isVertex(vertex2))
 
@@ -337,7 +337,7 @@ struct htd::CliqueMinimalSeparatorAlgorithm::Implementation
              *
              *  @return The actual identifiers of the vertices.
              */
-            const std::vector<htd::vertex_t> & vertexNames(void) const HTD_NOEXCEPT
+            const std::vector<htd::vertex_t> & vertexNames(void) const noexcept
             {
                 return names_;
             }
@@ -375,7 +375,7 @@ struct htd::CliqueMinimalSeparatorAlgorithm::Implementation
              *
              *  @return The updatable vector containing the preprocessed neighborhood of each of the vertices.
              */
-            std::vector<std::vector<htd::vertex_t>> & neighborhood(void) HTD_NOEXCEPT
+            std::vector<std::vector<htd::vertex_t>> & neighborhood(void) noexcept
             {
                 return neighborhood_;
             }
@@ -387,7 +387,7 @@ struct htd::CliqueMinimalSeparatorAlgorithm::Implementation
              *
              *  @return The vector containing the preprocessed neighborhood of each of the vertices.
              */
-            const std::vector<std::vector<htd::vertex_t>> & neighborhood(void) const HTD_NOEXCEPT
+            const std::vector<std::vector<htd::vertex_t>> & neighborhood(void) const noexcept
             {
                 return neighborhood_;
             }
@@ -502,12 +502,12 @@ struct htd::CliqueMinimalSeparatorAlgorithm::Implementation
                 return new TriangulatedGraph(*this);
             }
 
-            htd::IGraphStructure * cloneGraphStructure(void) const HTD_OVERRIDE
+            htd::IGraphStructure * cloneGraphStructure(void) const override
             {
                 return clone();
             }
 #else
-            TriangulatedGraph * clone(void) const HTD_OVERRIDE
+            TriangulatedGraph * clone(void) const override
             {
                 return new TriangulatedGraph(*this);
             }
@@ -671,7 +671,7 @@ struct htd::CliqueMinimalSeparatorAlgorithm::Implementation
      *  @param[in] weights  A vector containing the weights associated with each of the vertices.
      *  @param[out] pool    The vertex pool which shall be filled with all vertices of maximum weight.
      */
-    void fillMaxCardinalityPool(const std::unordered_set<htd::vertex_t> & vertices, const std::vector<std::size_t> & weights, std::vector<htd::vertex_t> & pool) const HTD_NOEXCEPT
+    void fillMaxCardinalityPool(const std::unordered_set<htd::vertex_t> & vertices, const std::vector<std::size_t> & weights, std::vector<htd::vertex_t> & pool) const noexcept
     {
         std::size_t max = 0;
 
@@ -958,7 +958,7 @@ std::vector<htd::vertex_t> * htd::CliqueMinimalSeparatorAlgorithm::computeSepara
     return ret;
 }
 
-const htd::LibraryInstance * htd::CliqueMinimalSeparatorAlgorithm::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::CliqueMinimalSeparatorAlgorithm::managementInstance(void) const noexcept
 {
     return implementation_->managementInstance_;
 }

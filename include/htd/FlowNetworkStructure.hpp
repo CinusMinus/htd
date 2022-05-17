@@ -56,43 +56,43 @@ namespace htd
              */
             HTD_API virtual ~FlowNetworkStructure();
 
-            HTD_API std::size_t vertexCount(void) const HTD_OVERRIDE;
+            HTD_API std::size_t vertexCount(void) const override;
 
-            HTD_API htd::ConstCollection<htd::vertex_t> vertices(void) const HTD_OVERRIDE;
+            HTD_API htd::ConstCollection<htd::vertex_t> vertices(void) const override;
 
-            HTD_API void copyVerticesTo(std::vector<htd::vertex_t> & target) const HTD_OVERRIDE;
+            HTD_API void copyVerticesTo(std::vector<htd::vertex_t> & target) const override;
 
-            HTD_API htd::vertex_t vertexAtPosition(htd::index_t index) const HTD_OVERRIDE;
+            HTD_API htd::vertex_t vertexAtPosition(htd::index_t index) const override;
 
-            HTD_API bool isVertex(htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API bool isVertex(htd::vertex_t vertex) const override;
 
-            HTD_API std::size_t isolatedVertexCount(void) const HTD_OVERRIDE;
+            HTD_API std::size_t isolatedVertexCount(void) const override;
 
-            HTD_API htd::ConstCollection<htd::vertex_t> isolatedVertices(void) const HTD_OVERRIDE;
+            HTD_API htd::ConstCollection<htd::vertex_t> isolatedVertices(void) const override;
 
-            HTD_API htd::vertex_t isolatedVertexAtPosition(htd::index_t index) const HTD_OVERRIDE;
+            HTD_API htd::vertex_t isolatedVertexAtPosition(htd::index_t index) const override;
 
-            HTD_API bool isIsolatedVertex(htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API bool isIsolatedVertex(htd::vertex_t vertex) const override;
 
-            HTD_API std::size_t neighborCount(htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API std::size_t neighborCount(htd::vertex_t vertex) const override;
 
-            HTD_API htd::ConstCollection<htd::vertex_t> neighbors(htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API htd::ConstCollection<htd::vertex_t> neighbors(htd::vertex_t vertex) const override;
 
-            HTD_API void copyNeighborsTo(htd::vertex_t vertex, std::vector<htd::vertex_t> & target) const HTD_OVERRIDE;
+            HTD_API void copyNeighborsTo(htd::vertex_t vertex, std::vector<htd::vertex_t> & target) const override;
 
-            HTD_API htd::vertex_t neighborAtPosition(htd::vertex_t vertex, htd::index_t index) const HTD_OVERRIDE;
+            HTD_API htd::vertex_t neighborAtPosition(htd::vertex_t vertex, htd::index_t index) const override;
 
-            HTD_API std::size_t edgeCount(void) const HTD_OVERRIDE;
+            HTD_API std::size_t edgeCount(void) const override;
 
-            HTD_API std::size_t edgeCount(htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API std::size_t edgeCount(htd::vertex_t vertex) const override;
 
-            HTD_API bool isConnected(void) const HTD_OVERRIDE;
+            HTD_API bool isConnected(void) const override;
 
-            HTD_API bool isConnected(htd::vertex_t vertex1, htd::vertex_t vertex2) const HTD_OVERRIDE;
+            HTD_API bool isConnected(htd::vertex_t vertex1, htd::vertex_t vertex2) const override;
 
-            HTD_API bool isNeighbor(htd::vertex_t vertex, htd::vertex_t neighbor) const HTD_OVERRIDE;
+            HTD_API bool isNeighbor(htd::vertex_t vertex, htd::vertex_t neighbor) const override;
 
-            HTD_API std::size_t capacity(htd::vertex_t source, htd::vertex_t target) const HTD_OVERRIDE;
+            HTD_API std::size_t capacity(htd::vertex_t source, htd::vertex_t target) const override;
 
             /**
              *  Update the capacity of edges connecting the source vertex with the target vertex.
@@ -104,7 +104,7 @@ namespace htd
             HTD_API void updateCapacity(htd::vertex_t source, htd::vertex_t target, std::size_t capacity);
 
 #ifndef HTD_USE_VISUAL_STUDIO_COMPATIBILITY_MODE
-            HTD_API FlowNetworkStructure * clone(void) const HTD_OVERRIDE;
+            HTD_API FlowNetworkStructure * clone(void) const override;
 #else
             /**
              *  Create a deep copy of the current flow network structure.
@@ -113,9 +113,9 @@ namespace htd
              */
             HTD_API FlowNetworkStructure * clone(void) const;
 
-            HTD_API IGraphStructure * cloneGraphStructure(void) const HTD_OVERRIDE;
+            HTD_API IGraphStructure * cloneGraphStructure(void) const override;
 
-            HTD_API IFlowNetworkStructure * cloneFlowNetworkStructure(void) const HTD_OVERRIDE;
+            HTD_API IFlowNetworkStructure * cloneFlowNetworkStructure(void) const override;
 #endif
 
         private:

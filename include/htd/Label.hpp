@@ -89,14 +89,14 @@ namespace htd
                 return *value_;
             }
 
-            std::size_t hash(void) const HTD_OVERRIDE
+            std::size_t hash(void) const override
             {
                 std::hash<T> hash_function;
 
                 return hash_function(*value_);
             }
 
-            Label<T> * clone(void) const HTD_OVERRIDE
+            Label<T> * clone(void) const override
             {
                 return new Label<T>(*value_);
             }
@@ -137,14 +137,14 @@ namespace htd
                 return *value_ == rhs.value();
             }
 
-            bool operator==(const htd::ILabel & rhs) const HTD_OVERRIDE
+            bool operator==(const htd::ILabel & rhs) const override
             {
                  const Label<T> * o = dynamic_cast<const Label<T> *>(&rhs);
 
                  return o != nullptr && *value_ == o->value();
             }
 
-            void print(std::ostream & stream) const HTD_OVERRIDE
+            void print(std::ostream & stream) const override
             {
                 stream << *value_;
             }

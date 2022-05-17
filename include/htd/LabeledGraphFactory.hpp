@@ -70,7 +70,7 @@ namespace htd
              *
              *  @return A new IMutableLabeledGraph object.
              */
-            HTD_API htd::IMutableLabeledGraph * createInstance(void) const HTD_OVERRIDE;
+            HTD_API htd::IMutableLabeledGraph * createInstance(void) const override;
 
             /**
              *  Create a new IMutableLabeledGraph object.

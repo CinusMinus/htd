@@ -68,7 +68,7 @@ namespace htd
              *
              *  @return A new IConnectedComponentAlgorithm object.
              */
-            HTD_API htd::IConnectedComponentAlgorithm * createInstance(void) const HTD_OVERRIDE;
+            HTD_API htd::IConnectedComponentAlgorithm * createInstance(void) const override;
     };
 }
 

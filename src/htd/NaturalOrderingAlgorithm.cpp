@@ -67,19 +67,19 @@ htd::NaturalOrderingAlgorithm::~NaturalOrderingAlgorithm()
     
 }
 
-htd::IVertexOrdering * htd::NaturalOrderingAlgorithm::computeOrdering(const htd::IMultiHypergraph & graph) const HTD_NOEXCEPT
+htd::IVertexOrdering * htd::NaturalOrderingAlgorithm::computeOrdering(const htd::IMultiHypergraph & graph) const noexcept
 {
     return new htd::VertexOrdering(std::vector<htd::vertex_t>(graph.vertices().begin(), graph.vertices().end()), 1);
 }
 
-htd::IVertexOrdering * htd::NaturalOrderingAlgorithm::computeOrdering(const htd::IMultiHypergraph & graph, const htd::IPreprocessedGraph & preprocessedGraph) const HTD_NOEXCEPT
+htd::IVertexOrdering * htd::NaturalOrderingAlgorithm::computeOrdering(const htd::IMultiHypergraph & graph, const htd::IPreprocessedGraph & preprocessedGraph) const noexcept
 {
     HTD_UNUSED(preprocessedGraph)
 
     return new htd::VertexOrdering(std::vector<htd::vertex_t>(graph.vertices().begin(), graph.vertices().end()), 1);
 }
 
-const htd::LibraryInstance * htd::NaturalOrderingAlgorithm::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::NaturalOrderingAlgorithm::managementInstance(void) const noexcept
 {
     return implementation_->managementInstance_;
 }

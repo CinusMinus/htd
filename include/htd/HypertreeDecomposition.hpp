@@ -85,88 +85,88 @@ namespace htd
 
             HTD_API virtual ~HypertreeDecomposition();
 
-            HTD_API void removeVertex(htd::vertex_t vertex) HTD_OVERRIDE;
+            HTD_API void removeVertex(htd::vertex_t vertex) override;
 
-            HTD_API void removeSubtree(htd::vertex_t subtreeRoot) HTD_OVERRIDE;
+            HTD_API void removeSubtree(htd::vertex_t subtreeRoot) override;
 
-            HTD_API htd::vertex_t insertRoot(void) HTD_OVERRIDE;
+            HTD_API htd::vertex_t insertRoot(void) override;
 
-            HTD_API htd::vertex_t insertRoot(const std::vector<htd::vertex_t> & bagContent, const htd::FilteredHyperedgeCollection & inducedEdges) HTD_OVERRIDE;
+            HTD_API htd::vertex_t insertRoot(const std::vector<htd::vertex_t> & bagContent, const htd::FilteredHyperedgeCollection & inducedEdges) override;
 
-            HTD_API htd::vertex_t insertRoot(std::vector<htd::vertex_t> && bagContent, htd::FilteredHyperedgeCollection && inducedEdges) HTD_OVERRIDE;
+            HTD_API htd::vertex_t insertRoot(std::vector<htd::vertex_t> && bagContent, htd::FilteredHyperedgeCollection && inducedEdges) override;
 
-            HTD_API htd::vertex_t addChild(htd::vertex_t vertex) HTD_OVERRIDE;
+            HTD_API htd::vertex_t addChild(htd::vertex_t vertex) override;
 
-            HTD_API htd::vertex_t addChild(htd::vertex_t vertex, const std::vector<htd::vertex_t> & bagContent, const htd::FilteredHyperedgeCollection & inducedEdges) HTD_OVERRIDE;
+            HTD_API htd::vertex_t addChild(htd::vertex_t vertex, const std::vector<htd::vertex_t> & bagContent, const htd::FilteredHyperedgeCollection & inducedEdges) override;
 
-            HTD_API htd::vertex_t addChild(htd::vertex_t vertex, std::vector<htd::vertex_t> && bagContent, htd::FilteredHyperedgeCollection && inducedEdges) HTD_OVERRIDE;
+            HTD_API htd::vertex_t addChild(htd::vertex_t vertex, std::vector<htd::vertex_t> && bagContent, htd::FilteredHyperedgeCollection && inducedEdges) override;
 
-            HTD_API htd::vertex_t addParent(htd::vertex_t vertex) HTD_OVERRIDE;
+            HTD_API htd::vertex_t addParent(htd::vertex_t vertex) override;
 
-            HTD_API htd::vertex_t addParent(htd::vertex_t vertex, const std::vector<htd::vertex_t> & bagContent, const htd::FilteredHyperedgeCollection & inducedEdges) HTD_OVERRIDE;
+            HTD_API htd::vertex_t addParent(htd::vertex_t vertex, const std::vector<htd::vertex_t> & bagContent, const htd::FilteredHyperedgeCollection & inducedEdges) override;
 
-            HTD_API htd::vertex_t addParent(htd::vertex_t vertex, std::vector<htd::vertex_t> && bagContent, htd::FilteredHyperedgeCollection && inducedEdges) HTD_OVERRIDE;
+            HTD_API htd::vertex_t addParent(htd::vertex_t vertex, std::vector<htd::vertex_t> && bagContent, htd::FilteredHyperedgeCollection && inducedEdges) override;
 
-            HTD_API void removeChild(htd::vertex_t vertex, htd::vertex_t child) HTD_OVERRIDE;
+            HTD_API void removeChild(htd::vertex_t vertex, htd::vertex_t child) override;
 
-            HTD_API const std::vector<htd::Hyperedge> & coveringEdges(htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API const std::vector<htd::Hyperedge> & coveringEdges(htd::vertex_t vertex) const override;
 
-            HTD_API void setCoveringEdges(htd::vertex_t vertex, const std::vector<htd::Hyperedge> & content) HTD_OVERRIDE;
+            HTD_API void setCoveringEdges(htd::vertex_t vertex, const std::vector<htd::Hyperedge> & content) override;
 
-            HTD_API void setCoveringEdges(htd::vertex_t vertex, const htd::ConstCollection<htd::Hyperedge> & content) HTD_OVERRIDE;
+            HTD_API void setCoveringEdges(htd::vertex_t vertex, const htd::ConstCollection<htd::Hyperedge> & content) override;
 
-            HTD_API std::size_t minimumCoveringEdgeAmount(void) const HTD_OVERRIDE;
+            HTD_API std::size_t minimumCoveringEdgeAmount(void) const override;
 
-            HTD_API std::size_t maximumCoveringEdgeAmount(void) const HTD_OVERRIDE;
+            HTD_API std::size_t maximumCoveringEdgeAmount(void) const override;
 
 #ifndef HTD_USE_VISUAL_STUDIO_COMPATIBILITY_MODE
-            HTD_API HypertreeDecomposition * clone(void) const HTD_OVERRIDE;
+            HTD_API HypertreeDecomposition * clone(void) const override;
 #else
             HTD_API HypertreeDecomposition * clone(void) const;
 
-            HTD_API htd::ITree * cloneTree(void) const HTD_OVERRIDE;
+            HTD_API htd::ITree * cloneTree(void) const override;
 
-            HTD_API htd::IGraph * cloneGraph(void) const HTD_OVERRIDE;
+            HTD_API htd::IGraph * cloneGraph(void) const override;
 
-            HTD_API htd::IMultiGraph * cloneMultiGraph(void) const HTD_OVERRIDE;
+            HTD_API htd::IMultiGraph * cloneMultiGraph(void) const override;
 
-            HTD_API htd::IHypergraph * cloneHypergraph(void) const HTD_OVERRIDE;
+            HTD_API htd::IHypergraph * cloneHypergraph(void) const override;
 
-            HTD_API htd::IMultiHypergraph * cloneMultiHypergraph(void) const HTD_OVERRIDE;
+            HTD_API htd::IMultiHypergraph * cloneMultiHypergraph(void) const override;
 
-            HTD_API htd::ILabeledTree * cloneLabeledTree(void) const HTD_OVERRIDE;
+            HTD_API htd::ILabeledTree * cloneLabeledTree(void) const override;
 
-            HTD_API htd::ILabeledGraph * cloneLabeledGraph(void) const HTD_OVERRIDE;
+            HTD_API htd::ILabeledGraph * cloneLabeledGraph(void) const override;
 
-            HTD_API htd::ILabeledMultiGraph * cloneLabeledMultiGraph(void) const HTD_OVERRIDE;
+            HTD_API htd::ILabeledMultiGraph * cloneLabeledMultiGraph(void) const override;
 
-            HTD_API htd::ILabeledHypergraph * cloneLabeledHypergraph(void) const HTD_OVERRIDE;
+            HTD_API htd::ILabeledHypergraph * cloneLabeledHypergraph(void) const override;
 
-            HTD_API htd::ILabeledMultiHypergraph * cloneLabeledMultiHypergraph(void) const HTD_OVERRIDE;
+            HTD_API htd::ILabeledMultiHypergraph * cloneLabeledMultiHypergraph(void) const override;
 
-            HTD_API htd::ITreeDecomposition * cloneTreeDecomposition(void) const HTD_OVERRIDE;
+            HTD_API htd::ITreeDecomposition * cloneTreeDecomposition(void) const override;
 
-            HTD_API htd::IGraphDecomposition * cloneGraphDecomposition(void) const HTD_OVERRIDE;
+            HTD_API htd::IGraphDecomposition * cloneGraphDecomposition(void) const override;
 
-            HTD_API htd::IHypertreeDecomposition * cloneHypertreeDecomposition(void) const HTD_OVERRIDE;
+            HTD_API htd::IHypertreeDecomposition * cloneHypertreeDecomposition(void) const override;
 
-            HTD_API htd::IMutableTree * cloneMutableTree(void) const HTD_OVERRIDE;
+            HTD_API htd::IMutableTree * cloneMutableTree(void) const override;
 
-            HTD_API htd::IMutableLabeledTree * cloneMutableLabeledTree(void) const HTD_OVERRIDE;
+            HTD_API htd::IMutableLabeledTree * cloneMutableLabeledTree(void) const override;
 
-            HTD_API htd::IMutableTreeDecomposition * cloneMutableTreeDecomposition(void) const HTD_OVERRIDE;
+            HTD_API htd::IMutableTreeDecomposition * cloneMutableTreeDecomposition(void) const override;
 
-            HTD_API htd::IMutableHypertreeDecomposition * cloneMutableHypertreeDecomposition(void) const HTD_OVERRIDE;
+            HTD_API htd::IMutableHypertreeDecomposition * cloneMutableHypertreeDecomposition(void) const override;
 #endif
 
 #ifndef HTD_USE_VISUAL_STUDIO_COMPATIBILITY_MODE
-            HTD_API HypertreeDecomposition & operator=(const htd::ITree & original) HTD_OVERRIDE;
+            HTD_API HypertreeDecomposition & operator=(const htd::ITree & original) override;
 
-            HTD_API HypertreeDecomposition & operator=(const htd::ILabeledTree & original) HTD_OVERRIDE;
+            HTD_API HypertreeDecomposition & operator=(const htd::ILabeledTree & original) override;
 
-            HTD_API HypertreeDecomposition & operator=(const htd::ITreeDecomposition & original) HTD_OVERRIDE;
+            HTD_API HypertreeDecomposition & operator=(const htd::ITreeDecomposition & original) override;
 
-            HTD_API HypertreeDecomposition & operator=(const htd::IHypertreeDecomposition & original) HTD_OVERRIDE;
+            HTD_API HypertreeDecomposition & operator=(const htd::IHypertreeDecomposition & original) override;
 #else
             HTD_API HypertreeDecomposition & operator=(const htd::ITree & original);
 
@@ -176,13 +176,13 @@ namespace htd
 
             HTD_API HypertreeDecomposition & operator=(const htd::IHypertreeDecomposition & original);
 
-            HTD_API void assign(const htd::ITree & original) HTD_OVERRIDE;
+            HTD_API void assign(const htd::ITree & original) override;
 
-            HTD_API void assign(const htd::ILabeledTree & original) HTD_OVERRIDE;
+            HTD_API void assign(const htd::ILabeledTree & original) override;
 
-            HTD_API void assign(const htd::ITreeDecomposition & original) HTD_OVERRIDE;
+            HTD_API void assign(const htd::ITreeDecomposition & original) override;
 
-            HTD_API void assign(const htd::IHypertreeDecomposition & original) HTD_OVERRIDE;
+            HTD_API void assign(const htd::IHypertreeDecomposition & original) override;
 #endif
 
         private:

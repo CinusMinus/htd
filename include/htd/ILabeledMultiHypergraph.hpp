@@ -119,7 +119,7 @@ namespace htd
              *
              *  @return A new ILabeledMultiHypergraph object identical to the current labeled multi-hypergraph.
              */
-            virtual ILabeledMultiHypergraph * clone(void) const HTD_OVERRIDE = 0;
+            virtual ILabeledMultiHypergraph * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current labeled multi-hypergraph.

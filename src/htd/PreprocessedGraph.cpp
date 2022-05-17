@@ -155,17 +155,17 @@ htd::PreprocessedGraph::~PreprocessedGraph()
 
 }
 
-std::size_t htd::PreprocessedGraph::vertexCount(void) const HTD_NOEXCEPT
+std::size_t htd::PreprocessedGraph::vertexCount(void) const noexcept
 {
     return implementation_->remainingVertices_.size();
 }
 
-std::size_t htd::PreprocessedGraph::inputGraphVertexCount(void) const HTD_NOEXCEPT
+std::size_t htd::PreprocessedGraph::inputGraphVertexCount(void) const noexcept
 {
     return implementation_->names_.size();
 }
 
-std::size_t htd::PreprocessedGraph::edgeCount(void) const HTD_NOEXCEPT
+std::size_t htd::PreprocessedGraph::edgeCount(void) const noexcept
 {
     return implementation_->edgeCount_;
 }
@@ -175,7 +175,7 @@ std::size_t htd::PreprocessedGraph::edgeCount(htd::vertex_t vertex) const
     return neighborCount(vertex);
 }
 
-std::size_t htd::PreprocessedGraph::inputGraphEdgeCount(void) const HTD_NOEXCEPT
+std::size_t htd::PreprocessedGraph::inputGraphEdgeCount(void) const noexcept
 {
     return implementation_->inputGraphEdgeCount_;
 }
@@ -427,7 +427,7 @@ void htd::PreprocessedGraph::removeVertex(htd::vertex_t vertex)
     std::vector<htd::vertex_t>().swap(selectedNeighborhood);
 }
 
-const std::vector<htd::vertex_t> & htd::PreprocessedGraph::vertexNames(void) const HTD_NOEXCEPT
+const std::vector<htd::vertex_t> & htd::PreprocessedGraph::vertexNames(void) const noexcept
 {
     return implementation_->names_;
 }
@@ -439,12 +439,12 @@ htd::vertex_t htd::PreprocessedGraph::vertexName(htd::vertex_t vertex) const
     return implementation_->names_[vertex];
 }
 
-std::vector<std::vector<htd::vertex_t>> & htd::PreprocessedGraph::neighborhood(void) HTD_NOEXCEPT
+std::vector<std::vector<htd::vertex_t>> & htd::PreprocessedGraph::neighborhood(void) noexcept
 {
     return implementation_->neighborhood_;
 }
 
-const std::vector<std::vector<htd::vertex_t>> & htd::PreprocessedGraph::neighborhood(void) const HTD_NOEXCEPT
+const std::vector<std::vector<htd::vertex_t>> & htd::PreprocessedGraph::neighborhood(void) const noexcept
 {
     return implementation_->neighborhood_;
 }
@@ -468,17 +468,17 @@ void htd::PreprocessedGraph::updateEdgeCount(void)
     implementation_->updateEdgeCount();
 }
 
-std::vector<htd::vertex_t> & htd::PreprocessedGraph::eliminationSequence(void) HTD_NOEXCEPT
+std::vector<htd::vertex_t> & htd::PreprocessedGraph::eliminationSequence(void) noexcept
 {
     return implementation_->eliminationSequence_;
 }
 
-const std::vector<htd::vertex_t> & htd::PreprocessedGraph::eliminationSequence(void) const HTD_NOEXCEPT
+const std::vector<htd::vertex_t> & htd::PreprocessedGraph::eliminationSequence(void) const noexcept
 {
     return implementation_->eliminationSequence_;
 }
 
-const std::vector<htd::vertex_t> & htd::PreprocessedGraph::remainingVertices(void) const HTD_NOEXCEPT
+const std::vector<htd::vertex_t> & htd::PreprocessedGraph::remainingVertices(void) const noexcept
 {
     return implementation_->remainingVertices_;
 }
@@ -497,12 +497,12 @@ void htd::PreprocessedGraph::setRemainingVertices(std::vector<htd::vertex_t> && 
     implementation_->updateEdgeCount();
 }
 
-std::size_t & htd::PreprocessedGraph::minTreeWidth(void) HTD_NOEXCEPT
+std::size_t & htd::PreprocessedGraph::minTreeWidth(void) noexcept
 {
     return implementation_->minTreeWidth_;
 }
 
-std::size_t htd::PreprocessedGraph::minTreeWidth(void) const HTD_NOEXCEPT
+std::size_t htd::PreprocessedGraph::minTreeWidth(void) const noexcept
 {
     return implementation_->minTreeWidth_;
 }

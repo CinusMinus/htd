@@ -68,7 +68,7 @@ namespace htd
              *
              *  @return A new ITreeDecompositionAlgorithm object.
              */
-            HTD_API htd::ITreeDecompositionAlgorithm * createInstance(void) const HTD_OVERRIDE;
+            HTD_API htd::ITreeDecompositionAlgorithm * createInstance(void) const override;
     };
 }
 

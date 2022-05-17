@@ -89,11 +89,11 @@ namespace htd
              */
             HTD_API virtual ~VertexOrdering();
 
-            HTD_API const std::vector<htd::vertex_t> & sequence(void) const HTD_OVERRIDE;
+            HTD_API const std::vector<htd::vertex_t> & sequence(void) const override;
 
-            HTD_API std::size_t requiredIterations(void) const HTD_OVERRIDE;
+            HTD_API std::size_t requiredIterations(void) const override;
 
-            HTD_API std::size_t maximumBagSize(void) const HTD_OVERRIDE;
+            HTD_API std::size_t maximumBagSize(void) const override;
 
             /**
              *  Set the maximum bag size a decomposition based on bucket elimination and the computed ordering will have.

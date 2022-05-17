@@ -68,7 +68,7 @@ namespace htd
              *
              *  @return A new IStronglyConnectedComponentAlgorithm object.
              */
-            HTD_API htd::IStronglyConnectedComponentAlgorithm * createInstance(void) const HTD_OVERRIDE;
+            HTD_API htd::IStronglyConnectedComponentAlgorithm * createInstance(void) const override;
     };
 }
 

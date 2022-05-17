@@ -81,14 +81,14 @@ namespace htd
              *
              *  @return The number of levels of the fitness evaluation.
              */
-            HTD_API std::size_t levelCount(void) const HTD_NOEXCEPT;
+            HTD_API std::size_t levelCount(void) const noexcept;
 
             /**
              *  Getter for the fitness values of the fitness evaluation.
              *
              *  @return The fitness values of the fitness evaluation.
              */
-            HTD_API const std::vector<double> & values(void) const HTD_NOEXCEPT;
+            HTD_API const std::vector<double> & values(void) const noexcept;
 
             /**
              *  Access the fitness value at the specific level of the fitness evaluation.
@@ -115,7 +115,7 @@ namespace htd
              *
              *  @return True if the vector returned by the values() is lexicographically smaller than rhs.values(), false otherwise.
              */
-            HTD_API bool operator<(const FitnessEvaluation & rhs) const HTD_NOEXCEPT;
+            HTD_API bool operator<(const FitnessEvaluation & rhs) const noexcept;
 
             /**
              *  Greater-than operator for a fitness evaluation.
@@ -124,7 +124,7 @@ namespace htd
              *
              *  @return True if the vector returned by the values() is lexicographically greater than rhs.values(), false otherwise.
              */
-            HTD_API bool operator>(const FitnessEvaluation & rhs) const HTD_NOEXCEPT;
+            HTD_API bool operator>(const FitnessEvaluation & rhs) const noexcept;
 
             /**
              *  Equality operator for a fitness evaluation.
@@ -133,7 +133,7 @@ namespace htd
              *
              *  @return True if the vector returned by the values() is equal to rhs.values(), false otherwise.
              */
-            HTD_API bool operator==(const FitnessEvaluation & rhs) const HTD_NOEXCEPT;
+            HTD_API bool operator==(const FitnessEvaluation & rhs) const noexcept;
 
             /**
              *  Inequality operator for a fitness evaluation.
@@ -142,7 +142,7 @@ namespace htd
              *
              *  @return True if the vector returned by the values() is unequal to rhs.values(), false otherwise.
              */
-            HTD_API bool operator!=(const FitnessEvaluation & rhs) const HTD_NOEXCEPT;
+            HTD_API bool operator!=(const FitnessEvaluation & rhs) const noexcept;
 
             /**
              *  Create a deep copy of the current fitness evaluation.

@@ -347,7 +347,7 @@ bool htd::TrivialTreeDecompositionAlgorithm::isSafelyInterruptible(void) const
     return false;
 }
 
-const htd::LibraryInstance * htd::TrivialTreeDecompositionAlgorithm::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::TrivialTreeDecompositionAlgorithm::managementInstance(void) const noexcept
 {
     return implementation_->managementInstance_;
 }

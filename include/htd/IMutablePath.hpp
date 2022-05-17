@@ -130,7 +130,7 @@ namespace htd
              *
              *  @return A new IMutablePath object identical to the current mutable path.
              */
-            virtual IMutablePath * clone(void) const HTD_OVERRIDE = 0;
+            virtual IMutablePath * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current mutable path.

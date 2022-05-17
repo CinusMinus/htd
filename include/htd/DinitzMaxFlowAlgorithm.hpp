@@ -44,13 +44,13 @@ namespace htd
 
             HTD_API ~DinitzMaxFlowAlgorithm();
 
-            HTD_API const htd::LibraryInstance * managementInstance(void) const HTD_NOEXCEPT HTD_OVERRIDE;
+            HTD_API const htd::LibraryInstance * managementInstance(void) const noexcept override;
 
-            HTD_API void setManagementInstance(const htd::LibraryInstance * const manager) HTD_OVERRIDE;
+            HTD_API void setManagementInstance(const htd::LibraryInstance * const manager) override;
 
-            HTD_API htd::IFlow * determineMaximumFlow(const htd::IFlowNetworkStructure & flowNetwork, htd::vertex_t source, htd::vertex_t target) const HTD_OVERRIDE;
+            HTD_API htd::IFlow * determineMaximumFlow(const htd::IFlowNetworkStructure & flowNetwork, htd::vertex_t source, htd::vertex_t target) const override;
 
-            HTD_API DinitzMaxFlowAlgorithm * clone(void) const HTD_OVERRIDE;
+            HTD_API DinitzMaxFlowAlgorithm * clone(void) const override;
 
         private:
             struct Implementation;

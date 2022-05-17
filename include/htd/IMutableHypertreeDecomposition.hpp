@@ -68,7 +68,7 @@ namespace htd
              *
              *  @return A new IMutableHypertreeDecomposition object identical to the current mutable hypertree decomposition.
              */
-            virtual IMutableHypertreeDecomposition * clone(void) const HTD_OVERRIDE = 0;
+            virtual IMutableHypertreeDecomposition * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current mutable hypertree decomposition.
@@ -84,7 +84,7 @@ namespace htd
              *
              *  @param[in] original  The original tree decomposition.
              */
-            virtual IMutableHypertreeDecomposition & operator=(const htd::ITreeDecomposition & original) HTD_OVERRIDE = 0;
+            virtual IMutableHypertreeDecomposition & operator=(const htd::ITreeDecomposition & original) override = 0;
 
             /**
              *  Copy assignment operator for a mutable hypertree decomposition.

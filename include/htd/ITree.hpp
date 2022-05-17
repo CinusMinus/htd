@@ -71,7 +71,7 @@ namespace htd
              *
              *  @return The number of leaf nodes of the tree.
              */
-            virtual std::size_t leafCount(void) const HTD_NOEXCEPT = 0;
+            virtual std::size_t leafCount(void) const noexcept = 0;
 
             /**
              *  Access the collection of all leaf nodes of the tree.
@@ -201,7 +201,7 @@ namespace htd
              *
              *  @return A new ITree object identical to the current tree.
              */
-            virtual ITree * clone(void) const HTD_OVERRIDE = 0;
+            virtual ITree * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current tree.

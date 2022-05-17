@@ -46,7 +46,7 @@ namespace htd
              *
              *  @return A new ILabeledGraph object identical to the current labeled graph.
              */
-            virtual ILabeledGraph * clone(void) const HTD_OVERRIDE = 0;
+            virtual ILabeledGraph * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current labeled graph.

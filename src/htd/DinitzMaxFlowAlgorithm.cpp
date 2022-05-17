@@ -66,22 +66,22 @@ namespace htd
 
             }
 
-            std::size_t vertexCount(void) const HTD_OVERRIDE
+            std::size_t vertexCount(void) const override
             {
                 return flow_.size();
             }
 
-            htd::vertex_t source(void) const HTD_OVERRIDE
+            htd::vertex_t source(void) const override
             {
                 return source_;
             }
 
-            htd::vertex_t target(void) const HTD_OVERRIDE
+            htd::vertex_t target(void) const override
             {
                 return target_;
             }
 
-            std::size_t value(void) const HTD_OVERRIDE
+            std::size_t value(void) const override
             {
                 std::size_t ret = 0;
 
@@ -93,14 +93,14 @@ namespace htd
                 return ret;
             }
 
-            virtual long long flow(htd::vertex_t source, htd::vertex_t target) const HTD_OVERRIDE
+            virtual long long flow(htd::vertex_t source, htd::vertex_t target) const override
             {
                 HTD_ASSERT(source < vertexCount() && target < vertexCount())
 
                 return flow_[source][target];
             }
 
-            Flow * clone(void) const HTD_OVERRIDE
+            Flow * clone(void) const override
             {
                 return new Flow(*this);
             }
@@ -227,7 +227,7 @@ htd::IFlow * htd::DinitzMaxFlowAlgorithm::determineMaximumFlow(const htd::IFlowN
     return ret;
 }
 
-const htd::LibraryInstance * htd::DinitzMaxFlowAlgorithm::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::DinitzMaxFlowAlgorithm::managementInstance(void) const noexcept
 {
     return implementation_->managementInstance_;
 }

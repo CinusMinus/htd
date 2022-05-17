@@ -50,7 +50,7 @@ namespace htd
              *
              *  @return The vertex ordering of the given graph.
              */
-            virtual htd::IWidthLimitedVertexOrdering * computeOrdering(const htd::IMultiHypergraph & graph, std::size_t maxBagSize, std::size_t maxIterationCount) const HTD_NOEXCEPT = 0;
+            virtual htd::IWidthLimitedVertexOrdering * computeOrdering(const htd::IMultiHypergraph & graph, std::size_t maxBagSize, std::size_t maxIterationCount) const noexcept = 0;
 
             /**
              *  Compute the vertex ordering of a given graph.
@@ -62,7 +62,7 @@ namespace htd
              *
              *  @return The vertex ordering of the given graph.
              */
-            virtual htd::IWidthLimitedVertexOrdering * computeOrdering(const htd::IMultiHypergraph & graph, const htd::IPreprocessedGraph & preprocessedGraph, std::size_t maxBagSize, std::size_t maxIterationCount) const HTD_NOEXCEPT = 0;
+            virtual htd::IWidthLimitedVertexOrdering * computeOrdering(const htd::IMultiHypergraph & graph, const htd::IPreprocessedGraph & preprocessedGraph, std::size_t maxBagSize, std::size_t maxIterationCount) const noexcept = 0;
 
 #ifndef HTD_USE_VISUAL_STUDIO_COMPATIBILITY_MODE
             /**
@@ -70,7 +70,7 @@ namespace htd
              *
              *  @return A new IWidthLimitableOrderingAlgorithm object identical to the current ordering algorithm.
              */
-            virtual IWidthLimitableOrderingAlgorithm * clone(void) const HTD_OVERRIDE = 0;
+            virtual IWidthLimitableOrderingAlgorithm * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current ordering algorithm.

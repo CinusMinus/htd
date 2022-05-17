@@ -380,7 +380,7 @@ void htd::PostProcessingPathDecompositionAlgorithm::setComputeInducedEdgesEnable
     implementation_->computeInducedEdges_ = computeInducedEdgesEnabled;
 }
 
-const htd::LibraryInstance * htd::PostProcessingPathDecompositionAlgorithm::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::PostProcessingPathDecompositionAlgorithm::managementInstance(void) const noexcept
 {
     return implementation_->managementInstance_;
 }

@@ -118,7 +118,7 @@ namespace htd
                                                                    const std::vector<htd::IDecompositionManipulationOperation *> & manipulationOperations,
                                                                    const std::function<void(const htd::IMultiHypergraph &, const htd::ITreeDecomposition &, const htd::FitnessEvaluation &)> & progressCallback) const = 0;
 
-            virtual ICustomizedTreeDecompositionAlgorithm * clone(void) const HTD_OVERRIDE = 0;
+            virtual ICustomizedTreeDecompositionAlgorithm * clone(void) const override = 0;
     };
 
     inline htd::ICustomizedTreeDecompositionAlgorithm::~ICustomizedTreeDecompositionAlgorithm() { }

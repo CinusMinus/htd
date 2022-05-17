@@ -47,7 +47,7 @@ namespace htd
              *
              *  @return A new ILabeledMultiGraph object identical to the current labeled multi-graph.
              */
-            virtual ILabeledMultiGraph * clone(void) const HTD_OVERRIDE = 0;
+            virtual ILabeledMultiGraph * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current labeled multi-graph.

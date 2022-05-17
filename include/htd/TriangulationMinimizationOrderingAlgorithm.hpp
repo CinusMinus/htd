@@ -54,13 +54,13 @@ namespace htd
 
             HTD_API virtual ~TriangulationMinimizationOrderingAlgorithm();
             
-            HTD_API htd::IVertexOrdering * computeOrdering(const htd::IMultiHypergraph & graph) const HTD_NOEXCEPT HTD_OVERRIDE;
+            HTD_API htd::IVertexOrdering * computeOrdering(const htd::IMultiHypergraph & graph) const noexcept override;
 
-            HTD_API htd::IVertexOrdering * computeOrdering(const htd::IMultiHypergraph & graph, const htd::IPreprocessedGraph & preprocessedGraph) const HTD_NOEXCEPT HTD_OVERRIDE;
+            HTD_API htd::IVertexOrdering * computeOrdering(const htd::IMultiHypergraph & graph, const htd::IPreprocessedGraph & preprocessedGraph) const noexcept override;
 
-            HTD_API const htd::LibraryInstance * managementInstance(void) const HTD_NOEXCEPT HTD_OVERRIDE;
+            HTD_API const htd::LibraryInstance * managementInstance(void) const noexcept override;
 
-            HTD_API void setManagementInstance(const htd::LibraryInstance * const manager) HTD_OVERRIDE;
+            HTD_API void setManagementInstance(const htd::LibraryInstance * const manager) override;
 
             /**
              *  Set the ordering algorithm which shall be used to compute the initial vertex elimination ordering.
@@ -74,11 +74,11 @@ namespace htd
             HTD_API void setOrderingAlgorithm(htd::IOrderingAlgorithm * algorithm);
 
 #ifndef HTD_USE_VISUAL_STUDIO_COMPATIBILITY_MODE
-            HTD_API TriangulationMinimizationOrderingAlgorithm * clone(void) const HTD_OVERRIDE;
+            HTD_API TriangulationMinimizationOrderingAlgorithm * clone(void) const override;
 #else
             HTD_API TriangulationMinimizationOrderingAlgorithm * clone(void) const;
 
-            HTD_API htd::IOrderingAlgorithm * cloneOrderingAlgorithm(void) const HTD_OVERRIDE;
+            HTD_API htd::IOrderingAlgorithm * cloneOrderingAlgorithm(void) const override;
 #endif
 
         protected:

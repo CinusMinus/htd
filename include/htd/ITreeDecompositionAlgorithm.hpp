@@ -46,7 +46,7 @@ namespace htd
              *
              *  @return A new ITreeDecomposition object representing the decomposition of the given graph.
              */
-            virtual htd::ITreeDecomposition * computeDecomposition(const htd::IMultiHypergraph & graph) const HTD_OVERRIDE = 0;
+            virtual htd::ITreeDecomposition * computeDecomposition(const htd::IMultiHypergraph & graph) const override = 0;
 
             /**
              *  Compute a decomposition of the given graph and apply the given manipulation operations to it.
@@ -62,7 +62,7 @@ namespace htd
              *
              *  @return A new ITreeDecomposition object representing the decomposition of the given graph.
              */
-            virtual htd::ITreeDecomposition * computeDecomposition(const htd::IMultiHypergraph & graph, const std::vector<htd::IDecompositionManipulationOperation *> & manipulationOperations) const HTD_OVERRIDE = 0;
+            virtual htd::ITreeDecomposition * computeDecomposition(const htd::IMultiHypergraph & graph, const std::vector<htd::IDecompositionManipulationOperation *> & manipulationOperations) const override = 0;
 
             /**
              *  Compute a decomposition of the given graph.
@@ -72,7 +72,7 @@ namespace htd
              *
              *  @return A new ITreeDecomposition object representing the decomposition of the given graph.
              */
-            virtual htd::ITreeDecomposition * computeDecomposition(const htd::IMultiHypergraph & graph, const htd::IPreprocessedGraph & preprocessedGraph) const HTD_OVERRIDE = 0;
+            virtual htd::ITreeDecomposition * computeDecomposition(const htd::IMultiHypergraph & graph, const htd::IPreprocessedGraph & preprocessedGraph) const override = 0;
 
             /**
              *  Compute a decomposition of the given graph and apply the given manipulation operations to it.
@@ -89,14 +89,14 @@ namespace htd
              *
              *  @return A new ITreeDecomposition object representing the decomposition of the given graph.
              */
-            virtual htd::ITreeDecomposition * computeDecomposition(const htd::IMultiHypergraph & graph, const htd::IPreprocessedGraph & preprocessedGraph, const std::vector<htd::IDecompositionManipulationOperation *> & manipulationOperations) const HTD_OVERRIDE = 0;
+            virtual htd::ITreeDecomposition * computeDecomposition(const htd::IMultiHypergraph & graph, const htd::IPreprocessedGraph & preprocessedGraph, const std::vector<htd::IDecompositionManipulationOperation *> & manipulationOperations) const override = 0;
 
             /**
              *  Create a deep copy of the current tree decomposition algorithm.
              *
              *  @return A new ITreeDecompositionAlgorithm object identical to the current tree decomposition algorithm.
              */
-            virtual ITreeDecompositionAlgorithm * clone(void) const HTD_OVERRIDE = 0;
+            virtual ITreeDecompositionAlgorithm * clone(void) const override = 0;
     };
 
     inline htd::ITreeDecompositionAlgorithm::~ITreeDecompositionAlgorithm() { }

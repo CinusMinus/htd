@@ -163,7 +163,7 @@ namespace htd
              *
              *  @return A new IMutableLabeledDirectedGraph object identical to the current mutable labeled directed graph.
              */
-            virtual IMutableLabeledDirectedGraph * clone(void) const HTD_OVERRIDE = 0;
+            virtual IMutableLabeledDirectedGraph * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current mutable labeled directed graph.

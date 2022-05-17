@@ -45,9 +45,9 @@ namespace htd_io
 
             HTD_IO_API virtual ~TdFormatExporter();
 
-            HTD_IO_API void write(const htd::ITreeDecomposition & decomposition, const htd::IMultiHypergraph & graph, std::ostream & outputStream) const HTD_OVERRIDE;
+            HTD_IO_API void write(const htd::ITreeDecomposition & decomposition, const htd::IMultiHypergraph & graph, std::ostream & outputStream) const override;
 
-            HTD_IO_API void write(const htd::ITreeDecomposition & decomposition, const htd::NamedMultiHypergraph<std::string, std::string> & graph, std::ostream & outputStream) const HTD_OVERRIDE;
+            HTD_IO_API void write(const htd::ITreeDecomposition & decomposition, const htd::NamedMultiHypergraph<std::string, std::string> & graph, std::ostream & outputStream) const override;
     };
 }
 

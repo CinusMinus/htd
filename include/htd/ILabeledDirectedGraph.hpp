@@ -48,7 +48,7 @@ namespace htd
              *
              *  @return A new ILabeledDirectedGraph object identical to the current labeled directed graph.
              */
-            virtual ILabeledDirectedGraph * clone(void) const HTD_OVERRIDE = 0;
+            virtual ILabeledDirectedGraph * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current labeled directed graph.

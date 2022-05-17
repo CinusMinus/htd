@@ -47,13 +47,13 @@ namespace htd
              */
             HTD_API virtual ~MinimumSeparatorAlgorithm();
 
-            HTD_API std::vector<htd::vertex_t> * computeSeparator(const htd::IGraphStructure & graph) const HTD_OVERRIDE;
+            HTD_API std::vector<htd::vertex_t> * computeSeparator(const htd::IGraphStructure & graph) const override;
 
-            HTD_API const htd::LibraryInstance * managementInstance(void) const HTD_NOEXCEPT HTD_OVERRIDE;
+            HTD_API const htd::LibraryInstance * managementInstance(void) const noexcept override;
 
-            HTD_API void setManagementInstance(const htd::LibraryInstance * const manager) HTD_OVERRIDE;
+            HTD_API void setManagementInstance(const htd::LibraryInstance * const manager) override;
 
-            HTD_API MinimumSeparatorAlgorithm * clone(void) const HTD_OVERRIDE;
+            HTD_API MinimumSeparatorAlgorithm * clone(void) const override;
 
         private:
             struct Implementation;

@@ -147,7 +147,7 @@ namespace htd
              *
              *  @return A new IMutablePathDecomposition object identical to the current mutable path decomposition.
              */
-            virtual IMutablePathDecomposition * clone(void) const HTD_OVERRIDE = 0;
+            virtual IMutablePathDecomposition * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current mutable path decomposition.
@@ -163,14 +163,14 @@ namespace htd
              *
              *  @param[in] original  The original path.
              */
-            virtual IMutablePathDecomposition & operator=(const htd::IPath & original) HTD_OVERRIDE = 0;
+            virtual IMutablePathDecomposition & operator=(const htd::IPath & original) override = 0;
 
             /**
              *  Copy assignment operator for a mutable path decomposition.
              *
              *  @param[in] original  The original labeled path.
              */
-            virtual IMutablePathDecomposition & operator=(const htd::ILabeledPath & original) HTD_OVERRIDE = 0;
+            virtual IMutablePathDecomposition & operator=(const htd::ILabeledPath & original) override = 0;
 
             /**
              *  Copy assignment operator for a mutable path decomposition.

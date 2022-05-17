@@ -70,7 +70,7 @@ namespace htd
              *
              *  @return A new IMutableLabeledPath object.
              */
-            HTD_API htd::IMutableLabeledPath * createInstance(void) const HTD_OVERRIDE;
+            HTD_API htd::IMutableLabeledPath * createInstance(void) const override;
     };
 }
 

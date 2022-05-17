@@ -77,49 +77,49 @@ namespace htd
              */
             HTD_API virtual ~PreprocessedGraph();
 
-            HTD_API std::size_t vertexCount(void) const HTD_NOEXCEPT HTD_OVERRIDE;
+            HTD_API std::size_t vertexCount(void) const noexcept override;
 
-            HTD_API std::size_t inputGraphVertexCount(void) const HTD_NOEXCEPT HTD_OVERRIDE;
+            HTD_API std::size_t inputGraphVertexCount(void) const noexcept override;
 
-            HTD_API std::size_t edgeCount(void) const HTD_NOEXCEPT HTD_OVERRIDE;
+            HTD_API std::size_t edgeCount(void) const noexcept override;
 
-            HTD_API std::size_t edgeCount(htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API std::size_t edgeCount(htd::vertex_t vertex) const override;
 
-            HTD_API std::size_t inputGraphEdgeCount(void) const HTD_NOEXCEPT HTD_OVERRIDE;
+            HTD_API std::size_t inputGraphEdgeCount(void) const noexcept override;
 
-            HTD_API htd::ConstCollection<htd::vertex_t> vertices(void) const HTD_OVERRIDE;
+            HTD_API htd::ConstCollection<htd::vertex_t> vertices(void) const override;
 
-            HTD_API void copyVerticesTo(std::vector<htd::vertex_t> & target) const HTD_OVERRIDE;
+            HTD_API void copyVerticesTo(std::vector<htd::vertex_t> & target) const override;
 
-            HTD_API htd::vertex_t vertexAtPosition(htd::index_t index) const HTD_OVERRIDE;
+            HTD_API htd::vertex_t vertexAtPosition(htd::index_t index) const override;
 
-            HTD_API bool isVertex(htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API bool isVertex(htd::vertex_t vertex) const override;
 
-            HTD_API std::size_t isolatedVertexCount(void) const HTD_OVERRIDE;
+            HTD_API std::size_t isolatedVertexCount(void) const override;
 
-            HTD_API htd::ConstCollection<htd::vertex_t> isolatedVertices(void) const HTD_OVERRIDE;
+            HTD_API htd::ConstCollection<htd::vertex_t> isolatedVertices(void) const override;
 
-            HTD_API htd::vertex_t isolatedVertexAtPosition(htd::index_t index) const HTD_OVERRIDE;
+            HTD_API htd::vertex_t isolatedVertexAtPosition(htd::index_t index) const override;
 
-            HTD_API bool isIsolatedVertex(htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API bool isIsolatedVertex(htd::vertex_t vertex) const override;
 
-            HTD_API std::size_t neighborCount(htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API std::size_t neighborCount(htd::vertex_t vertex) const override;
 
-            HTD_API htd::ConstCollection<htd::vertex_t> neighbors(htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API htd::ConstCollection<htd::vertex_t> neighbors(htd::vertex_t vertex) const override;
 
-            HTD_API void copyNeighborsTo(htd::vertex_t vertex, std::vector<htd::vertex_t> & target) const HTD_OVERRIDE;
+            HTD_API void copyNeighborsTo(htd::vertex_t vertex, std::vector<htd::vertex_t> & target) const override;
 
-            HTD_API htd::vertex_t neighborAtPosition(htd::vertex_t vertex, htd::index_t index) const HTD_OVERRIDE;
+            HTD_API htd::vertex_t neighborAtPosition(htd::vertex_t vertex, htd::index_t index) const override;
 
-            HTD_API bool isNeighbor(htd::vertex_t vertex, htd::vertex_t neighbor) const HTD_OVERRIDE;
+            HTD_API bool isNeighbor(htd::vertex_t vertex, htd::vertex_t neighbor) const override;
 
-            HTD_API bool isConnected(void) const HTD_OVERRIDE;
+            HTD_API bool isConnected(void) const override;
 
-            HTD_API bool isConnected(htd::vertex_t vertex1, htd::vertex_t vertex2) const HTD_OVERRIDE;
+            HTD_API bool isConnected(htd::vertex_t vertex1, htd::vertex_t vertex2) const override;
 
-            HTD_API const std::vector<htd::vertex_t> & vertexNames(void) const HTD_NOEXCEPT HTD_OVERRIDE;
+            HTD_API const std::vector<htd::vertex_t> & vertexNames(void) const noexcept override;
 
-            HTD_API htd::vertex_t vertexName(htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API htd::vertex_t vertexName(htd::vertex_t vertex) const override;
 
             /**
              *  Updatable getter for the vector containing the preprocessed neighborhood of each of the vertices.
@@ -128,9 +128,9 @@ namespace htd
              *
              *  @return The updatable vector containing the preprocessed neighborhood of each of the vertices.
              */
-            HTD_API std::vector<std::vector<htd::vertex_t>> & neighborhood(void) HTD_NOEXCEPT;
+            HTD_API std::vector<std::vector<htd::vertex_t>> & neighborhood(void) noexcept;
 
-            HTD_API const std::vector<std::vector<htd::vertex_t>> & neighborhood(void) const HTD_NOEXCEPT HTD_OVERRIDE;
+            HTD_API const std::vector<std::vector<htd::vertex_t>> & neighborhood(void) const noexcept override;
 
             /**
              *  Updatable getter for the vector containing the preprocessed neighborhood of a vertex.
@@ -143,7 +143,7 @@ namespace htd
              */
             HTD_API std::vector<htd::vertex_t> & neighborhood(htd::vertex_t vertex);
 
-            HTD_API const std::vector<htd::vertex_t> & neighborhood(htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API const std::vector<htd::vertex_t> & neighborhood(htd::vertex_t vertex) const override;
 
             /**
              *  Remove a vertex from the graph.
@@ -162,11 +162,11 @@ namespace htd
              *
              *  @return The updatable partial vertex elimination ordering computed during the preprocessing phase.
              */
-            HTD_API std::vector<htd::vertex_t> & eliminationSequence(void) HTD_NOEXCEPT;
+            HTD_API std::vector<htd::vertex_t> & eliminationSequence(void) noexcept;
 
-            HTD_API const std::vector<htd::vertex_t> & eliminationSequence(void) const HTD_NOEXCEPT HTD_OVERRIDE;
+            HTD_API const std::vector<htd::vertex_t> & eliminationSequence(void) const noexcept override;
 
-            HTD_API const std::vector<htd::vertex_t> & remainingVertices(void) const HTD_NOEXCEPT HTD_OVERRIDE;
+            HTD_API const std::vector<htd::vertex_t> & remainingVertices(void) const noexcept override;
 
             /**
              *  Set the vertices (with 0-based IDs) which were not eliminated during the preprocessing phase.
@@ -187,12 +187,12 @@ namespace htd
              *
              *  @return The updatable lower bound of the treewidth of the input graph.
              */
-            HTD_API std::size_t & minTreeWidth(void) HTD_NOEXCEPT;
+            HTD_API std::size_t & minTreeWidth(void) noexcept;
 
-            HTD_API std::size_t minTreeWidth(void) const HTD_NOEXCEPT HTD_OVERRIDE;
+            HTD_API std::size_t minTreeWidth(void) const noexcept override;
 
 #ifndef HTD_USE_VISUAL_STUDIO_COMPATIBILITY_MODE
-            HTD_API PreprocessedGraph * clone(void) const HTD_OVERRIDE;
+            HTD_API PreprocessedGraph * clone(void) const override;
 #else
             /**
              *  Create a deep copy of the current preprocessed graph.
@@ -201,7 +201,7 @@ namespace htd
              */
             HTD_API PreprocessedGraph * clone(void) const;
 
-            HTD_API htd::IGraphStructure * cloneGraphStructure(void) const HTD_OVERRIDE;
+            HTD_API htd::IGraphStructure * cloneGraphStructure(void) const override;
 #endif
 
         private:

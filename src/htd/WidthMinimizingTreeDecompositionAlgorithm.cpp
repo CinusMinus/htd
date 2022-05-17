@@ -454,7 +454,7 @@ void htd::WidthMinimizingTreeDecompositionAlgorithm::setComputeInducedEdgesEnabl
     implementation_->algorithm_->setComputeInducedEdgesEnabled(computeInducedEdgesEnabled);
 }
 
-const htd::LibraryInstance * htd::WidthMinimizingTreeDecompositionAlgorithm::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::WidthMinimizingTreeDecompositionAlgorithm::managementInstance(void) const noexcept
 {
     return implementation_->managementInstance_;
 }

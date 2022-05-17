@@ -163,7 +163,7 @@ namespace htd
              *
              *  @return A new IMutableLabeledHypergraph object identical to the current mutable labeled hypergraph.
              */
-            virtual IMutableLabeledHypergraph * clone(void) const HTD_OVERRIDE = 0;
+            virtual IMutableLabeledHypergraph * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current mutable labeled hypergraph.

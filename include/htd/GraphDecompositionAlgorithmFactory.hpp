@@ -68,7 +68,7 @@ namespace htd
              *
              *  @return A new IGraphDecompositionAlgorithm object.
              */
-            HTD_API htd::IGraphDecompositionAlgorithm * createInstance(void) const HTD_OVERRIDE;
+            HTD_API htd::IGraphDecompositionAlgorithm * createInstance(void) const override;
     };
 }
 

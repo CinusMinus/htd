@@ -72,7 +72,7 @@ htd::MaximumCardinalitySearchOrderingAlgorithm::~MaximumCardinalitySearchOrderin
     
 }
 
-htd::IVertexOrdering * htd::MaximumCardinalitySearchOrderingAlgorithm::computeOrdering(const htd::IMultiHypergraph & graph) const HTD_NOEXCEPT
+htd::IVertexOrdering * htd::MaximumCardinalitySearchOrderingAlgorithm::computeOrdering(const htd::IMultiHypergraph & graph) const noexcept
 {
     htd::IGraphPreprocessor * preprocessor = implementation_->managementInstance_->graphPreprocessorFactory().createInstance();
 
@@ -86,7 +86,7 @@ htd::IVertexOrdering * htd::MaximumCardinalitySearchOrderingAlgorithm::computeOr
     return ret;
 }
 
-htd::IVertexOrdering * htd::MaximumCardinalitySearchOrderingAlgorithm::computeOrdering(const htd::IMultiHypergraph & graph, const htd::IPreprocessedGraph & preprocessedGraph) const HTD_NOEXCEPT
+htd::IVertexOrdering * htd::MaximumCardinalitySearchOrderingAlgorithm::computeOrdering(const htd::IMultiHypergraph & graph, const htd::IPreprocessedGraph & preprocessedGraph) const noexcept
 {
     HTD_UNUSED(graph)
 
@@ -153,7 +153,7 @@ htd::IVertexOrdering * htd::MaximumCardinalitySearchOrderingAlgorithm::computeOr
     return new htd::VertexOrdering(std::move(ordering), 1);
 }
 
-const htd::LibraryInstance * htd::MaximumCardinalitySearchOrderingAlgorithm::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::MaximumCardinalitySearchOrderingAlgorithm::managementInstance(void) const noexcept
 {
     return implementation_->managementInstance_;
 }

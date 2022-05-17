@@ -44,37 +44,37 @@ namespace htd
 
             HTD_API virtual ~GraphLabeling();
 
-            HTD_API std::size_t vertexLabelCount(void) const HTD_OVERRIDE;
+            HTD_API std::size_t vertexLabelCount(void) const override;
 
-            HTD_API std::size_t edgeLabelCount(void) const HTD_OVERRIDE;
+            HTD_API std::size_t edgeLabelCount(void) const override;
 
-            HTD_API bool isLabeledVertex(htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API bool isLabeledVertex(htd::vertex_t vertex) const override;
 
-            HTD_API bool isLabeledEdge(htd::id_t edgeId) const HTD_OVERRIDE;
+            HTD_API bool isLabeledEdge(htd::id_t edgeId) const override;
 
-            HTD_API const htd::ILabel & vertexLabel(htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API const htd::ILabel & vertexLabel(htd::vertex_t vertex) const override;
 
-            HTD_API const htd::ILabel & edgeLabel(htd::id_t edgeId) const HTD_OVERRIDE;
+            HTD_API const htd::ILabel & edgeLabel(htd::id_t edgeId) const override;
 
-            HTD_API void setVertexLabel(htd::vertex_t vertex, htd::ILabel * label) HTD_OVERRIDE;
+            HTD_API void setVertexLabel(htd::vertex_t vertex, htd::ILabel * label) override;
 
-            HTD_API void setEdgeLabel(htd::id_t edgeId, htd::ILabel * label) HTD_OVERRIDE;
+            HTD_API void setEdgeLabel(htd::id_t edgeId, htd::ILabel * label) override;
 
-            HTD_API void swapVertexLabels(htd::vertex_t vertex1, htd::vertex_t vertex2) HTD_OVERRIDE;
+            HTD_API void swapVertexLabels(htd::vertex_t vertex1, htd::vertex_t vertex2) override;
 
-            HTD_API void swapEdgeLabels(htd::id_t edgeId1, htd::id_t edgeId2) HTD_OVERRIDE;
+            HTD_API void swapEdgeLabels(htd::id_t edgeId1, htd::id_t edgeId2) override;
 
-            HTD_API htd::ILabel * transferVertexLabel(htd::vertex_t vertex) HTD_OVERRIDE;
+            HTD_API htd::ILabel * transferVertexLabel(htd::vertex_t vertex) override;
 
-            HTD_API htd::ILabel * transferEdgeLabel(htd::id_t edgeId) HTD_OVERRIDE;
+            HTD_API htd::ILabel * transferEdgeLabel(htd::id_t edgeId) override;
 
-            HTD_API void removeVertexLabel(htd::vertex_t vertex) HTD_OVERRIDE;
+            HTD_API void removeVertexLabel(htd::vertex_t vertex) override;
 
-            HTD_API void removeEdgeLabel(htd::id_t edgeId) HTD_OVERRIDE;
+            HTD_API void removeEdgeLabel(htd::id_t edgeId) override;
 
-            HTD_API GraphLabeling * clone(void) const HTD_OVERRIDE;
+            HTD_API GraphLabeling * clone(void) const override;
 
-            HTD_API void clear(void) HTD_OVERRIDE;
+            HTD_API void clear(void) override;
 
         private:
             std::unordered_map<htd::id_t, htd::ILabel *> vertexLabels_;

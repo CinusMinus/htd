@@ -70,7 +70,7 @@ namespace htd
              *
              *  @return A new IMutablePathDecomposition object.
              */
-            HTD_API htd::IMutablePathDecomposition * createInstance(void) const HTD_OVERRIDE;
+            HTD_API htd::IMutablePathDecomposition * createInstance(void) const override;
     };
 }
 

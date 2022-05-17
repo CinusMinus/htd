@@ -113,7 +113,7 @@ void htd::DepthFirstConnectedComponentAlgorithm::determineComponent(const htd::I
     std::sort(target.begin(), target.end());
 }
 
-const htd::LibraryInstance * htd::DepthFirstConnectedComponentAlgorithm::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::DepthFirstConnectedComponentAlgorithm::managementInstance(void) const noexcept
 {
     return implementation_->managementInstance_;
 }

@@ -79,7 +79,7 @@ namespace htd
             /**
              *  Constructor for an iterator pointing nowhere.
              */
-            ConstIterator(void) HTD_NOEXCEPT : baseIterator_(nullptr)
+            ConstIterator(void) noexcept : baseIterator_(nullptr)
             {
 
             }
@@ -104,7 +104,7 @@ namespace htd
              *  the new iterator wrapper. Deleting the base iterator outside the iterator wrapper or using the same base iterator in
              *  different iterator wrappers will lead to undefined behavior.
              */
-            ConstIterator(htd::ConstIteratorBase<T> * iterator) HTD_NOEXCEPT : baseIterator_(iterator)
+            ConstIterator(htd::ConstIteratorBase<T> * iterator) noexcept : baseIterator_(iterator)
             {
 
             }
@@ -114,7 +114,7 @@ namespace htd
              *
              *  @param[in] original  The original iterator.
              */
-            ConstIterator<T>(const ConstIterator<T> & original) HTD_NOEXCEPT : baseIterator_(nullptr)
+            ConstIterator<T>(const ConstIterator<T> & original) noexcept : baseIterator_(nullptr)
             {
                 if (original.baseIterator_ != nullptr)
                 {
@@ -127,7 +127,7 @@ namespace htd
              *
              *  @param[in] original  The original iterator.
              */
-            ConstIterator<T>(ConstIterator<T> && original) HTD_NOEXCEPT : baseIterator_(nullptr)
+            ConstIterator<T>(ConstIterator<T> && original) noexcept : baseIterator_(nullptr)
             {
                 if (original.baseIterator_ != nullptr)
                 {
@@ -150,7 +150,7 @@ namespace htd
                 }
             }
 
-            ConstIterator<T> & operator++(void) HTD_NOEXCEPT HTD_OVERRIDE
+            ConstIterator<T> & operator++(void) noexcept override
             {
                 if (baseIterator_!= nullptr)
                 {
@@ -165,7 +165,7 @@ namespace htd
              *
              *  @return A copy of the iterator reflecting the state before the increment operation took place.
              */
-            ConstIterator<T> operator++(int) HTD_NOEXCEPT
+            ConstIterator<T> operator++(int) noexcept
             {
                 ConstIterator<T> ret(*baseIterator_);
 
@@ -179,7 +179,7 @@ namespace htd
              *
              *  @param[in] original  The original iterator.
              */
-            ConstIterator<T> & operator=(const ConstIterator<T> & original) HTD_NOEXCEPT
+            ConstIterator<T> & operator=(const ConstIterator<T> & original) noexcept
             {
                 if (baseIterator_!= nullptr)
                 {
@@ -201,7 +201,7 @@ namespace htd
              *
              *  @param[in] original  The original iterator.
              */
-            ConstIterator<T> & operator=(ConstIterator<T> && original) HTD_NOEXCEPT
+            ConstIterator<T> & operator=(ConstIterator<T> && original) noexcept
             {
                 if (baseIterator_!= nullptr)
                 {
@@ -220,7 +220,7 @@ namespace htd
                 return *this;
             }
 
-            bool operator==(const htd::ConstIteratorBase<T> & rhs) const HTD_NOEXCEPT HTD_OVERRIDE
+            bool operator==(const htd::ConstIteratorBase<T> & rhs) const noexcept override
             {
                 bool ret = false;
 
@@ -245,7 +245,7 @@ namespace htd
              *
              *  @return True if the iterator points to the same element as the iterator at the right-hand side of the operator, false otherwise.
              */
-            bool operator==(const ConstIterator<T> & rhs) const HTD_NOEXCEPT
+            bool operator==(const ConstIterator<T> & rhs) const noexcept
             {
                 bool ret = false;
 
@@ -261,7 +261,7 @@ namespace htd
                 return ret;
             }
 
-            bool operator!=(const htd::ConstIteratorBase<T> & rhs) const HTD_NOEXCEPT HTD_OVERRIDE
+            bool operator!=(const htd::ConstIteratorBase<T> & rhs) const noexcept override
             {
                 bool ret = false;
 
@@ -286,7 +286,7 @@ namespace htd
              *
              *  @return True if the iterator does not point to the same element as the iterator at the right-hand side of the operator, false otherwise.
              */
-            bool operator!=(const ConstIterator<T> & rhs) const HTD_NOEXCEPT
+            bool operator!=(const ConstIterator<T> & rhs) const noexcept
             {
                 bool ret = false;
 
@@ -302,17 +302,17 @@ namespace htd
                 return ret;
             }
 
-            const T * operator->(void) const HTD_OVERRIDE
+            const T * operator->(void) const override
             {
                 return baseIterator_->operator->();
             }
 
-            const T & operator*(void) const HTD_OVERRIDE
+            const T & operator*(void) const override
             {
                 return baseIterator_->operator*();
             }
 
-            ConstIterator<T> * clone(void) const HTD_NOEXCEPT HTD_OVERRIDE
+            ConstIterator<T> * clone(void) const noexcept override
             {
                 ConstIterator<T> * ret = nullptr;
 

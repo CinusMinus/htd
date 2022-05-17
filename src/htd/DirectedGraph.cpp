@@ -333,7 +333,7 @@ void htd::DirectedGraph::removeEdge(htd::vertex_t vertex1, htd::vertex_t vertex2
     }
 }
 
-const htd::LibraryInstance * htd::DirectedGraph::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::DirectedGraph::managementInstance(void) const noexcept
 {
     return base_->managementInstance();
 }

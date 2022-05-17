@@ -79,9 +79,9 @@ namespace htd_cli
              *
              *  @param[in] value    The value which shall be registered.
              */
-            HTD_CLI_API void registerValue(const char * const value) HTD_OVERRIDE;
+            HTD_CLI_API void registerValue(const char * const value) override;
 
-            void printHelp(std::ostream & stream, std::size_t maxNameLength) const HTD_OVERRIDE;
+            void printHelp(std::ostream & stream, std::size_t maxNameLength) const override;
 
         private:
             struct Implementation;

@@ -372,7 +372,7 @@ void htd::Hypergraph::removeEdge(const htd::ConstCollection<htd::vertex_t> & ele
     }
 }
 
-const htd::LibraryInstance * htd::Hypergraph::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::Hypergraph::managementInstance(void) const noexcept
 {
     return base_->managementInstance();
 }

@@ -79,48 +79,48 @@ namespace htd
             
             HTD_API virtual ~LabeledMultiGraph();
 
-            HTD_API void removeVertex(htd::vertex_t vertex) HTD_OVERRIDE;
+            HTD_API void removeVertex(htd::vertex_t vertex) override;
 
-            HTD_API void removeEdge(htd::id_t edgeId) HTD_OVERRIDE;
+            HTD_API void removeEdge(htd::id_t edgeId) override;
 
-            HTD_API const htd::ILabelingCollection & labelings(void) const HTD_OVERRIDE;
+            HTD_API const htd::ILabelingCollection & labelings(void) const override;
 
-            HTD_API std::size_t labelCount(void) const HTD_OVERRIDE;
+            HTD_API std::size_t labelCount(void) const override;
 
-            HTD_API htd::ConstCollection<std::string> labelNames(void) const HTD_OVERRIDE;
+            HTD_API htd::ConstCollection<std::string> labelNames(void) const override;
 
-            HTD_API const std::string & labelNameAtPosition(htd::index_t index) const HTD_OVERRIDE;
+            HTD_API const std::string & labelNameAtPosition(htd::index_t index) const override;
 
-            HTD_API bool isLabeledVertex(const std::string & labelName, htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API bool isLabeledVertex(const std::string & labelName, htd::vertex_t vertex) const override;
 
-            HTD_API bool isLabeledEdge(const std::string & labelName, htd::id_t edgeId) const HTD_OVERRIDE;
+            HTD_API bool isLabeledEdge(const std::string & labelName, htd::id_t edgeId) const override;
 
-            HTD_API const htd::ILabel & vertexLabel(const std::string & labelName, htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API const htd::ILabel & vertexLabel(const std::string & labelName, htd::vertex_t vertex) const override;
 
-            HTD_API const htd::ILabel & edgeLabel(const std::string & labelName, htd::id_t edgeId) const HTD_OVERRIDE;
+            HTD_API const htd::ILabel & edgeLabel(const std::string & labelName, htd::id_t edgeId) const override;
 
-            HTD_API void setVertexLabel(const std::string & labelName, htd::vertex_t vertex, htd::ILabel * label) HTD_OVERRIDE;
+            HTD_API void setVertexLabel(const std::string & labelName, htd::vertex_t vertex, htd::ILabel * label) override;
 
-            HTD_API void setEdgeLabel(const std::string & labelName, htd::id_t edgeId, htd::ILabel * label) HTD_OVERRIDE;
+            HTD_API void setEdgeLabel(const std::string & labelName, htd::id_t edgeId, htd::ILabel * label) override;
 
-            HTD_API void removeVertexLabel(const std::string & labelName, htd::vertex_t vertex) HTD_OVERRIDE;
+            HTD_API void removeVertexLabel(const std::string & labelName, htd::vertex_t vertex) override;
 
-            HTD_API void removeEdgeLabel(const std::string & labelName, htd::id_t edgeId) HTD_OVERRIDE;
+            HTD_API void removeEdgeLabel(const std::string & labelName, htd::id_t edgeId) override;
 
-            HTD_API void swapVertexLabels(htd::vertex_t vertex1, htd::vertex_t vertex2) HTD_OVERRIDE;
+            HTD_API void swapVertexLabels(htd::vertex_t vertex1, htd::vertex_t vertex2) override;
 
-            HTD_API void swapEdgeLabels(htd::id_t edgeId1, htd::id_t edgeId2) HTD_OVERRIDE;
+            HTD_API void swapEdgeLabels(htd::id_t edgeId1, htd::id_t edgeId2) override;
 
-            HTD_API void swapVertexLabel(const std::string & labelName, htd::vertex_t vertex1, htd::vertex_t vertex2) HTD_OVERRIDE;
+            HTD_API void swapVertexLabel(const std::string & labelName, htd::vertex_t vertex1, htd::vertex_t vertex2) override;
 
-            HTD_API void swapEdgeLabel(const std::string & labelName, htd::id_t edgeId1, htd::id_t edgeId2) HTD_OVERRIDE;
+            HTD_API void swapEdgeLabel(const std::string & labelName, htd::id_t edgeId1, htd::id_t edgeId2) override;
 
-            HTD_API htd::ILabel * transferVertexLabel(const std::string & labelName, htd::vertex_t vertex) HTD_OVERRIDE;
+            HTD_API htd::ILabel * transferVertexLabel(const std::string & labelName, htd::vertex_t vertex) override;
 
-            HTD_API htd::ILabel * transferEdgeLabel(const std::string & labelName, htd::id_t edgeId) HTD_OVERRIDE;
+            HTD_API htd::ILabel * transferEdgeLabel(const std::string & labelName, htd::id_t edgeId) override;
 
 #ifndef HTD_USE_VISUAL_STUDIO_COMPATIBILITY_MODE
-            HTD_API LabeledMultiGraph * clone(void) const HTD_OVERRIDE;
+            HTD_API LabeledMultiGraph * clone(void) const override;
 #else
             /**
              *  Create a deep copy of the current mutable labeled multi-graph.
@@ -129,17 +129,17 @@ namespace htd
              */
             HTD_API LabeledMultiGraph * clone(void) const;
 
-            HTD_API htd::IMultiGraph * cloneMultiGraph(void) const HTD_OVERRIDE;
+            HTD_API htd::IMultiGraph * cloneMultiGraph(void) const override;
 
-            HTD_API htd::IMultiHypergraph * cloneMultiHypergraph(void) const HTD_OVERRIDE;
+            HTD_API htd::IMultiHypergraph * cloneMultiHypergraph(void) const override;
 
-            HTD_API htd::ILabeledMultiGraph * cloneLabeledMultiGraph(void) const HTD_OVERRIDE;
+            HTD_API htd::ILabeledMultiGraph * cloneLabeledMultiGraph(void) const override;
 
-            HTD_API htd::ILabeledMultiHypergraph * cloneLabeledMultiHypergraph(void) const HTD_OVERRIDE;
+            HTD_API htd::ILabeledMultiHypergraph * cloneLabeledMultiHypergraph(void) const override;
 
-            HTD_API htd::IMutableMultiGraph * cloneMutableMultiGraph(void) const HTD_OVERRIDE;
+            HTD_API htd::IMutableMultiGraph * cloneMutableMultiGraph(void) const override;
 
-            htd::IMutableLabeledMultiGraph * cloneMutableLabeledMultiGraph(void) const HTD_OVERRIDE;
+            htd::IMutableLabeledMultiGraph * cloneMutableLabeledMultiGraph(void) const override;
 #endif
 
             /**
@@ -150,17 +150,17 @@ namespace htd
             HTD_API LabeledMultiGraph & operator=(const LabeledMultiGraph & original);
 
 #ifndef HTD_USE_VISUAL_STUDIO_COMPATIBILITY_MODE
-            HTD_API LabeledMultiGraph & operator=(const htd::IMultiGraph & original) HTD_OVERRIDE;
+            HTD_API LabeledMultiGraph & operator=(const htd::IMultiGraph & original) override;
 
-            HTD_API LabeledMultiGraph & operator=(const htd::ILabeledMultiGraph & original) HTD_OVERRIDE;
+            HTD_API LabeledMultiGraph & operator=(const htd::ILabeledMultiGraph & original) override;
 #else
             HTD_API LabeledMultiGraph & operator=(const htd::IMultiGraph & original);
 
             HTD_API LabeledMultiGraph & operator=(const htd::ILabeledMultiGraph & original);
 
-            HTD_API void assign(const htd::IMultiGraph & original) HTD_OVERRIDE;
+            HTD_API void assign(const htd::IMultiGraph & original) override;
 
-            HTD_API void assign(const htd::ILabeledMultiGraph & original) HTD_OVERRIDE;
+            HTD_API void assign(const htd::ILabeledMultiGraph & original) override;
 #endif
     };
 }

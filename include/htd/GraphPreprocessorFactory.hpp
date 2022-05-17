@@ -68,7 +68,7 @@ namespace htd
              *
              *  @return A new IGraphPreprocessor object.
              */
-            HTD_API htd::IGraphPreprocessor * createInstance(void) const HTD_OVERRIDE;
+            HTD_API htd::IGraphPreprocessor * createInstance(void) const override;
     };
 }
 

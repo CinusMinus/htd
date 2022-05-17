@@ -1067,7 +1067,7 @@ htd::vertex_t htd::Path::addParent(htd::vertex_t vertex)
     return ret;
 }
 
-std::size_t htd::Path::leafCount(void) const HTD_NOEXCEPT
+std::size_t htd::Path::leafCount(void) const noexcept
 {
     std::size_t ret = 0;
 
@@ -1220,7 +1220,7 @@ void htd::Path::swapWithParent(htd::vertex_t vertex)
     }
 }
 
-const htd::LibraryInstance * htd::Path::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::Path::managementInstance(void) const noexcept
 {
     return implementation_->managementInstance_;
 }

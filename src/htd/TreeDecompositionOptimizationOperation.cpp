@@ -730,7 +730,7 @@ void htd::TreeDecompositionOptimizationOperation::Implementation::removeCreatedN
     }
 }
 
-const htd::LibraryInstance * htd::TreeDecompositionOptimizationOperation::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::TreeDecompositionOptimizationOperation::managementInstance(void) const noexcept
 {
     return implementation_->managementInstance_;
 }

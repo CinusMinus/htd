@@ -442,7 +442,7 @@ bool htd::WidthReductionOperation::createsLocationDependendLabels(void) const
     return false;
 }
 
-const htd::LibraryInstance * htd::WidthReductionOperation::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::WidthReductionOperation::managementInstance(void) const noexcept
 {
     return implementation_->managementInstance_;
 }

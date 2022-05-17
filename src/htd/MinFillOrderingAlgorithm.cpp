@@ -155,7 +155,7 @@ struct htd::MinFillOrderingAlgorithm::Implementation
      *
      *  @return The maximum bag size of the decomposition which is obtained via bucket elimination using the input graph and the resulting ordering.
      */
-    std::size_t writeOrderingTo(const htd::IPreprocessedGraph & preprocessedGraph, const PreparedInput & input, std::vector<htd::vertex_t> & target, std::size_t maxBagSize) const HTD_NOEXCEPT;
+    std::size_t writeOrderingTo(const htd::IPreprocessedGraph & preprocessedGraph, const PreparedInput & input, std::vector<htd::vertex_t> & target, std::size_t maxBagSize) const noexcept;
 };
 
 htd::MinFillOrderingAlgorithm::MinFillOrderingAlgorithm(const htd::LibraryInstance * const manager) : implementation_(new Implementation(manager))
@@ -168,12 +168,12 @@ htd::MinFillOrderingAlgorithm::~MinFillOrderingAlgorithm()
 
 }
 
-htd::IVertexOrdering * htd::MinFillOrderingAlgorithm::computeOrdering(const htd::IMultiHypergraph & graph) const HTD_NOEXCEPT
+htd::IVertexOrdering * htd::MinFillOrderingAlgorithm::computeOrdering(const htd::IMultiHypergraph & graph) const noexcept
 {
     return computeOrdering(graph, (std::size_t)-1, 1);
 }
 
-htd::IWidthLimitedVertexOrdering * htd::MinFillOrderingAlgorithm::computeOrdering(const htd::IMultiHypergraph & graph, std::size_t maxBagSize, std::size_t maxIterationCount) const HTD_NOEXCEPT
+htd::IWidthLimitedVertexOrdering * htd::MinFillOrderingAlgorithm::computeOrdering(const htd::IMultiHypergraph & graph, std::size_t maxBagSize, std::size_t maxIterationCount) const noexcept
 {
     htd::IGraphPreprocessor * preprocessor = implementation_->managementInstance_->graphPreprocessorFactory().createInstance();
 
@@ -187,12 +187,12 @@ htd::IWidthLimitedVertexOrdering * htd::MinFillOrderingAlgorithm::computeOrderin
     return ret;
 }
 
-htd::IVertexOrdering * htd::MinFillOrderingAlgorithm::computeOrdering(const htd::IMultiHypergraph & graph, const htd::IPreprocessedGraph & preprocessedGraph) const HTD_NOEXCEPT
+htd::IVertexOrdering * htd::MinFillOrderingAlgorithm::computeOrdering(const htd::IMultiHypergraph & graph, const htd::IPreprocessedGraph & preprocessedGraph) const noexcept
 {
     return computeOrdering(graph, preprocessedGraph, (std::size_t)-1, 1);
 }
 
-htd::IWidthLimitedVertexOrdering * htd::MinFillOrderingAlgorithm::computeOrdering(const htd::IMultiHypergraph & graph, const htd::IPreprocessedGraph & preprocessedGraph, std::size_t maxBagSize, std::size_t maxIterationCount) const HTD_NOEXCEPT
+htd::IWidthLimitedVertexOrdering * htd::MinFillOrderingAlgorithm::computeOrdering(const htd::IMultiHypergraph & graph, const htd::IPreprocessedGraph & preprocessedGraph, std::size_t maxBagSize, std::size_t maxIterationCount) const noexcept
 {
     const htd::LibraryInstance & managementInstance = *(implementation_->managementInstance_);
 
@@ -225,7 +225,7 @@ htd::IWidthLimitedVertexOrdering * htd::MinFillOrderingAlgorithm::computeOrderin
     return new htd::VertexOrdering(std::move(ordering), iterations, currentMaxBagSize);
 }
 
-std::size_t htd::MinFillOrderingAlgorithm::Implementation::writeOrderingTo(const htd::IPreprocessedGraph & preprocessedGraph, const PreparedInput & input, std::vector<htd::vertex_t> & target, std::size_t maxBagSize) const HTD_NOEXCEPT
+std::size_t htd::MinFillOrderingAlgorithm::Implementation::writeOrderingTo(const htd::IPreprocessedGraph & preprocessedGraph, const PreparedInput & input, std::vector<htd::vertex_t> & target, std::size_t maxBagSize) const noexcept
 {
     std::size_t ret = 0;
 
@@ -662,7 +662,7 @@ std::size_t htd::MinFillOrderingAlgorithm::Implementation::writeOrderingTo(const
     return ret;
 }
 
-const htd::LibraryInstance * htd::MinFillOrderingAlgorithm::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::MinFillOrderingAlgorithm::managementInstance(void) const noexcept
 {
     return implementation_->managementInstance_;
 }

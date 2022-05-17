@@ -600,7 +600,7 @@ bool htd::LimitMaximumIntroducedVertexCountOperation::createsLocationDependendLa
     return false;
 }
 
-const htd::LibraryInstance * htd::LimitMaximumIntroducedVertexCountOperation::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::LimitMaximumIntroducedVertexCountOperation::managementInstance(void) const noexcept
 {
     return implementation_->managementInstance_;
 }

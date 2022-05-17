@@ -88,7 +88,7 @@ namespace htd
                 return *this;
             }
 
-            IteratorWrapper<Iter, T> & operator++(void) HTD_OVERRIDE
+            IteratorWrapper<Iter, T> & operator++(void) override
             {
                 ++baseIterator_;
 
@@ -109,7 +109,7 @@ namespace htd
                 return ret;
             }
 
-            bool operator==(const htd::IteratorBase<T> & rhs) const HTD_OVERRIDE
+            bool operator==(const htd::IteratorBase<T> & rhs) const override
             {
                 return baseIterator_ == static_cast<const IteratorWrapper<Iter, T> *>(&rhs)->baseIterator_;
             }
@@ -126,7 +126,7 @@ namespace htd
                 return baseIterator_ == rhs.baseIterator_;
             }
 
-            bool operator!=(const htd::IteratorBase<T> & rhs) const HTD_OVERRIDE
+            bool operator!=(const htd::IteratorBase<T> & rhs) const override
             {
                 return baseIterator_ != static_cast<const IteratorWrapper<Iter, T> *>(&rhs)->baseIterator_;
             }
@@ -143,7 +143,7 @@ namespace htd
                 return baseIterator_ != rhs.baseIterator_;
             }
 
-            T * operator->(void) HTD_OVERRIDE
+            T * operator->(void) override
             {
                 return &(*baseIterator_);
             }
@@ -158,7 +158,7 @@ namespace htd
                 return &(*baseIterator_);
             }
 
-            T & operator*(void) HTD_OVERRIDE
+            T & operator*(void) override
             {
                 return *baseIterator_;
             }
@@ -173,7 +173,7 @@ namespace htd
                 return *baseIterator_;
             }
 
-            IteratorWrapper<Iter, T> * clone(void) const HTD_OVERRIDE
+            IteratorWrapper<Iter, T> * clone(void) const override
             {
                 return new IteratorWrapper<Iter, T>(*this);
             }

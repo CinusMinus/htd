@@ -65,7 +65,7 @@ namespace htd
              *
              *  @return A new IStronglyConnectedComponentAlgorithm object identical to the current strongly connected component algorithm.
              */
-            virtual IStronglyConnectedComponentAlgorithm * clone(void) const HTD_OVERRIDE = 0;
+            virtual IStronglyConnectedComponentAlgorithm * clone(void) const override = 0;
     };
 
     inline htd::IStronglyConnectedComponentAlgorithm::~IStronglyConnectedComponentAlgorithm() { }

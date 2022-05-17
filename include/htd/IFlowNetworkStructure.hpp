@@ -56,7 +56,7 @@ namespace htd
              *
              *  @return A new IMultiHypergraph object identical to the current flow network structure.
              */
-            virtual IFlowNetworkStructure * clone(void) const HTD_OVERRIDE = 0;
+            virtual IFlowNetworkStructure * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current flow network structure.

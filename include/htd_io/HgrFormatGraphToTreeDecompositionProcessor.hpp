@@ -49,23 +49,23 @@ namespace htd_io
              */
             HTD_IO_API virtual ~HgrFormatGraphToTreeDecompositionProcessor();
 
-            HTD_IO_API void process(const std::string & inputFile, const std::string & outputFile) const HTD_OVERRIDE;
+            HTD_IO_API void process(const std::string & inputFile, const std::string & outputFile) const override;
 
-            HTD_IO_API void process(const std::string & inputFile, std::ostream & outputStream) const HTD_OVERRIDE;
+            HTD_IO_API void process(const std::string & inputFile, std::ostream & outputStream) const override;
 
-            HTD_IO_API void process(std::istream & inputStream, const std::string & outputFile) const HTD_OVERRIDE;
+            HTD_IO_API void process(std::istream & inputStream, const std::string & outputFile) const override;
 
-            HTD_IO_API void process(std::istream & inputStream = std::cin, std::ostream & outputStream = std::cout) const HTD_OVERRIDE;
+            HTD_IO_API void process(std::istream & inputStream = std::cin, std::ostream & outputStream = std::cout) const override;
 
-            HTD_IO_API void setExporter(htd_io::ITreeDecompositionExporter * exporter) HTD_OVERRIDE;
+            HTD_IO_API void setExporter(htd_io::ITreeDecompositionExporter * exporter) override;
 
-            HTD_IO_API void setPreprocessor(htd::IGraphPreprocessor * preprocessor) HTD_OVERRIDE;
+            HTD_IO_API void setPreprocessor(htd::IGraphPreprocessor * preprocessor) override;
 
-            HTD_IO_API void registerParsingCallback(const std::function<void(htd_io::parsing_result_t result, std::size_t vertexCount, std::size_t edgeCount)> & callback) HTD_OVERRIDE;
+            HTD_IO_API void registerParsingCallback(const std::function<void(htd_io::parsing_result_t result, std::size_t vertexCount, std::size_t edgeCount)> & callback) override;
 
-            HTD_IO_API void registerPreprocessingCallback(const std::function<void(std::size_t vertexCount, std::size_t edgeCount)> & callback) HTD_OVERRIDE;
+            HTD_IO_API void registerPreprocessingCallback(const std::function<void(std::size_t vertexCount, std::size_t edgeCount)> & callback) override;
 
-            HTD_IO_API void registerDecompositionCallback(const std::function<void(const htd::FitnessEvaluation &)> & callback) HTD_OVERRIDE;
+            HTD_IO_API void registerDecompositionCallback(const std::function<void(const htd::FitnessEvaluation &)> & callback) override;
 
         private:
             struct Implementation;

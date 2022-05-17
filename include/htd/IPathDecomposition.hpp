@@ -45,7 +45,7 @@ namespace htd
              *
              *  @return A new IPathDecomposition object identical to the current path decomposition.
              */
-            virtual IPathDecomposition * clone(void) const HTD_OVERRIDE = 0;
+            virtual IPathDecomposition * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current path decomposition.

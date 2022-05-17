@@ -68,7 +68,7 @@ namespace htd
              *
              *  @return A new IHypertreeDecompositionAlgorithm object.
              */
-            HTD_API htd::IHypertreeDecompositionAlgorithm * createInstance(void) const HTD_OVERRIDE;
+            HTD_API htd::IHypertreeDecompositionAlgorithm * createInstance(void) const override;
     };
 }
 

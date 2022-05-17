@@ -47,7 +47,7 @@ namespace htd
              *
              *  @return A new ILabeledHypergraph object identical to the current labeled hypergraph.
              */
-            virtual ILabeledHypergraph * clone(void) const HTD_OVERRIDE = 0;
+            virtual ILabeledHypergraph * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current labeled hypergraph.

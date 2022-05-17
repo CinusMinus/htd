@@ -78,11 +78,11 @@ namespace htd_cli
              */
             HTD_CLI_API void setDefaultValue(const char * const value);
 
-            HTD_CLI_API const char * value(void) const HTD_OVERRIDE;
+            HTD_CLI_API const char * value(void) const override;
 
-            HTD_CLI_API void registerValue(const char * const value) HTD_OVERRIDE;
+            HTD_CLI_API void registerValue(const char * const value) override;
 
-            void printHelp(std::ostream & stream, std::size_t maxNameLength) const HTD_OVERRIDE;
+            void printHelp(std::ostream & stream, std::size_t maxNameLength) const override;
 
         private:
             struct Implementation;

@@ -79,23 +79,23 @@ namespace htd
              */
             HTD_API virtual ~HyperedgeVector();
 
-            HTD_API bool empty(void) const HTD_OVERRIDE;
+            HTD_API bool empty(void) const override;
 
-            HTD_API std::size_t size(void) const HTD_OVERRIDE;
+            HTD_API std::size_t size(void) const override;
 
-            HTD_API const htd::Hyperedge & at(htd::index_t index) const HTD_OVERRIDE;
+            HTD_API const htd::Hyperedge & at(htd::index_t index) const override;
 
-            HTD_API htd::ConstIterator<htd::Hyperedge> begin(void) const HTD_OVERRIDE;
+            HTD_API htd::ConstIterator<htd::Hyperedge> begin(void) const override;
 
-            HTD_API htd::ConstIterator<htd::Hyperedge> end(void) const HTD_OVERRIDE;
+            HTD_API htd::ConstIterator<htd::Hyperedge> end(void) const override;
 
-            HTD_API const htd::Hyperedge & operator[](htd::index_t index) const HTD_OVERRIDE;
+            HTD_API const htd::Hyperedge & operator[](htd::index_t index) const override;
 
-            HTD_API bool operator==(const htd::IHyperedgeCollection & rhs) const HTD_OVERRIDE;
+            HTD_API bool operator==(const htd::IHyperedgeCollection & rhs) const override;
 
-            HTD_API bool operator!=(const htd::IHyperedgeCollection & rhs) const HTD_OVERRIDE;
+            HTD_API bool operator!=(const htd::IHyperedgeCollection & rhs) const override;
 
-            HTD_API HyperedgeVector * clone(void) const HTD_OVERRIDE;
+            HTD_API HyperedgeVector * clone(void) const override;
 
         private:
             std::shared_ptr<std::vector<htd::Hyperedge>> baseCollection_;

@@ -62,21 +62,21 @@ namespace htd
 	    
             HTD_API virtual ~LabelCollection();
 
-            HTD_API std::size_t labelCount(void) const HTD_OVERRIDE;
+            HTD_API std::size_t labelCount(void) const override;
 
-            HTD_API htd::ConstCollection<std::string> labelNames(void) const HTD_OVERRIDE;
+            HTD_API htd::ConstCollection<std::string> labelNames(void) const override;
 
-            HTD_API const std::string & labelNameAtPosition(htd::index_t index) const HTD_OVERRIDE;
+            HTD_API const std::string & labelNameAtPosition(htd::index_t index) const override;
 
-            HTD_API htd::ILabel & label(const std::string & labelName) HTD_OVERRIDE;
+            HTD_API htd::ILabel & label(const std::string & labelName) override;
 
-            HTD_API const htd::ILabel & label(const std::string & labelName) const HTD_OVERRIDE;
+            HTD_API const htd::ILabel & label(const std::string & labelName) const override;
 
-            HTD_API void setLabel(const std::string & labelName, htd::ILabel * label) HTD_OVERRIDE;
+            HTD_API void setLabel(const std::string & labelName, htd::ILabel * label) override;
 
-            HTD_API void removeLabel(const std::string & labelName) HTD_OVERRIDE;
+            HTD_API void removeLabel(const std::string & labelName) override;
 
-            HTD_API LabelCollection * clone(void) const HTD_OVERRIDE;
+            HTD_API LabelCollection * clone(void) const override;
 
         private:
             std::vector<std::string> labelNames_;

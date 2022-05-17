@@ -234,7 +234,7 @@ void htd::BiconnectedComponentAlgorithm::determineComponent(const htd::IGraphStr
     }
 }
 
-const htd::LibraryInstance * htd::BiconnectedComponentAlgorithm::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::BiconnectedComponentAlgorithm::managementInstance(void) const noexcept
 {
     return implementation_->managementInstance_;
 }

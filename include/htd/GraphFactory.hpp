@@ -70,7 +70,7 @@ namespace htd
              *
              *  @return A new IMutableGraph object.
              */
-            HTD_API htd::IMutableGraph * createInstance(void) const HTD_OVERRIDE;
+            HTD_API htd::IMutableGraph * createInstance(void) const override;
 
             /**
              *  Create a new IMutableGraph object.

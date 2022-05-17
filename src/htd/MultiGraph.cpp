@@ -318,7 +318,7 @@ void htd::MultiGraph::removeEdge(htd::id_t edgeId)
     implementation_->base_->removeEdge(edgeId);
 }
 
-const htd::LibraryInstance * htd::MultiGraph::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::MultiGraph::managementInstance(void) const noexcept
 {
     return implementation_->base_->managementInstance();
 }

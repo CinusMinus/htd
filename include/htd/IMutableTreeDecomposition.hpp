@@ -143,7 +143,7 @@ namespace htd
              *
              *  @return A new IMutableTreeDecomposition object identical to the current mutable tree decomposition.
              */
-            virtual IMutableTreeDecomposition * clone(void) const HTD_OVERRIDE = 0;
+            virtual IMutableTreeDecomposition * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current mutable tree decomposition.
@@ -159,14 +159,14 @@ namespace htd
              *
              *  @param[in] original  The original tree.
              */
-            virtual IMutableTreeDecomposition & operator=(const htd::ITree & original) HTD_OVERRIDE = 0;
+            virtual IMutableTreeDecomposition & operator=(const htd::ITree & original) override = 0;
 
             /**
              *  Copy assignment operator for a mutable tree decomposition.
              *
              *  @param[in] original  The original labeled tree.
              */
-            virtual IMutableTreeDecomposition & operator=(const htd::ILabeledTree & original) HTD_OVERRIDE = 0;
+            virtual IMutableTreeDecomposition & operator=(const htd::ILabeledTree & original) override = 0;
 
             /**
              *  Copy assignment operator for a mutable tree decomposition.

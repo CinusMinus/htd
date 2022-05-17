@@ -162,7 +162,7 @@ namespace htd
              *
              *  @return A new IMutableLabeledMultiHypergraph object identical to the current mutable labeled multi-hypergraph.
              */
-            virtual IMutableLabeledMultiHypergraph * clone(void) const HTD_OVERRIDE = 0;
+            virtual IMutableLabeledMultiHypergraph * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current mutable labeled multi-hypergraph.

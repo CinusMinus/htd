@@ -337,7 +337,7 @@ void htd::HypertreeDecompositionAlgorithm::setComputeInducedEdgesEnabled(bool co
     implementation_->computeInducedEdges_ = computeInducedEdgesEnabled;
 }
 
-const htd::LibraryInstance * htd::HypertreeDecompositionAlgorithm::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::HypertreeDecompositionAlgorithm::managementInstance(void) const noexcept
 {
     return implementation_->managementInstance_;
 }

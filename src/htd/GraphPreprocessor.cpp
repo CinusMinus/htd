@@ -83,56 +83,56 @@ namespace htd
 
             }
 
-            std::size_t vertexCount(void) const HTD_NOEXCEPT HTD_OVERRIDE
+            std::size_t vertexCount(void) const noexcept override
             {
                 return remainingVertices_.size();
             }
 
-            std::size_t inputGraphVertexCount(void) const HTD_NOEXCEPT HTD_OVERRIDE
+            std::size_t inputGraphVertexCount(void) const noexcept override
             {
                 return baseGraph_.inputGraphVertexCount();
             }
 
-            std::size_t edgeCount(void) const HTD_NOEXCEPT HTD_OVERRIDE
+            std::size_t edgeCount(void) const noexcept override
             {
                 return edgeCount_;
             }
 
-            std::size_t edgeCount(htd::vertex_t vertex) const HTD_OVERRIDE
+            std::size_t edgeCount(htd::vertex_t vertex) const override
             {
                 return neighborCount(vertex);
             }
 
-            std::size_t inputGraphEdgeCount(void) const HTD_NOEXCEPT HTD_OVERRIDE
+            std::size_t inputGraphEdgeCount(void) const noexcept override
             {
                 return baseGraph_.inputGraphEdgeCount();
             }
 
-            htd::ConstCollection<htd::vertex_t> vertices(void) const HTD_OVERRIDE
+            htd::ConstCollection<htd::vertex_t> vertices(void) const override
             {
                 return htd::ConstCollection<htd::vertex_t>::getInstance(remainingVertices_);
             }
 
-            void copyVerticesTo(std::vector<htd::vertex_t> & target) const HTD_OVERRIDE
+            void copyVerticesTo(std::vector<htd::vertex_t> & target) const override
             {
                 target.insert(target.end(), remainingVertices_.begin(), remainingVertices_.end());
             }
 
-            htd::vertex_t vertexAtPosition(htd::index_t index) const HTD_OVERRIDE
+            htd::vertex_t vertexAtPosition(htd::index_t index) const override
             {
                 HTD_ASSERT(index < remainingVertices_.size())
 
                 return remainingVertices_[index];
             }
 
-            bool isVertex(htd::vertex_t vertex) const HTD_OVERRIDE
+            bool isVertex(htd::vertex_t vertex) const override
             {
                 return std::binary_search(remainingVertices_.begin(),
                                           remainingVertices_.end(),
                                           vertex);
             }
 
-            std::size_t isolatedVertexCount(void) const HTD_OVERRIDE
+            std::size_t isolatedVertexCount(void) const override
             {
                 std::size_t ret = 0;
 
@@ -147,7 +147,7 @@ namespace htd
                 return ret;
             }
 
-            htd::ConstCollection<htd::vertex_t> isolatedVertices(void) const HTD_OVERRIDE
+            htd::ConstCollection<htd::vertex_t> isolatedVertices(void) const override
             {
                 htd::VectorAdapter<htd::vertex_t> ret;
 
@@ -164,7 +164,7 @@ namespace htd
                 return htd::ConstCollection<htd::vertex_t>::getInstance(ret);
             }
 
-            htd::vertex_t isolatedVertexAtPosition(htd::index_t index) const HTD_OVERRIDE
+            htd::vertex_t isolatedVertexAtPosition(htd::index_t index) const override
             {
                 const htd::ConstCollection<htd::vertex_t> & isolatedVertexCollection = isolatedVertices();
 
@@ -177,54 +177,54 @@ namespace htd
                 return *it;
             }
 
-            bool isIsolatedVertex(htd::vertex_t vertex) const HTD_OVERRIDE
+            bool isIsolatedVertex(htd::vertex_t vertex) const override
             {
                 HTD_ASSERT(isVertex(vertex))
 
                 return baseGraph_.isIsolatedVertex(vertex);
             }
 
-            std::size_t neighborCount(htd::vertex_t vertex) const HTD_OVERRIDE
+            std::size_t neighborCount(htd::vertex_t vertex) const override
             {
                 HTD_ASSERT(isVertex(vertex))
 
                 return baseGraph_.neighborCount(vertex);
             }
 
-            htd::ConstCollection<htd::vertex_t> neighbors(htd::vertex_t vertex) const HTD_OVERRIDE
+            htd::ConstCollection<htd::vertex_t> neighbors(htd::vertex_t vertex) const override
             {
                 HTD_ASSERT(isVertex(vertex))
 
                 return baseGraph_.neighbors(vertex);
             }
 
-            void copyNeighborsTo(htd::vertex_t vertex, std::vector<htd::vertex_t> & target) const HTD_OVERRIDE
+            void copyNeighborsTo(htd::vertex_t vertex, std::vector<htd::vertex_t> & target) const override
             {
                 HTD_ASSERT(isVertex(vertex))
 
                 baseGraph_.copyNeighborsTo(vertex, target);
             }
 
-            htd::vertex_t neighborAtPosition(htd::vertex_t vertex, htd::index_t index) const HTD_OVERRIDE
+            htd::vertex_t neighborAtPosition(htd::vertex_t vertex, htd::index_t index) const override
             {
                 HTD_ASSERT(isVertex(vertex))
 
                 return baseGraph_.neighborAtPosition(vertex, index);
             }
 
-            bool isNeighbor(htd::vertex_t vertex, htd::vertex_t neighbor) const HTD_OVERRIDE
+            bool isNeighbor(htd::vertex_t vertex, htd::vertex_t neighbor) const override
             {
                 HTD_ASSERT(isVertex(vertex) && isVertex(neighbor))
 
                 return baseGraph_.isNeighbor(vertex, neighbor);
             }
 
-            bool isConnected(void) const HTD_OVERRIDE
+            bool isConnected(void) const override
             {
                 return true;
             }
 
-            bool isConnected(htd::vertex_t vertex1, htd::vertex_t vertex2) const HTD_OVERRIDE
+            bool isConnected(htd::vertex_t vertex1, htd::vertex_t vertex2) const override
             {
                 HTD_UNUSED(vertex1)
                 HTD_UNUSED(vertex2)
@@ -234,47 +234,47 @@ namespace htd
                 return true;
             }
 
-            const std::vector<htd::vertex_t> & vertexNames(void) const HTD_NOEXCEPT HTD_OVERRIDE
+            const std::vector<htd::vertex_t> & vertexNames(void) const noexcept override
             {
                 return baseGraph_.vertexNames();
             }
 
-            htd::vertex_t vertexName(htd::vertex_t vertex) const HTD_OVERRIDE
+            htd::vertex_t vertexName(htd::vertex_t vertex) const override
             {
                 HTD_ASSERT(isVertex(vertex))
 
                 return baseGraph_.vertexName(vertex);
             }
 
-            const std::vector<std::vector<htd::vertex_t>> & neighborhood(void) const HTD_NOEXCEPT HTD_OVERRIDE
+            const std::vector<std::vector<htd::vertex_t>> & neighborhood(void) const noexcept override
             {
                 return baseGraph_.neighborhood();
             }
 
-            const std::vector<htd::vertex_t> & neighborhood(htd::vertex_t vertex) const HTD_OVERRIDE
+            const std::vector<htd::vertex_t> & neighborhood(htd::vertex_t vertex) const override
             {
                 HTD_ASSERT(isVertex(vertex))
 
                 return baseGraph_.neighborhood(vertex);
             }
 
-            const std::vector<htd::vertex_t> & eliminationSequence(void) const HTD_NOEXCEPT HTD_OVERRIDE
+            const std::vector<htd::vertex_t> & eliminationSequence(void) const noexcept override
             {
                 return eliminationSequence_;
             }
 
-            const std::vector<htd::vertex_t> & remainingVertices(void) const HTD_NOEXCEPT HTD_OVERRIDE
+            const std::vector<htd::vertex_t> & remainingVertices(void) const noexcept override
             {
                 return remainingVertices_;
             }
 
-            std::size_t minTreeWidth(void) const HTD_NOEXCEPT HTD_OVERRIDE
+            std::size_t minTreeWidth(void) const noexcept override
             {
                 return minTreeWidth_;
             }
 
     #ifndef HTD_USE_VISUAL_STUDIO_COMPATIBILITY_MODE
-            PreprocessedGraphComponent * clone(void) const HTD_OVERRIDE
+            PreprocessedGraphComponent * clone(void) const override
             {
                 return new htd::PreprocessedGraphComponent(*this);
             }
@@ -289,7 +289,7 @@ namespace htd
                 return new htd::PreprocessedGraphComponent(*this);
             }
 
-            htd::IGraphStructure * cloneGraphStructure(void) const HTD_OVERRIDE
+            htd::IGraphStructure * cloneGraphStructure(void) const override
             {
                 return clone();
             }
@@ -709,7 +709,7 @@ struct htd::GraphPreprocessor::Implementation
     void splitSets(const std::vector<htd::vertex_t> & set1,
                    const std::vector<htd::vertex_t> & set2,
                    std::vector<htd::vertex_t> & resultOnlySet1,
-                   std::vector<htd::vertex_t> & resultIntersection) const HTD_NOEXCEPT;
+                   std::vector<htd::vertex_t> & resultIntersection) const noexcept;
 
     /**
      *  Compute largest biconnected component of the given graph and eliminate all vertices contained in the remainder.
@@ -755,7 +755,7 @@ htd::GraphPreprocessor::~GraphPreprocessor()
 
 }
 
-htd::IPreprocessedGraph * htd::GraphPreprocessor::prepare(const htd::IMultiHypergraph & graph) const HTD_NOEXCEPT
+htd::IPreprocessedGraph * htd::GraphPreprocessor::prepare(const htd::IMultiHypergraph & graph) const noexcept
 {
     htd::PreprocessedGraph * ret = nullptr;
 
@@ -944,7 +944,7 @@ void htd::GraphPreprocessor::setPreprocessingStrategy(std::size_t level)
     }
 }
 
-const htd::LibraryInstance * htd::GraphPreprocessor::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::GraphPreprocessor::managementInstance(void) const noexcept
 {
     return implementation_->managementInstance_;
 }
@@ -1583,7 +1583,7 @@ bool htd::GraphPreprocessor::Implementation::eliminateAlmostSimplicialVertices(s
 void htd::GraphPreprocessor::Implementation::splitSets(const std::vector<htd::vertex_t> & set1,
                                                        const std::vector<htd::vertex_t> & set2,
                                                        std::vector<htd::vertex_t> & resultOnlySet1,
-                                                       std::vector<htd::vertex_t> & resultIntersection) const HTD_NOEXCEPT
+                                                       std::vector<htd::vertex_t> & resultIntersection) const noexcept
 {
     auto first1 = set1.begin();
     auto first2 = set2.begin();

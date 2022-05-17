@@ -112,7 +112,7 @@ namespace htd
              *
              *  @return A new IMutableGraph object identical to the current mutable graph.
              */
-            virtual IMutableGraph * clone(void) const HTD_OVERRIDE = 0;
+            virtual IMutableGraph * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current mutable graph.

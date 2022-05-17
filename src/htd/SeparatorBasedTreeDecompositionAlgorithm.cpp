@@ -363,7 +363,7 @@ bool htd::SeparatorBasedTreeDecompositionAlgorithm::isSafelyInterruptible(void) 
     return false;
 }
 
-const htd::LibraryInstance * htd::SeparatorBasedTreeDecompositionAlgorithm::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::SeparatorBasedTreeDecompositionAlgorithm::managementInstance(void) const noexcept
 {
     return implementation_->managementInstance_;
 }

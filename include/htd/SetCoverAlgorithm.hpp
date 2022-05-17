@@ -47,15 +47,15 @@ namespace htd
             
             HTD_API virtual ~SetCoverAlgorithm();
             
-            HTD_API void computeSetCover(const std::vector<htd::id_t> & elements, const std::vector<std::vector<htd::id_t>> & containers, std::vector<htd::index_t> & target) const HTD_OVERRIDE;
+            HTD_API void computeSetCover(const std::vector<htd::id_t> & elements, const std::vector<std::vector<htd::id_t>> & containers, std::vector<htd::index_t> & target) const override;
 
-            HTD_API void computeSetCover(const htd::ConstCollection<htd::id_t> & elements, const htd::ConstCollection<std::vector<htd::id_t>> & containers, std::vector<htd::index_t> & target) const HTD_OVERRIDE;
+            HTD_API void computeSetCover(const htd::ConstCollection<htd::id_t> & elements, const htd::ConstCollection<std::vector<htd::id_t>> & containers, std::vector<htd::index_t> & target) const override;
 
-            HTD_API const htd::LibraryInstance * managementInstance(void) const HTD_NOEXCEPT HTD_OVERRIDE;
+            HTD_API const htd::LibraryInstance * managementInstance(void) const noexcept override;
 
-            HTD_API void setManagementInstance(const htd::LibraryInstance * const manager) HTD_OVERRIDE;
+            HTD_API void setManagementInstance(const htd::LibraryInstance * const manager) override;
 
-            HTD_API SetCoverAlgorithm * clone(void) const HTD_OVERRIDE;
+            HTD_API SetCoverAlgorithm * clone(void) const override;
 
         protected:
             /**

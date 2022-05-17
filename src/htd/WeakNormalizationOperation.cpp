@@ -255,7 +255,7 @@ bool htd::WeakNormalizationOperation::identicalJoinNodeParentRequired(void) cons
     return implementation_->identicalJoinNodeParent_;
 }
 
-const htd::LibraryInstance * htd::WeakNormalizationOperation::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::WeakNormalizationOperation::managementInstance(void) const noexcept
 {
     return implementation_->managementInstance_;
 }

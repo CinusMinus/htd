@@ -45,7 +45,7 @@ namespace htd
              *
              *  @return A new IDirectedGraph object identical to the current directed graph.
              */
-            virtual IDirectedGraph * clone(void) const HTD_OVERRIDE = 0;
+            virtual IDirectedGraph * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current directed graph.

@@ -162,7 +162,7 @@ namespace htd
              *
              *  @return A new IMutableLabeledDirectedMultiGraph object identical to the current mutable labeled directed multi-graph.
              */
-            virtual IMutableLabeledDirectedMultiGraph * clone(void) const HTD_OVERRIDE = 0;
+            virtual IMutableLabeledDirectedMultiGraph * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current mutable labeled directed multi-graph.

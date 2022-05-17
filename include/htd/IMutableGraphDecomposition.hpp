@@ -92,7 +92,7 @@ namespace htd
              *
              *  @return A new IMutableGraphDecomposition object identical to the current mutable graph decomposition.
              */
-            virtual IMutableGraphDecomposition * clone(void) const HTD_OVERRIDE = 0;
+            virtual IMutableGraphDecomposition * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current mutable graph decomposition.
@@ -108,14 +108,14 @@ namespace htd
              *
              *  @param[in] original  The original multi-hypergraph.
              */
-            virtual IMutableGraphDecomposition & operator=(const htd::IMultiHypergraph & original) HTD_OVERRIDE = 0;
+            virtual IMutableGraphDecomposition & operator=(const htd::IMultiHypergraph & original) override = 0;
 
             /**
              *  Copy assignment operator for a mutable graph decomposition.
              *
              *  @param[in] original  The original labeled multi-hypergraph.
              */
-            virtual IMutableGraphDecomposition & operator=(const htd::ILabeledMultiHypergraph & original) HTD_OVERRIDE = 0;
+            virtual IMutableGraphDecomposition & operator=(const htd::ILabeledMultiHypergraph & original) override = 0;
 
             /**
              *  Copy assignment operator for a mutable graph decomposition.

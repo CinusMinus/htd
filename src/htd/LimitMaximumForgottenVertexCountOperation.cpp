@@ -405,7 +405,7 @@ bool htd::LimitMaximumForgottenVertexCountOperation::createsLocationDependendLab
     return false;
 }
 
-const htd::LibraryInstance * htd::LimitMaximumForgottenVertexCountOperation::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::LimitMaximumForgottenVertexCountOperation::managementInstance(void) const noexcept
 {
     return implementation_->managementInstance_;
 }

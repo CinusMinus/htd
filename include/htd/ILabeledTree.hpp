@@ -45,7 +45,7 @@ namespace htd
              *
              *  @return A new ILabeledTree object identical to the current labeled tree.
              */
-            virtual ILabeledTree * clone(void) const HTD_OVERRIDE = 0;
+            virtual ILabeledTree * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current labeled tree.

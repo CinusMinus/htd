@@ -161,7 +161,7 @@ void htd::GreedySetCoverAlgorithm::computeSetCover(const htd::ConstCollection<ht
     }
 }
 
-const htd::LibraryInstance * htd::GreedySetCoverAlgorithm::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::GreedySetCoverAlgorithm::managementInstance(void) const noexcept
 {
     return implementation_->managementInstance_;
 }

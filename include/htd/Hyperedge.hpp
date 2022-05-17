@@ -50,7 +50,7 @@ namespace htd
              *  @param[in] id       The ID of the constructed hyperedge.
              *  @param[in] vertex   The single endpoint of the constructed hyperedge.
              */
-            HTD_API Hyperedge(htd::id_t id, htd::vertex_t vertex) HTD_NOEXCEPT;
+            HTD_API Hyperedge(htd::id_t id, htd::vertex_t vertex) noexcept;
 
             /**
              *  Constructor for a hyperedge.
@@ -59,7 +59,7 @@ namespace htd
              *  @param[in] vertex1  The first endpoint of the constructed hyperedge.
              *  @param[in] vertex2  The second endpoint of the constructed hyperedge.
              */
-            HTD_API Hyperedge(htd::id_t id, htd::vertex_t vertex1, htd::vertex_t vertex2) HTD_NOEXCEPT;
+            HTD_API Hyperedge(htd::id_t id, htd::vertex_t vertex1, htd::vertex_t vertex2) noexcept;
 
             /**
              *  Constructor for a hyperedge.
@@ -67,7 +67,7 @@ namespace htd
              *  @param[in] id       The ID of the constructed hyperedge.
              *  @param[in] elements The endpoints of the constructed hyperedge.
              */
-            HTD_API Hyperedge(htd::id_t id, const std::vector<htd::vertex_t> & elements) HTD_NOEXCEPT;
+            HTD_API Hyperedge(htd::id_t id, const std::vector<htd::vertex_t> & elements) noexcept;
 
             /**
              *  Constructor for a hyperedge.
@@ -76,7 +76,7 @@ namespace htd
              *  @param[in] elements         The endpoints of the constructed hyperedge.
              *  @param[in] sortedElements   The endpoints of the constructed hyperedge sorted in ascending order without duplicates.
              */
-            HTD_API Hyperedge(htd::id_t id, const std::vector<htd::vertex_t> & elements, const std::vector<htd::vertex_t> & sortedElements) HTD_NOEXCEPT;
+            HTD_API Hyperedge(htd::id_t id, const std::vector<htd::vertex_t> & elements, const std::vector<htd::vertex_t> & sortedElements) noexcept;
 
             /**
              *  Constructor for a hyperedge.
@@ -84,7 +84,7 @@ namespace htd
              *  @param[in] id       The ID of the constructed hyperedge.
              *  @param[in] elements The endpoints of the constructed hyperedge.
              */
-            HTD_API Hyperedge(htd::id_t id, std::vector<htd::vertex_t> && elements) HTD_NOEXCEPT;
+            HTD_API Hyperedge(htd::id_t id, std::vector<htd::vertex_t> && elements) noexcept;
 
             /**
              *  Constructor for a hyperedge.
@@ -93,7 +93,7 @@ namespace htd
              *  @param[in] elements         The endpoints of the constructed hyperedge.
              *  @param[in] sortedElements   The endpoints of the constructed hyperedge sorted in ascending order without duplicates.
              */
-            HTD_API Hyperedge(htd::id_t id, std::vector<htd::vertex_t> && elements, std::vector<htd::vertex_t> && sortedElements) HTD_NOEXCEPT;
+            HTD_API Hyperedge(htd::id_t id, std::vector<htd::vertex_t> && elements, std::vector<htd::vertex_t> && sortedElements) noexcept;
 
             /**
              *  Constructor for a hyperedge.
@@ -101,40 +101,40 @@ namespace htd
              *  @param[in] id       The ID of the constructed hyperedge.
              *  @param[in] elements The endpoints of the constructed hyperedge.
              */
-            HTD_API Hyperedge(htd::id_t id, const htd::ConstCollection<htd::vertex_t> & elements) HTD_NOEXCEPT;
+            HTD_API Hyperedge(htd::id_t id, const htd::ConstCollection<htd::vertex_t> & elements) noexcept;
 
             /**
              *  Copy constructor for a hyperedge.
              *
              *  @param[in] original  The original hyperedge.
              */
-            HTD_API Hyperedge(const Hyperedge & original) HTD_NOEXCEPT;
+            HTD_API Hyperedge(const Hyperedge & original) noexcept;
 
             /**
              *  Move constructor for a hyperedge.
              *
              *  @param[in] original  The original hyperedge.
              */
-            HTD_API Hyperedge(Hyperedge && original) HTD_NOEXCEPT;
+            HTD_API Hyperedge(Hyperedge && original) noexcept;
 
             /**
              *  Destructor for a Hyperedge object.
              */
-            HTD_API virtual ~Hyperedge() HTD_NOEXCEPT;
+            HTD_API virtual ~Hyperedge() noexcept;
 
             /**
              *  Getter for the ID of the hyperedge.
              *
              *  @return The ID of the hyperedge.
              */
-            HTD_API htd::id_t id(void) const HTD_NOEXCEPT;
+            HTD_API htd::id_t id(void) const noexcept;
 
             /**
              *  Setter for the ID of the hyperedge.
              *
              *  @param[in] newId    The new ID of the hyperedge.
              */
-            HTD_API void setId(htd::id_t newId) HTD_NOEXCEPT;
+            HTD_API void setId(htd::id_t newId) noexcept;
 
             /**
              *  Set the endpoints of the hyperedge.
@@ -142,56 +142,56 @@ namespace htd
              *  @param[in] vertex1  The first endpoint of the updated hyperedge.
              *  @param[in] vertex2  The second endpoint of the updated hyperedge.
              */
-            HTD_API void setElements(htd::vertex_t vertex1, htd::vertex_t vertex2) HTD_NOEXCEPT;
+            HTD_API void setElements(htd::vertex_t vertex1, htd::vertex_t vertex2) noexcept;
 
             /**
              *  Set the endpoints of the hyperedge.
              *
              *  @param[in] elements The new endpoints of the updated hyperedge.
              */
-            HTD_API void setElements(const std::vector<htd::vertex_t> & elements) HTD_NOEXCEPT;
+            HTD_API void setElements(const std::vector<htd::vertex_t> & elements) noexcept;
 
             /**
              *  Set the endpoints of the hyperedge.
              *
              *  @param[in] elements The new endpoints of the updated hyperedge.
              */
-            HTD_API void setElements(std::vector<htd::vertex_t> && elements) HTD_NOEXCEPT;
+            HTD_API void setElements(std::vector<htd::vertex_t> && elements) noexcept;
 
             /**
              *  Set the endpoints of the hyperedge.
              *
              *  @param[in] elements The new endpoints of the updated hyperedge.
              */
-            HTD_API void setElements(const htd::ConstCollection<htd::vertex_t> & elements) HTD_NOEXCEPT;
+            HTD_API void setElements(const htd::ConstCollection<htd::vertex_t> & elements) noexcept;
 
             /**
              *  Getter for the elements of the hyperedge.
              *
              *  @return The elements of the hyperedge.
              */
-            HTD_API const std::vector<htd::vertex_t> & elements(void) const HTD_NOEXCEPT;
+            HTD_API const std::vector<htd::vertex_t> & elements(void) const noexcept;
 
             /**
              *  Getter for the elements of the hyperedge in ascending order without duplicates.
              *
              *  @return The elements of the hyperedge in ascending order without duplicates.
              */
-            HTD_API const std::vector<htd::vertex_t> & sortedElements(void) const HTD_NOEXCEPT;
+            HTD_API const std::vector<htd::vertex_t> & sortedElements(void) const noexcept;
 
             /**
              *  Check whether the hyperedge contains no elements.
              *
              *  @return True if the hyperedge contains no elements, false otherwise.
              */
-            HTD_API bool empty(void) const HTD_NOEXCEPT;
+            HTD_API bool empty(void) const noexcept;
 
             /**
              *  Getter for the number of elements of the hyperedge.
              *
              *  @return The number of elements of the hyperedge.
              */
-            HTD_API std::size_t size(void) const HTD_NOEXCEPT;
+            HTD_API std::size_t size(void) const noexcept;
 
             /**
              *  Check whether the hyperedge contains a specific vertex.
@@ -200,28 +200,28 @@ namespace htd
              *
              *  @return True if the hyperedge contains the specific vertex, false otherwise.
              */
-            HTD_API bool contains(htd::vertex_t vertex) const HTD_NOEXCEPT;
+            HTD_API bool contains(htd::vertex_t vertex) const noexcept;
 
             /**
              *  Erase a specific vertex from the hyperedge in case the vertex is contained in the hyperedge.
              *
              *  @param[in] vertex   The specific vertex which shall be removed.
              */
-            HTD_API void erase(htd::vertex_t vertex) HTD_NOEXCEPT;
+            HTD_API void erase(htd::vertex_t vertex) noexcept;
 
             /**
              *  Getter for a const_iterator pointing to the first element in the hyperedge.
              *
              *  @return A const_iterator pointing to the first element in the hyperedge.
              */
-            HTD_API std::vector<htd::vertex_t>::const_iterator begin(void) const HTD_NOEXCEPT;
+            HTD_API std::vector<htd::vertex_t>::const_iterator begin(void) const noexcept;
 
             /**
              *  Getter for a const_iterator pointing to the end of the elements in the hyperedge.
              *
              *  @return A const_iterator pointing to the end of the elements in the hyperedge.
              */
-            HTD_API std::vector<htd::vertex_t>::const_iterator end(void) const HTD_NOEXCEPT;
+            HTD_API std::vector<htd::vertex_t>::const_iterator end(void) const noexcept;
 
             /**
              *  Access the element at the specific position within the hyperedge.
@@ -253,7 +253,7 @@ namespace htd
              *
              *  @param[in] original  The original hyperedge.
              */
-            HTD_API Hyperedge & operator=(Hyperedge && original) HTD_NOEXCEPT;
+            HTD_API Hyperedge & operator=(Hyperedge && original) noexcept;
 
             /**
              *  Less-than operator for a hyperedge.

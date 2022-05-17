@@ -162,7 +162,7 @@ namespace htd
              *
              *  @return A new IMutableLabeledPath object identical to the current mutable labeled path.
              */
-            virtual IMutableLabeledPath * clone(void) const HTD_OVERRIDE = 0;
+            virtual IMutableLabeledPath * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current mutable labeled path.

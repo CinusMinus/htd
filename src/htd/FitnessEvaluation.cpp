@@ -61,12 +61,12 @@ htd::FitnessEvaluation::~FitnessEvaluation()
 
 }
 
-std::size_t htd::FitnessEvaluation::levelCount(void) const HTD_NOEXCEPT
+std::size_t htd::FitnessEvaluation::levelCount(void) const noexcept
 {
     return values_.size();
 }
 
-const std::vector<double> & htd::FitnessEvaluation::values(void) const HTD_NOEXCEPT
+const std::vector<double> & htd::FitnessEvaluation::values(void) const noexcept
 {
     return values_;
 }
@@ -81,26 +81,26 @@ double htd::FitnessEvaluation::operator[](htd::index_t level) const
     return values_[level];
 }
 
-bool htd::FitnessEvaluation::operator<(const htd::FitnessEvaluation & rhs) const HTD_NOEXCEPT
+bool htd::FitnessEvaluation::operator<(const htd::FitnessEvaluation & rhs) const noexcept
 {
     HTD_ASSERT(rhs.levelCount() == levelCount())
 
     return values_ < rhs.values();
 }
 
-bool htd::FitnessEvaluation::operator>(const htd::FitnessEvaluation & rhs) const HTD_NOEXCEPT
+bool htd::FitnessEvaluation::operator>(const htd::FitnessEvaluation & rhs) const noexcept
 {
     HTD_ASSERT(rhs.levelCount() == levelCount())
 
     return values_ > rhs.values();
 }
 
-bool htd::FitnessEvaluation::operator==(const htd::FitnessEvaluation & rhs) const HTD_NOEXCEPT
+bool htd::FitnessEvaluation::operator==(const htd::FitnessEvaluation & rhs) const noexcept
 {
     return values_ == rhs.values();
 }
 
-bool htd::FitnessEvaluation::operator!=(const htd::FitnessEvaluation & rhs) const HTD_NOEXCEPT
+bool htd::FitnessEvaluation::operator!=(const htd::FitnessEvaluation & rhs) const noexcept
 {
     return values_ != rhs.values();
 }

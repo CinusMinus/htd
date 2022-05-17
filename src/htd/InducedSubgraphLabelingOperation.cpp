@@ -392,7 +392,7 @@ bool htd::InducedSubgraphLabelingOperation::createsLocationDependendLabels(void)
     return true;
 }
 
-const htd::LibraryInstance * htd::InducedSubgraphLabelingOperation::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::InducedSubgraphLabelingOperation::managementInstance(void) const noexcept
 {
     return implementation_->managementInstance_;
 }

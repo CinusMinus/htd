@@ -94,7 +94,7 @@ namespace htd
              *
              *  @return A new IPathDecompositionManipulationOperation object identical to the current path decomposition manipulation operation.
              */
-            virtual IPathDecompositionManipulationOperation * clone(void) const HTD_OVERRIDE = 0;
+            virtual IPathDecompositionManipulationOperation * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current path decomposition manipulation operation.

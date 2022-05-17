@@ -1097,7 +1097,7 @@ void htd::MultiHypergraph::removeEdge(htd::id_t edgeId)
     }
 }
 
-const htd::LibraryInstance * htd::MultiHypergraph::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::MultiHypergraph::managementInstance(void) const noexcept
 {
     return implementation_->managementInstance_;
 }

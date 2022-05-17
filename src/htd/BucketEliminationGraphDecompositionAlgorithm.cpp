@@ -577,7 +577,7 @@ bool htd::BucketEliminationGraphDecompositionAlgorithm::isSafelyInterruptible(vo
     return false;
 }
 
-const htd::LibraryInstance * htd::BucketEliminationGraphDecompositionAlgorithm::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::BucketEliminationGraphDecompositionAlgorithm::managementInstance(void) const noexcept
 {
     return implementation_->managementInstance_;
 }

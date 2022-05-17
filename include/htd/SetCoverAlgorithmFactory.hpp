@@ -68,7 +68,7 @@ namespace htd
              *
              *  @return A new ISetCoverAlgorithm object.
              */
-            HTD_API htd::ISetCoverAlgorithm * createInstance(void) const HTD_OVERRIDE;
+            HTD_API htd::ISetCoverAlgorithm * createInstance(void) const override;
     };
 }
 

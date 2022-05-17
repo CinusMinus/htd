@@ -138,7 +138,7 @@ namespace htd
              *
              *  @return A new ITreeDecompositionManipulationOperation object identical to the current tree decomposition manipulation operation.
              */
-            virtual ITreeDecompositionManipulationOperation * clone(void) const HTD_OVERRIDE = 0;
+            virtual ITreeDecompositionManipulationOperation * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current tree decomposition manipulation operation.

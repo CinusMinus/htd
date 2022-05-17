@@ -51,14 +51,14 @@ namespace htd
 
             HTD_API virtual ~SingleNeighborVertexSelectionStrategy();
 
-            HTD_API void selectVertices(const htd::IMultiHypergraph & graph, std::vector<htd::vertex_t> & target) const HTD_OVERRIDE;
+            HTD_API void selectVertices(const htd::IMultiHypergraph & graph, std::vector<htd::vertex_t> & target) const override;
 
             /**
              *  Create a deep copy of the current vertex selection strategy.
              *
              *  @return A new SingleNeighborVertexSelectionStrategy object identical to the current vertex selection strategy.
              */
-            HTD_API SingleNeighborVertexSelectionStrategy * clone(void) const HTD_OVERRIDE;
+            HTD_API SingleNeighborVertexSelectionStrategy * clone(void) const override;
 
         private:
             std::size_t limit_;

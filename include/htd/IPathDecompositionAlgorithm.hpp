@@ -46,7 +46,7 @@ namespace htd
              *
              *  @return A new IPathDecomposition object representing the decomposition of the given graph or a null-pointer in case that no decomposition with a appropriate maximum bag size could be found after maxIterationCount iterations.
              */
-            virtual htd::IPathDecomposition * computeDecomposition(const htd::IMultiHypergraph & graph) const HTD_OVERRIDE = 0;
+            virtual htd::IPathDecomposition * computeDecomposition(const htd::IMultiHypergraph & graph) const override = 0;
 
             /**
              *  Compute a decomposition of the given graph and apply the given manipulation operations to it.
@@ -62,7 +62,7 @@ namespace htd
              *
              *  @return A new IPathDecomposition object representing the decomposition of the given graph.
              */
-            virtual htd::IPathDecomposition * computeDecomposition(const htd::IMultiHypergraph & graph, const std::vector<htd::IDecompositionManipulationOperation *> & manipulationOperations) const HTD_OVERRIDE = 0;
+            virtual htd::IPathDecomposition * computeDecomposition(const htd::IMultiHypergraph & graph, const std::vector<htd::IDecompositionManipulationOperation *> & manipulationOperations) const override = 0;
 
             /**
              *  Compute a decomposition of the given graph.
@@ -72,7 +72,7 @@ namespace htd
              *
              *  @return A new IPathDecomposition object representing the decomposition of the given graph or a null-pointer in case that no decomposition with a appropriate maximum bag size could be found after maxIterationCount iterations.
              */
-            virtual htd::IPathDecomposition * computeDecomposition(const htd::IMultiHypergraph & graph, const htd::IPreprocessedGraph & preprocessedGraph) const HTD_OVERRIDE = 0;
+            virtual htd::IPathDecomposition * computeDecomposition(const htd::IMultiHypergraph & graph, const htd::IPreprocessedGraph & preprocessedGraph) const override = 0;
 
             /**
              *  Compute a decomposition of the given graph and apply the given manipulation operations to it.
@@ -89,14 +89,14 @@ namespace htd
              *
              *  @return A new IPathDecomposition object representing the decomposition of the given graph.
              */
-            virtual htd::IPathDecomposition * computeDecomposition(const htd::IMultiHypergraph & graph, const htd::IPreprocessedGraph & preprocessedGraph, const std::vector<htd::IDecompositionManipulationOperation *> & manipulationOperations) const HTD_OVERRIDE = 0;
+            virtual htd::IPathDecomposition * computeDecomposition(const htd::IMultiHypergraph & graph, const htd::IPreprocessedGraph & preprocessedGraph, const std::vector<htd::IDecompositionManipulationOperation *> & manipulationOperations) const override = 0;
 
             /**
              *  Create a deep copy of the current path decomposition algorithm.
              *
              *  @return A new IPathDecompositionAlgorithm object identical to the current path decomposition algorithm.
              */
-            virtual IPathDecompositionAlgorithm * clone(void) const HTD_OVERRIDE = 0;
+            virtual IPathDecompositionAlgorithm * clone(void) const override = 0;
     };
 
     inline htd::IPathDecompositionAlgorithm::~IPathDecompositionAlgorithm() { }

@@ -45,7 +45,7 @@ namespace htd
              *
              *  @return The associated management class.
              */
-            virtual const htd::LibraryInstance * managementInstance(void) const HTD_NOEXCEPT = 0;
+            virtual const htd::LibraryInstance * managementInstance(void) const noexcept = 0;
 
             /**
              *  Set a new management class for the library object.
@@ -61,7 +61,7 @@ namespace htd
              *
              *  @return The vertex ordering of the given graph.
              */
-            virtual htd::IVertexOrdering * computeOrdering(const htd::IMultiHypergraph & graph) const HTD_NOEXCEPT = 0;
+            virtual htd::IVertexOrdering * computeOrdering(const htd::IMultiHypergraph & graph) const noexcept = 0;
 
             /**
              *  Compute the vertex ordering of a given graph.
@@ -71,7 +71,7 @@ namespace htd
              *
              *  @return The vertex ordering of the given graph.
              */
-            virtual htd::IVertexOrdering * computeOrdering(const htd::IMultiHypergraph & graph, const htd::IPreprocessedGraph & preprocessedGraph) const HTD_NOEXCEPT = 0;
+            virtual htd::IVertexOrdering * computeOrdering(const htd::IMultiHypergraph & graph, const htd::IPreprocessedGraph & preprocessedGraph) const noexcept = 0;
 
 #ifndef HTD_USE_VISUAL_STUDIO_COMPATIBILITY_MODE
             /**

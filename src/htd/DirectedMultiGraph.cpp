@@ -507,7 +507,7 @@ void htd::DirectedMultiGraph::removeEdge(htd::id_t edgeId)
     }
 }
 
-const htd::LibraryInstance * htd::DirectedMultiGraph::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::DirectedMultiGraph::managementInstance(void) const noexcept
 {
     return implementation_->base_->managementInstance();
 }

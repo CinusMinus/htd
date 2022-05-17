@@ -437,7 +437,7 @@ void htd::IterativeImprovementTreeDecompositionAlgorithm::setNonImprovementLimit
     implementation_->nonImprovementLimit_ = nonImprovementLimit;
 }
 
-const htd::LibraryInstance * htd::IterativeImprovementTreeDecompositionAlgorithm::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::IterativeImprovementTreeDecompositionAlgorithm::managementInstance(void) const noexcept
 {
     return implementation_->managementInstance_;
 }

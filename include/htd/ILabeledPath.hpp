@@ -45,7 +45,7 @@ namespace htd
              *
              *  @return A new ILabeledPath object identical to the current labeled path.
              */
-            virtual ILabeledPath * clone(void) const HTD_OVERRIDE = 0;
+            virtual ILabeledPath * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current labeled path.

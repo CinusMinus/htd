@@ -70,7 +70,7 @@ namespace htd
              *
              *  @return A new IMutableTreeDecomposition object.
              */
-            HTD_API htd::IMutableTreeDecomposition * createInstance(void) const HTD_OVERRIDE;
+            HTD_API htd::IMutableTreeDecomposition * createInstance(void) const override;
     };
 }
 

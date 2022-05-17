@@ -494,7 +494,7 @@ namespace htd
              *
              *  @return A new ITreeDecomposition object identical to the current tree decomposition.
              */
-            virtual ITreeDecomposition * clone(void) const HTD_OVERRIDE = 0;
+            virtual ITreeDecomposition * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current tree decomposition.

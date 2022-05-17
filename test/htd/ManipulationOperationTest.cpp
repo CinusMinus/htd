@@ -66,31 +66,31 @@ class BagSizeLabelingFunction : public htd::ILabelingFunction
 
         }
 
-        std::string name() const HTD_OVERRIDE
+        std::string name() const override
         {
             return "BAG_SIZE";
         }
 
-        htd::ILabel * computeLabel(const std::vector<htd::vertex_t> & vertices, const htd::ILabelCollection & labels) const HTD_OVERRIDE
+        htd::ILabel * computeLabel(const std::vector<htd::vertex_t> & vertices, const htd::ILabelCollection & labels) const override
         {
             HTD_UNUSED(labels)
 
             return new htd::Label<std::size_t>(vertices.size());
         }
 
-        htd::ILabel * computeLabel(const htd::ConstCollection<htd::vertex_t> & vertices, const htd::ILabelCollection & labels) const HTD_OVERRIDE
+        htd::ILabel * computeLabel(const htd::ConstCollection<htd::vertex_t> & vertices, const htd::ILabelCollection & labels) const override
         {
             HTD_UNUSED(labels)
 
             return new htd::Label<std::size_t>(vertices.size());
         }
 
-        const htd::LibraryInstance * managementInstance(void) const HTD_NOEXCEPT HTD_OVERRIDE
+        const htd::LibraryInstance * managementInstance(void) const noexcept override
         {
             return managementInstance_;
         }
 
-        void setManagementInstance(const htd::LibraryInstance * const manager) HTD_OVERRIDE
+        void setManagementInstance(const htd::LibraryInstance * const manager) override
         {
             HTD_ASSERT(manager != nullptr)
 
@@ -98,7 +98,7 @@ class BagSizeLabelingFunction : public htd::ILabelingFunction
         }
 
 #ifndef HTD_USE_VISUAL_STUDIO_COMPATIBILITY_MODE
-        BagSizeLabelingFunction * clone(void) const HTD_OVERRIDE
+        BagSizeLabelingFunction * clone(void) const override
         {
             return new BagSizeLabelingFunction(managementInstance_);
         }
@@ -108,12 +108,12 @@ class BagSizeLabelingFunction : public htd::ILabelingFunction
             return new BagSizeLabelingFunction(managementInstance_);
         }
 
-        htd::ILabelingFunction * cloneLabelingFunction(void) const HTD_OVERRIDE
+        htd::ILabelingFunction * cloneLabelingFunction(void) const override
         {
             return new BagSizeLabelingFunction(managementInstance_);
         }
 
-        htd::IDecompositionManipulationOperation * cloneDecompositionManipulationOperation(void) const HTD_OVERRIDE
+        htd::IDecompositionManipulationOperation * cloneDecompositionManipulationOperation(void) const override
         {
             return new BagSizeLabelingFunction(managementInstance_);
         }

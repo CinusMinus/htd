@@ -103,7 +103,7 @@ namespace htd
              *
              *  @return A new IMutableMultiGraph object identical to the current mutable multi-graph.
              */
-            virtual IMutableMultiGraph * clone(void) const HTD_OVERRIDE = 0;
+            virtual IMutableMultiGraph * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current mutable multi-graph.

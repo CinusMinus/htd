@@ -342,7 +342,7 @@ bool htd::ExchangeNodeReplacementOperation::createsLocationDependendLabels(void)
     return false;
 }
 
-const htd::LibraryInstance * htd::ExchangeNodeReplacementOperation::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::ExchangeNodeReplacementOperation::managementInstance(void) const noexcept
 {
     return implementation_->managementInstance_;
 }

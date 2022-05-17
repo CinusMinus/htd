@@ -298,7 +298,7 @@ void htd::Graph::removeEdge(htd::vertex_t vertex1, htd::vertex_t vertex2)
     }
 }
 
-const htd::LibraryInstance * htd::Graph::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::Graph::managementInstance(void) const noexcept
 {
     return base_->managementInstance();
 }

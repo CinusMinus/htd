@@ -68,7 +68,7 @@ namespace htd
              *
              *  @return A new IPathDecompositionAlgorithm object.
              */
-            HTD_API htd::IPathDecompositionAlgorithm * createInstance(void) const HTD_OVERRIDE;
+            HTD_API htd::IPathDecompositionAlgorithm * createInstance(void) const override;
     };
 }
 

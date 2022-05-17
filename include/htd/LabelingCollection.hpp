@@ -64,49 +64,49 @@ namespace htd
             
             HTD_API virtual ~LabelingCollection();
 
-            HTD_API std::size_t labelCount(void) const HTD_OVERRIDE;
+            HTD_API std::size_t labelCount(void) const override;
 
-            HTD_API htd::ConstCollection<std::string> labelNames(void) const HTD_OVERRIDE;
+            HTD_API htd::ConstCollection<std::string> labelNames(void) const override;
 
-            HTD_API const std::string & labelNameAtPosition(htd::index_t index) const HTD_OVERRIDE;
+            HTD_API const std::string & labelNameAtPosition(htd::index_t index) const override;
 
-            HTD_API bool isLabelName(const std::string & labelName) const HTD_OVERRIDE;
+            HTD_API bool isLabelName(const std::string & labelName) const override;
 
-            HTD_API htd::IGraphLabeling & labeling(const std::string & labelName) HTD_OVERRIDE;
+            HTD_API htd::IGraphLabeling & labeling(const std::string & labelName) override;
 
-            HTD_API const htd::IGraphLabeling & labeling(const std::string & labelName) const HTD_OVERRIDE;
+            HTD_API const htd::IGraphLabeling & labeling(const std::string & labelName) const override;
 
-            HTD_API void setLabeling(const std::string & labelName, htd::IGraphLabeling * labeling) HTD_OVERRIDE;
+            HTD_API void setLabeling(const std::string & labelName, htd::IGraphLabeling * labeling) override;
 
-            HTD_API void removeLabeling(const std::string & labelName) HTD_OVERRIDE;
+            HTD_API void removeLabeling(const std::string & labelName) override;
 
-            HTD_API void removeVertexLabels(htd::vertex_t vertex) HTD_OVERRIDE;
+            HTD_API void removeVertexLabels(htd::vertex_t vertex) override;
 
-            HTD_API void removeEdgeLabels(htd::id_t edgeId) HTD_OVERRIDE;
+            HTD_API void removeEdgeLabels(htd::id_t edgeId) override;
 
-            HTD_API void swapVertexLabels(htd::vertex_t vertex1, htd::vertex_t vertex2) HTD_OVERRIDE;
+            HTD_API void swapVertexLabels(htd::vertex_t vertex1, htd::vertex_t vertex2) override;
 
-            HTD_API void swapEdgeLabels(htd::id_t edgeId1, htd::id_t edgeId2) HTD_OVERRIDE;
+            HTD_API void swapEdgeLabels(htd::id_t edgeId1, htd::id_t edgeId2) override;
 
-            HTD_API htd::ILabelCollection * exportVertexLabelCollection(htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API htd::ILabelCollection * exportVertexLabelCollection(htd::vertex_t vertex) const override;
 
-            HTD_API htd::ILabelCollection * exportEdgeLabelCollection(htd::id_t edgeId) const HTD_OVERRIDE;
+            HTD_API htd::ILabelCollection * exportEdgeLabelCollection(htd::id_t edgeId) const override;
 
-            HTD_API void clear(void) HTD_OVERRIDE;
+            HTD_API void clear(void) override;
 
-            HTD_API LabelingCollection * clone(void) const HTD_OVERRIDE;
+            HTD_API LabelingCollection * clone(void) const override;
 
-            HTD_API htd::IGraphLabeling & operator[](const std::string & labelName) HTD_OVERRIDE;
+            HTD_API htd::IGraphLabeling & operator[](const std::string & labelName) override;
 
-            HTD_API const htd::IGraphLabeling & operator[](const std::string & labelName) const HTD_OVERRIDE;
+            HTD_API const htd::IGraphLabeling & operator[](const std::string & labelName) const override;
 
-            HTD_API htd::Iterator<std::pair<const std::string, htd::IGraphLabeling *>> begin(void) HTD_OVERRIDE;
+            HTD_API htd::Iterator<std::pair<const std::string, htd::IGraphLabeling *>> begin(void) override;
 
-            HTD_API const htd::ConstIterator<std::pair<const std::string, htd::IGraphLabeling *>> begin(void) const HTD_OVERRIDE;
+            HTD_API const htd::ConstIterator<std::pair<const std::string, htd::IGraphLabeling *>> begin(void) const override;
 
-            HTD_API htd::Iterator<std::pair<const std::string, htd::IGraphLabeling *>> end(void) HTD_OVERRIDE;
+            HTD_API htd::Iterator<std::pair<const std::string, htd::IGraphLabeling *>> end(void) override;
 
-            HTD_API const htd::ConstIterator<std::pair<const std::string, htd::IGraphLabeling *>> end(void) const HTD_OVERRIDE;
+            HTD_API const htd::ConstIterator<std::pair<const std::string, htd::IGraphLabeling *>> end(void) const override;
 
         private:
             std::vector<std::string> labelNames_;

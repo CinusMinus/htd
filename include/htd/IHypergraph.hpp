@@ -47,7 +47,7 @@ namespace htd
              *
              *  @return A new IHypergraph object identical to the current hypergraph.
              */
-            virtual IHypergraph * clone(void) const HTD_OVERRIDE = 0;
+            virtual IHypergraph * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current hypergraph.

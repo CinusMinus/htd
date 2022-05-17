@@ -53,21 +53,21 @@ namespace htd
              *
              *  @return The vertex count of the input graph.
              */
-            virtual std::size_t inputGraphVertexCount(void) const HTD_NOEXCEPT = 0;
+            virtual std::size_t inputGraphVertexCount(void) const noexcept = 0;
 
             /**
              *  Getter for the edge count of the input graph.
              *
              *  @return The edge count of the input graph.
              */
-            virtual std::size_t inputGraphEdgeCount(void) const HTD_NOEXCEPT = 0;
+            virtual std::size_t inputGraphEdgeCount(void) const noexcept = 0;
 
             /**
              *  Getter for the actual identifiers of the vertices.
              *
              *  @return The actual identifiers of the vertices.
              */
-            virtual const std::vector<htd::vertex_t> & vertexNames(void) const HTD_NOEXCEPT = 0;
+            virtual const std::vector<htd::vertex_t> & vertexNames(void) const noexcept = 0;
 
             /**
              *  Getter for the actual identifier of the given vertex.
@@ -83,7 +83,7 @@ namespace htd
              *
              *  @return The vector containing the preprocessed neighborhood of each of the vertices.
              */
-            virtual const std::vector<std::vector<htd::vertex_t>> & neighborhood(void) const HTD_NOEXCEPT = 0;
+            virtual const std::vector<std::vector<htd::vertex_t>> & neighborhood(void) const noexcept = 0;
 
             /**
              *  Getter for the vector containing the preprocessed neighborhood of a vertex.
@@ -101,21 +101,21 @@ namespace htd
              *
              *  @return The partial vertex elimination ordering computed during the preprocessing phase.
              */
-            virtual const std::vector<htd::vertex_t> & eliminationSequence(void) const HTD_NOEXCEPT = 0;
+            virtual const std::vector<htd::vertex_t> & eliminationSequence(void) const noexcept = 0;
 
             /**
              *  Getter for the set of vertices (with 0-based IDs) which were not eliminated during the preprocessing phase.
              *
              *  @return The set of vertices (with 0-based IDs) which were not eliminated during the preprocessing phase.
              */
-            virtual const std::vector<htd::vertex_t> & remainingVertices(void) const HTD_NOEXCEPT = 0;
+            virtual const std::vector<htd::vertex_t> & remainingVertices(void) const noexcept = 0;
 
             /**
              *  Getter for the lower bound of the treewidth of the input graph.
              *
              *  @return The lower bound of the treewidth of the input graph.
              */
-            virtual std::size_t minTreeWidth(void) const HTD_NOEXCEPT = 0;
+            virtual std::size_t minTreeWidth(void) const noexcept = 0;
     };
 
     inline htd::IPreprocessedGraph::~IPreprocessedGraph() { }

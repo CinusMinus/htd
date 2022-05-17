@@ -46,7 +46,7 @@ namespace htd
             
             HTD_API virtual ~GraphPreprocessor();
 
-            HTD_API htd::IPreprocessedGraph * prepare(const htd::IMultiHypergraph & graph) const HTD_NOEXCEPT HTD_OVERRIDE;
+            HTD_API htd::IPreprocessedGraph * prepare(const htd::IMultiHypergraph & graph) const noexcept override;
 
             /**
              *  Set the preprocessing strategy which shall be used.
@@ -55,9 +55,9 @@ namespace htd
              */
             HTD_API void setPreprocessingStrategy(std::size_t level);
 
-            HTD_API const htd::LibraryInstance * managementInstance(void) const HTD_NOEXCEPT HTD_OVERRIDE;
+            HTD_API const htd::LibraryInstance * managementInstance(void) const noexcept override;
 
-            HTD_API void setManagementInstance(const htd::LibraryInstance * const manager) HTD_OVERRIDE;
+            HTD_API void setManagementInstance(const htd::LibraryInstance * const manager) override;
 
             /**
              *  Getter for the number of iterations which shall be performed (0=infinite).
@@ -109,7 +109,7 @@ namespace htd
              *
              *  @return A new GraphPreprocessor object identical to the current graph preprocessor.
              */
-            HTD_API GraphPreprocessor * clone(void) const HTD_OVERRIDE;
+            HTD_API GraphPreprocessor * clone(void) const override;
 
         protected:
             /**

@@ -259,7 +259,7 @@ void htd::decompose_sets(const std::vector<htd::vertex_t> & set1,
                          const std::vector<htd::vertex_t> & set2,
                          std::vector<htd::vertex_t> & resultOnlySet1,
                          std::vector<htd::vertex_t> & resultOnlySet2,
-                         std::vector<htd::vertex_t> & resultIntersection) HTD_NOEXCEPT
+                         std::vector<htd::vertex_t> & resultIntersection) noexcept
 {
     auto first1 = set1.begin();
     auto first2 = set2.begin();

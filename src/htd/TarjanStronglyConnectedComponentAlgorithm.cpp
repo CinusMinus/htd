@@ -402,7 +402,7 @@ void htd::TarjanStronglyConnectedComponentAlgorithm::determineComponent(const ht
     }
 }
 
-const htd::LibraryInstance * htd::TarjanStronglyConnectedComponentAlgorithm::managementInstance(void) const HTD_NOEXCEPT
+const htd::LibraryInstance * htd::TarjanStronglyConnectedComponentAlgorithm::managementInstance(void) const noexcept
 {
     return implementation_->managementInstance_;
 }

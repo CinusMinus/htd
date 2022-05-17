@@ -137,7 +137,7 @@ namespace htd
                 }
             }
 
-            Iterator<T> & operator++(void) HTD_OVERRIDE
+            Iterator<T> & operator++(void) override
             {
                 if (baseIterator_!= nullptr)
                 {
@@ -203,7 +203,7 @@ namespace htd
                 return *this;
             }
 
-            bool operator==(const htd::IteratorBase<T> & rhs) const HTD_OVERRIDE
+            bool operator==(const htd::IteratorBase<T> & rhs) const override
             {
                 bool ret = false;
 
@@ -244,7 +244,7 @@ namespace htd
                 return ret;
             }
 
-            bool operator!=(const htd::IteratorBase<T> & rhs) const HTD_OVERRIDE
+            bool operator!=(const htd::IteratorBase<T> & rhs) const override
             {
                 bool ret = false;
 
@@ -285,7 +285,7 @@ namespace htd
                 return ret;
             }
 
-            T * operator->(void) HTD_OVERRIDE
+            T * operator->(void) override
             {
                 return baseIterator_->operator->();
             }
@@ -300,7 +300,7 @@ namespace htd
                 return baseIterator_->operator->();
             }
 
-            T & operator*(void) HTD_OVERRIDE
+            T & operator*(void) override
             {
                 return baseIterator_->operator*();
             }
@@ -315,7 +315,7 @@ namespace htd
                 return baseIterator_->operator*();
             }
 
-            Iterator<T> * clone(void) const HTD_OVERRIDE
+            Iterator<T> * clone(void) const override
             {
                 Iterator<T> * ret = nullptr;
 

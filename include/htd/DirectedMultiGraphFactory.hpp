@@ -70,7 +70,7 @@ namespace htd
              *
              *  @return A new IMutableDirectedMultiGraph object.
              */
-            HTD_API htd::IMutableDirectedMultiGraph * createInstance(void) const HTD_OVERRIDE;
+            HTD_API htd::IMutableDirectedMultiGraph * createInstance(void) const override;
 
             /**
              *  Create a new IMutableDirectedMultiGraph object.

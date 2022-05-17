@@ -83,17 +83,17 @@ namespace htd
 
             HTD_API virtual ~IterativeImprovementTreeDecompositionAlgorithm();
 
-            HTD_API htd::ITreeDecomposition * computeDecomposition(const htd::IMultiHypergraph & graph) const HTD_OVERRIDE;
+            HTD_API htd::ITreeDecomposition * computeDecomposition(const htd::IMultiHypergraph & graph) const override;
 
             HTD_API htd::ITreeDecomposition * computeDecomposition(const htd::IMultiHypergraph & graph,
-                                                                   const std::function<void(const htd::IMultiHypergraph &, const htd::ITreeDecomposition &, const htd::FitnessEvaluation &)> & progressCallback) const HTD_OVERRIDE;
+                                                                   const std::function<void(const htd::IMultiHypergraph &, const htd::ITreeDecomposition &, const htd::FitnessEvaluation &)> & progressCallback) const override;
 
             HTD_API htd::ITreeDecomposition * computeDecomposition(const htd::IMultiHypergraph & graph,
-                                                                   const std::vector<htd::IDecompositionManipulationOperation *> & manipulationOperations) const HTD_OVERRIDE;
+                                                                   const std::vector<htd::IDecompositionManipulationOperation *> & manipulationOperations) const override;
 
             HTD_API htd::ITreeDecomposition * computeDecomposition(const htd::IMultiHypergraph & graph,
                                                                    const std::vector<htd::IDecompositionManipulationOperation *> & manipulationOperations,
-                                                                   const std::function<void(const htd::IMultiHypergraph &, const htd::ITreeDecomposition &, const htd::FitnessEvaluation &)> & progressCallback) const HTD_OVERRIDE;
+                                                                   const std::function<void(const htd::IMultiHypergraph &, const htd::ITreeDecomposition &, const htd::FitnessEvaluation &)> & progressCallback) const override;
 
             /**
              *  Compute a decomposition of the given graph and apply the given manipulation operations to it. The manipulation operations are applied in the given order.
@@ -111,20 +111,20 @@ namespace htd
              */
             HTD_API htd::ITreeDecomposition * computeDecomposition(const htd::IMultiHypergraph & graph, int manipulationOperationCount, ...) const;
 
-            HTD_API htd::ITreeDecomposition * computeDecomposition(const htd::IMultiHypergraph & graph, const htd::IPreprocessedGraph & preprocessedGraph) const HTD_OVERRIDE;
+            HTD_API htd::ITreeDecomposition * computeDecomposition(const htd::IMultiHypergraph & graph, const htd::IPreprocessedGraph & preprocessedGraph) const override;
 
             HTD_API htd::ITreeDecomposition * computeDecomposition(const htd::IMultiHypergraph & graph,
                                                                    const htd::IPreprocessedGraph & preprocessedGraph,
-                                                                   const std::function<void(const htd::IMultiHypergraph &, const htd::ITreeDecomposition &, const htd::FitnessEvaluation &)> & progressCallback) const HTD_OVERRIDE;
+                                                                   const std::function<void(const htd::IMultiHypergraph &, const htd::ITreeDecomposition &, const htd::FitnessEvaluation &)> & progressCallback) const override;
 
             HTD_API htd::ITreeDecomposition * computeDecomposition(const htd::IMultiHypergraph & graph,
                                                                    const htd::IPreprocessedGraph & preprocessedGraph,
-                                                                   const std::vector<htd::IDecompositionManipulationOperation *> & manipulationOperations) const HTD_OVERRIDE;
+                                                                   const std::vector<htd::IDecompositionManipulationOperation *> & manipulationOperations) const override;
 
             HTD_API htd::ITreeDecomposition * computeDecomposition(const htd::IMultiHypergraph & graph,
                                                                    const htd::IPreprocessedGraph & preprocessedGraph,
                                                                    const std::vector<htd::IDecompositionManipulationOperation *> & manipulationOperations,
-                                                                   const std::function<void(const htd::IMultiHypergraph &, const htd::ITreeDecomposition &, const htd::FitnessEvaluation &)> & progressCallback) const HTD_OVERRIDE;
+                                                                   const std::function<void(const htd::IMultiHypergraph &, const htd::ITreeDecomposition &, const htd::FitnessEvaluation &)> & progressCallback) const override;
 
             /**
              *  Compute a decomposition of the given graph and apply the given manipulation operations to it. The manipulation operations are applied in the given order.
@@ -143,17 +143,17 @@ namespace htd
              */
             HTD_API htd::ITreeDecomposition * computeDecomposition(const htd::IMultiHypergraph & graph, const htd::IPreprocessedGraph & preprocessedGraph, int manipulationOperationCount, ...) const;
 
-            HTD_API void setManipulationOperations(const std::vector<htd::IDecompositionManipulationOperation *> & manipulationOperations) HTD_OVERRIDE;
+            HTD_API void setManipulationOperations(const std::vector<htd::IDecompositionManipulationOperation *> & manipulationOperations) override;
 
-            HTD_API void addManipulationOperation(htd::IDecompositionManipulationOperation * manipulationOperation) HTD_OVERRIDE;
+            HTD_API void addManipulationOperation(htd::IDecompositionManipulationOperation * manipulationOperation) override;
 
-            HTD_API void addManipulationOperations(const std::vector<htd::IDecompositionManipulationOperation *> & manipulationOperations) HTD_OVERRIDE;
+            HTD_API void addManipulationOperations(const std::vector<htd::IDecompositionManipulationOperation *> & manipulationOperations) override;
 
-            HTD_API bool isSafelyInterruptible(void) const HTD_OVERRIDE;
+            HTD_API bool isSafelyInterruptible(void) const override;
 
-            HTD_API bool isComputeInducedEdgesEnabled(void) const HTD_OVERRIDE;
+            HTD_API bool isComputeInducedEdgesEnabled(void) const override;
 
-            HTD_API void setComputeInducedEdgesEnabled(bool computeInducedEdgesEnabled) HTD_OVERRIDE;
+            HTD_API void setComputeInducedEdgesEnabled(bool computeInducedEdgesEnabled) override;
 
             /**
              *  Getter for the number of iterations which shall be performed (0=infinite).
@@ -187,11 +187,11 @@ namespace htd
              */
             HTD_API void setNonImprovementLimit(std::size_t nonImprovementLimit);
 
-            HTD_API const htd::LibraryInstance * managementInstance(void) const HTD_NOEXCEPT HTD_OVERRIDE;
+            HTD_API const htd::LibraryInstance * managementInstance(void) const noexcept override;
 
-            HTD_API void setManagementInstance(const htd::LibraryInstance * const manager) HTD_OVERRIDE;
+            HTD_API void setManagementInstance(const htd::LibraryInstance * const manager) override;
 
-            HTD_API IterativeImprovementTreeDecompositionAlgorithm * clone(void) const HTD_OVERRIDE;
+            HTD_API IterativeImprovementTreeDecompositionAlgorithm * clone(void) const override;
 
         protected:
             /**

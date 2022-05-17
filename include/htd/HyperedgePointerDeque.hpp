@@ -79,23 +79,23 @@ namespace htd
              */
             virtual ~HyperedgePointerDeque();
 
-            bool empty(void) const HTD_OVERRIDE;
+            bool empty(void) const override;
 
-            std::size_t size(void) const HTD_OVERRIDE;
+            std::size_t size(void) const override;
 
-            const htd::Hyperedge & at(htd::index_t index) const HTD_OVERRIDE;
+            const htd::Hyperedge & at(htd::index_t index) const override;
 
-            htd::ConstIterator<htd::Hyperedge> begin(void) const HTD_OVERRIDE;
+            htd::ConstIterator<htd::Hyperedge> begin(void) const override;
 
-            htd::ConstIterator<htd::Hyperedge> end(void) const HTD_OVERRIDE;
+            htd::ConstIterator<htd::Hyperedge> end(void) const override;
 
-            const htd::Hyperedge & operator[](htd::index_t index) const HTD_OVERRIDE;
+            const htd::Hyperedge & operator[](htd::index_t index) const override;
 
-            bool operator==(const htd::IHyperedgeCollection & rhs) const HTD_OVERRIDE;
+            bool operator==(const htd::IHyperedgeCollection & rhs) const override;
 
-            bool operator!=(const htd::IHyperedgeCollection & rhs) const HTD_OVERRIDE;
+            bool operator!=(const htd::IHyperedgeCollection & rhs) const override;
 
-            HyperedgePointerDeque * clone(void) const HTD_OVERRIDE;
+            HyperedgePointerDeque * clone(void) const override;
 
         private:
             std::shared_ptr<std::deque<htd::Hyperedge *>> baseCollection_;

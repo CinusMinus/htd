@@ -389,7 +389,7 @@ namespace htd
                         const std::vector<htd::vertex_t> & set2,
                         std::vector<htd::vertex_t> & resultOnlySet1,
                         std::vector<htd::vertex_t> & resultOnlySet2,
-                        std::vector<htd::vertex_t> & resultIntersection) HTD_NOEXCEPT;
+                        std::vector<htd::vertex_t> & resultIntersection) noexcept;
 
     HTD_API std::pair<std::size_t, std::size_t> symmetric_difference_sizes(const std::vector<htd::vertex_t> & set1, const std::vector<htd::vertex_t> & set2);
 

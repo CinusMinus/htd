@@ -88,7 +88,7 @@ namespace htd
              *
              *  @return A new IGraphDecomposition object identical to the current graph decomposition.
              */
-            virtual IGraphDecomposition * clone(void) const HTD_OVERRIDE = 0;
+            virtual IGraphDecomposition * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current graph decomposition.

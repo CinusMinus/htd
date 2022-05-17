@@ -78,146 +78,146 @@ namespace htd
             
             HTD_API virtual ~TreeDecomposition();
 
-            HTD_API void removeVertex(htd::vertex_t vertex) HTD_OVERRIDE;
+            HTD_API void removeVertex(htd::vertex_t vertex) override;
 
-            HTD_API void removeSubtree(htd::vertex_t subtreeRoot) HTD_OVERRIDE;
+            HTD_API void removeSubtree(htd::vertex_t subtreeRoot) override;
 
-            HTD_API htd::vertex_t insertRoot(void) HTD_OVERRIDE;
+            HTD_API htd::vertex_t insertRoot(void) override;
 
-            HTD_API htd::vertex_t insertRoot(const std::vector<htd::vertex_t> & bagContent, const htd::FilteredHyperedgeCollection & inducedEdges) HTD_OVERRIDE;
+            HTD_API htd::vertex_t insertRoot(const std::vector<htd::vertex_t> & bagContent, const htd::FilteredHyperedgeCollection & inducedEdges) override;
 
-            HTD_API htd::vertex_t insertRoot(std::vector<htd::vertex_t> && bagContent, htd::FilteredHyperedgeCollection && inducedEdges) HTD_OVERRIDE;
+            HTD_API htd::vertex_t insertRoot(std::vector<htd::vertex_t> && bagContent, htd::FilteredHyperedgeCollection && inducedEdges) override;
 
-            HTD_API htd::vertex_t addChild(htd::vertex_t vertex) HTD_OVERRIDE;
+            HTD_API htd::vertex_t addChild(htd::vertex_t vertex) override;
 
-            HTD_API htd::vertex_t addChild(htd::vertex_t vertex, const std::vector<htd::vertex_t> & bagContent, const htd::FilteredHyperedgeCollection & inducedEdges) HTD_OVERRIDE;
+            HTD_API htd::vertex_t addChild(htd::vertex_t vertex, const std::vector<htd::vertex_t> & bagContent, const htd::FilteredHyperedgeCollection & inducedEdges) override;
 
-            HTD_API htd::vertex_t addChild(htd::vertex_t vertex, std::vector<htd::vertex_t> && bagContent, htd::FilteredHyperedgeCollection && inducedEdges) HTD_OVERRIDE;
+            HTD_API htd::vertex_t addChild(htd::vertex_t vertex, std::vector<htd::vertex_t> && bagContent, htd::FilteredHyperedgeCollection && inducedEdges) override;
 
-            HTD_API htd::vertex_t addParent(htd::vertex_t vertex) HTD_OVERRIDE;
+            HTD_API htd::vertex_t addParent(htd::vertex_t vertex) override;
 
-            HTD_API htd::vertex_t addParent(htd::vertex_t vertex, const std::vector<htd::vertex_t> & bagContent, const htd::FilteredHyperedgeCollection & inducedEdges) HTD_OVERRIDE;
+            HTD_API htd::vertex_t addParent(htd::vertex_t vertex, const std::vector<htd::vertex_t> & bagContent, const htd::FilteredHyperedgeCollection & inducedEdges) override;
 
-            HTD_API htd::vertex_t addParent(htd::vertex_t vertex, std::vector<htd::vertex_t> && bagContent, htd::FilteredHyperedgeCollection && inducedEdges) HTD_OVERRIDE;
+            HTD_API htd::vertex_t addParent(htd::vertex_t vertex, std::vector<htd::vertex_t> && bagContent, htd::FilteredHyperedgeCollection && inducedEdges) override;
 
-            HTD_API void removeChild(htd::vertex_t vertex, htd::vertex_t child) HTD_OVERRIDE;
+            HTD_API void removeChild(htd::vertex_t vertex, htd::vertex_t child) override;
 
-            HTD_API std::size_t joinNodeCount(void) const HTD_OVERRIDE;
+            HTD_API std::size_t joinNodeCount(void) const override;
 
-            HTD_API htd::ConstCollection<htd::vertex_t> joinNodes(void) const HTD_OVERRIDE;
+            HTD_API htd::ConstCollection<htd::vertex_t> joinNodes(void) const override;
 
-            HTD_API void copyJoinNodesTo(std::vector<htd::vertex_t> & target) const HTD_OVERRIDE;
+            HTD_API void copyJoinNodesTo(std::vector<htd::vertex_t> & target) const override;
 
-            HTD_API htd::vertex_t joinNodeAtPosition(htd::index_t index) const HTD_OVERRIDE;
+            HTD_API htd::vertex_t joinNodeAtPosition(htd::index_t index) const override;
 
-            HTD_API bool isJoinNode(htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API bool isJoinNode(htd::vertex_t vertex) const override;
 
-            HTD_API std::size_t forgetNodeCount(void) const HTD_OVERRIDE;
+            HTD_API std::size_t forgetNodeCount(void) const override;
 
-            HTD_API htd::ConstCollection<htd::vertex_t> forgetNodes(void) const HTD_OVERRIDE;
+            HTD_API htd::ConstCollection<htd::vertex_t> forgetNodes(void) const override;
 
-            HTD_API void copyForgetNodesTo(std::vector<htd::vertex_t> & target) const HTD_OVERRIDE;
+            HTD_API void copyForgetNodesTo(std::vector<htd::vertex_t> & target) const override;
 
-            HTD_API htd::vertex_t forgetNodeAtPosition(htd::index_t index) const HTD_OVERRIDE;
+            HTD_API htd::vertex_t forgetNodeAtPosition(htd::index_t index) const override;
 
-            HTD_API bool isForgetNode(htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API bool isForgetNode(htd::vertex_t vertex) const override;
 
-            HTD_API std::size_t introduceNodeCount(void) const HTD_OVERRIDE;
+            HTD_API std::size_t introduceNodeCount(void) const override;
 
-            HTD_API htd::ConstCollection<htd::vertex_t> introduceNodes(void) const HTD_OVERRIDE;
+            HTD_API htd::ConstCollection<htd::vertex_t> introduceNodes(void) const override;
 
-            HTD_API void copyIntroduceNodesTo(std::vector<htd::vertex_t> & target) const HTD_OVERRIDE;
+            HTD_API void copyIntroduceNodesTo(std::vector<htd::vertex_t> & target) const override;
 
-            HTD_API htd::vertex_t introduceNodeAtPosition(htd::index_t index) const HTD_OVERRIDE;
+            HTD_API htd::vertex_t introduceNodeAtPosition(htd::index_t index) const override;
 
-            HTD_API bool isIntroduceNode(htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API bool isIntroduceNode(htd::vertex_t vertex) const override;
 
-            HTD_API std::size_t exchangeNodeCount(void) const HTD_OVERRIDE;
+            HTD_API std::size_t exchangeNodeCount(void) const override;
 
-            HTD_API htd::ConstCollection<htd::vertex_t> exchangeNodes(void) const HTD_OVERRIDE;
+            HTD_API htd::ConstCollection<htd::vertex_t> exchangeNodes(void) const override;
 
-            HTD_API void copyExchangeNodesTo(std::vector<htd::vertex_t> & target) const HTD_OVERRIDE;
+            HTD_API void copyExchangeNodesTo(std::vector<htd::vertex_t> & target) const override;
 
-            HTD_API htd::vertex_t exchangeNodeAtPosition(htd::index_t index) const HTD_OVERRIDE;
+            HTD_API htd::vertex_t exchangeNodeAtPosition(htd::index_t index) const override;
 
-            HTD_API bool isExchangeNode(htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API bool isExchangeNode(htd::vertex_t vertex) const override;
 
-            HTD_API std::size_t bagSize(htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API std::size_t bagSize(htd::vertex_t vertex) const override;
 
-            HTD_API std::vector<htd::vertex_t> & mutableBagContent(htd::vertex_t vertex) HTD_OVERRIDE;
+            HTD_API std::vector<htd::vertex_t> & mutableBagContent(htd::vertex_t vertex) override;
 
-            HTD_API const std::vector<htd::vertex_t> & bagContent(htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API const std::vector<htd::vertex_t> & bagContent(htd::vertex_t vertex) const override;
 
-            HTD_API htd::FilteredHyperedgeCollection & mutableInducedHyperedges(htd::vertex_t vertex) HTD_OVERRIDE;
+            HTD_API htd::FilteredHyperedgeCollection & mutableInducedHyperedges(htd::vertex_t vertex) override;
 
-            HTD_API const htd::FilteredHyperedgeCollection & inducedHyperedges(htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API const htd::FilteredHyperedgeCollection & inducedHyperedges(htd::vertex_t vertex) const override;
 
-            HTD_API std::size_t forgottenVertexCount(htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API std::size_t forgottenVertexCount(htd::vertex_t vertex) const override;
 
-            HTD_API std::size_t forgottenVertexCount(htd::vertex_t vertex, htd::vertex_t child) const HTD_OVERRIDE;
+            HTD_API std::size_t forgottenVertexCount(htd::vertex_t vertex, htd::vertex_t child) const override;
 
-            HTD_API htd::ConstCollection<htd::vertex_t> forgottenVertices(htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API htd::ConstCollection<htd::vertex_t> forgottenVertices(htd::vertex_t vertex) const override;
 
-            HTD_API htd::ConstCollection<htd::vertex_t> forgottenVertices(htd::vertex_t vertex, htd::vertex_t child) const HTD_OVERRIDE;
+            HTD_API htd::ConstCollection<htd::vertex_t> forgottenVertices(htd::vertex_t vertex, htd::vertex_t child) const override;
 
-            HTD_API void copyForgottenVerticesTo(htd::vertex_t vertex, std::vector<htd::vertex_t> & target) const HTD_OVERRIDE;
+            HTD_API void copyForgottenVerticesTo(htd::vertex_t vertex, std::vector<htd::vertex_t> & target) const override;
 
-            HTD_API void copyForgottenVerticesTo(htd::vertex_t vertex, std::vector<htd::vertex_t> & target, htd::vertex_t child) const HTD_OVERRIDE;
+            HTD_API void copyForgottenVerticesTo(htd::vertex_t vertex, std::vector<htd::vertex_t> & target, htd::vertex_t child) const override;
 
-            HTD_API htd::vertex_t forgottenVertexAtPosition(htd::vertex_t vertex, htd::index_t index) const HTD_OVERRIDE;
+            HTD_API htd::vertex_t forgottenVertexAtPosition(htd::vertex_t vertex, htd::index_t index) const override;
 
-            HTD_API htd::vertex_t forgottenVertexAtPosition(htd::vertex_t vertex, htd::index_t index, htd::vertex_t child) const HTD_OVERRIDE;
+            HTD_API htd::vertex_t forgottenVertexAtPosition(htd::vertex_t vertex, htd::index_t index, htd::vertex_t child) const override;
 
-            HTD_API bool isForgottenVertex(htd::vertex_t vertex, htd::vertex_t forgottenVertex) const HTD_OVERRIDE;
+            HTD_API bool isForgottenVertex(htd::vertex_t vertex, htd::vertex_t forgottenVertex) const override;
 
-            HTD_API bool isForgottenVertex(htd::vertex_t vertex, htd::vertex_t forgottenVertex, htd::vertex_t child) const HTD_OVERRIDE;
+            HTD_API bool isForgottenVertex(htd::vertex_t vertex, htd::vertex_t forgottenVertex, htd::vertex_t child) const override;
 
-            HTD_API std::size_t introducedVertexCount(htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API std::size_t introducedVertexCount(htd::vertex_t vertex) const override;
 
-            HTD_API std::size_t introducedVertexCount(htd::vertex_t vertex, htd::vertex_t child) const HTD_OVERRIDE;
+            HTD_API std::size_t introducedVertexCount(htd::vertex_t vertex, htd::vertex_t child) const override;
 
-            HTD_API htd::ConstCollection<htd::vertex_t> introducedVertices(htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API htd::ConstCollection<htd::vertex_t> introducedVertices(htd::vertex_t vertex) const override;
 
-            HTD_API htd::ConstCollection<htd::vertex_t> introducedVertices(htd::vertex_t vertex, htd::vertex_t child) const HTD_OVERRIDE;
+            HTD_API htd::ConstCollection<htd::vertex_t> introducedVertices(htd::vertex_t vertex, htd::vertex_t child) const override;
 
-            HTD_API void copyIntroducedVerticesTo(htd::vertex_t vertex, std::vector<htd::vertex_t> & target) const HTD_OVERRIDE;
+            HTD_API void copyIntroducedVerticesTo(htd::vertex_t vertex, std::vector<htd::vertex_t> & target) const override;
 
-            HTD_API void copyIntroducedVerticesTo(htd::vertex_t vertex, std::vector<htd::vertex_t> & target, htd::vertex_t child) const HTD_OVERRIDE;
+            HTD_API void copyIntroducedVerticesTo(htd::vertex_t vertex, std::vector<htd::vertex_t> & target, htd::vertex_t child) const override;
 
-            HTD_API htd::vertex_t introducedVertexAtPosition(htd::vertex_t vertex, htd::index_t index) const HTD_OVERRIDE;
+            HTD_API htd::vertex_t introducedVertexAtPosition(htd::vertex_t vertex, htd::index_t index) const override;
 
-            HTD_API htd::vertex_t introducedVertexAtPosition(htd::vertex_t vertex, htd::index_t index, htd::vertex_t child) const HTD_OVERRIDE;
+            HTD_API htd::vertex_t introducedVertexAtPosition(htd::vertex_t vertex, htd::index_t index, htd::vertex_t child) const override;
 
-            HTD_API bool isIntroducedVertex(htd::vertex_t vertex, htd::vertex_t introducedVertex) const HTD_OVERRIDE;
+            HTD_API bool isIntroducedVertex(htd::vertex_t vertex, htd::vertex_t introducedVertex) const override;
 
-            HTD_API bool isIntroducedVertex(htd::vertex_t vertex, htd::vertex_t introducedVertex, htd::vertex_t child) const HTD_OVERRIDE;
+            HTD_API bool isIntroducedVertex(htd::vertex_t vertex, htd::vertex_t introducedVertex, htd::vertex_t child) const override;
 
-            HTD_API std::size_t rememberedVertexCount(htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API std::size_t rememberedVertexCount(htd::vertex_t vertex) const override;
 
-            HTD_API std::size_t rememberedVertexCount(htd::vertex_t vertex, htd::vertex_t child) const HTD_OVERRIDE;
+            HTD_API std::size_t rememberedVertexCount(htd::vertex_t vertex, htd::vertex_t child) const override;
 
-            HTD_API htd::ConstCollection<htd::vertex_t> rememberedVertices(htd::vertex_t vertex) const HTD_OVERRIDE;
+            HTD_API htd::ConstCollection<htd::vertex_t> rememberedVertices(htd::vertex_t vertex) const override;
 
-            HTD_API htd::ConstCollection<htd::vertex_t> rememberedVertices(htd::vertex_t vertex, htd::vertex_t child) const HTD_OVERRIDE;
+            HTD_API htd::ConstCollection<htd::vertex_t> rememberedVertices(htd::vertex_t vertex, htd::vertex_t child) const override;
 
-            HTD_API void copyRememberedVerticesTo(htd::vertex_t vertex, std::vector<htd::vertex_t> & target) const HTD_OVERRIDE;
+            HTD_API void copyRememberedVerticesTo(htd::vertex_t vertex, std::vector<htd::vertex_t> & target) const override;
 
-            HTD_API void copyRememberedVerticesTo(htd::vertex_t vertex, std::vector<htd::vertex_t> & target, htd::vertex_t child) const HTD_OVERRIDE;
+            HTD_API void copyRememberedVerticesTo(htd::vertex_t vertex, std::vector<htd::vertex_t> & target, htd::vertex_t child) const override;
 
-            HTD_API htd::vertex_t rememberedVertexAtPosition(htd::vertex_t vertex, htd::index_t index) const HTD_OVERRIDE;
+            HTD_API htd::vertex_t rememberedVertexAtPosition(htd::vertex_t vertex, htd::index_t index) const override;
 
-            HTD_API htd::vertex_t rememberedVertexAtPosition(htd::vertex_t vertex, htd::index_t index, htd::vertex_t child) const HTD_OVERRIDE;
+            HTD_API htd::vertex_t rememberedVertexAtPosition(htd::vertex_t vertex, htd::index_t index, htd::vertex_t child) const override;
 
-            HTD_API bool isRememberedVertex(htd::vertex_t vertex, htd::vertex_t rememberedVertex) const HTD_OVERRIDE;
+            HTD_API bool isRememberedVertex(htd::vertex_t vertex, htd::vertex_t rememberedVertex) const override;
 
-            HTD_API bool isRememberedVertex(htd::vertex_t vertex, htd::vertex_t rememberedVertex, htd::vertex_t child) const HTD_OVERRIDE;
+            HTD_API bool isRememberedVertex(htd::vertex_t vertex, htd::vertex_t rememberedVertex, htd::vertex_t child) const override;
 
-            HTD_API std::size_t minimumBagSize(void) const HTD_OVERRIDE;
+            HTD_API std::size_t minimumBagSize(void) const override;
 
-            HTD_API std::size_t maximumBagSize(void) const HTD_OVERRIDE;
+            HTD_API std::size_t maximumBagSize(void) const override;
 
 #ifndef HTD_USE_VISUAL_STUDIO_COMPATIBILITY_MODE
-            HTD_API TreeDecomposition * clone(void) const HTD_OVERRIDE;
+            HTD_API TreeDecomposition * clone(void) const override;
 #else
             /**
              *  Create a deep copy of the current mutable tree decomposition.
@@ -226,35 +226,35 @@ namespace htd
              */
             HTD_API TreeDecomposition * clone(void) const;
 
-            HTD_API htd::ITree * cloneTree(void) const HTD_OVERRIDE;
+            HTD_API htd::ITree * cloneTree(void) const override;
 
-            HTD_API htd::IGraph * cloneGraph(void) const HTD_OVERRIDE;
+            HTD_API htd::IGraph * cloneGraph(void) const override;
 
-            HTD_API htd::IMultiGraph * cloneMultiGraph(void) const HTD_OVERRIDE;
+            HTD_API htd::IMultiGraph * cloneMultiGraph(void) const override;
 
-            HTD_API htd::IHypergraph * cloneHypergraph(void) const HTD_OVERRIDE;
+            HTD_API htd::IHypergraph * cloneHypergraph(void) const override;
 
-            HTD_API htd::IMultiHypergraph * cloneMultiHypergraph(void) const HTD_OVERRIDE;
+            HTD_API htd::IMultiHypergraph * cloneMultiHypergraph(void) const override;
 
-            HTD_API htd::ILabeledTree * cloneLabeledTree(void) const HTD_OVERRIDE;
+            HTD_API htd::ILabeledTree * cloneLabeledTree(void) const override;
 
-            HTD_API htd::ILabeledGraph * cloneLabeledGraph(void) const HTD_OVERRIDE;
+            HTD_API htd::ILabeledGraph * cloneLabeledGraph(void) const override;
 
-            HTD_API htd::ILabeledMultiGraph * cloneLabeledMultiGraph(void) const HTD_OVERRIDE;
+            HTD_API htd::ILabeledMultiGraph * cloneLabeledMultiGraph(void) const override;
 
-            HTD_API htd::ILabeledHypergraph * cloneLabeledHypergraph(void) const HTD_OVERRIDE;
+            HTD_API htd::ILabeledHypergraph * cloneLabeledHypergraph(void) const override;
 
-            HTD_API htd::ILabeledMultiHypergraph * cloneLabeledMultiHypergraph(void) const HTD_OVERRIDE;
+            HTD_API htd::ILabeledMultiHypergraph * cloneLabeledMultiHypergraph(void) const override;
 
-            HTD_API htd::ITreeDecomposition * cloneTreeDecomposition(void) const HTD_OVERRIDE;
+            HTD_API htd::ITreeDecomposition * cloneTreeDecomposition(void) const override;
 
-            HTD_API htd::IGraphDecomposition * cloneGraphDecomposition(void) const HTD_OVERRIDE;
+            HTD_API htd::IGraphDecomposition * cloneGraphDecomposition(void) const override;
 
-            HTD_API htd::IMutableTree * cloneMutableTree(void) const HTD_OVERRIDE;
+            HTD_API htd::IMutableTree * cloneMutableTree(void) const override;
 
-            HTD_API htd::IMutableLabeledTree * cloneMutableLabeledTree(void) const HTD_OVERRIDE;
+            HTD_API htd::IMutableLabeledTree * cloneMutableLabeledTree(void) const override;
 
-            HTD_API htd::IMutableTreeDecomposition * cloneMutableTreeDecomposition(void) const HTD_OVERRIDE;
+            HTD_API htd::IMutableTreeDecomposition * cloneMutableTreeDecomposition(void) const override;
 #endif
 
             /**
@@ -265,11 +265,11 @@ namespace htd
             HTD_API TreeDecomposition & operator=(const TreeDecomposition & original);
 
 #ifndef HTD_USE_VISUAL_STUDIO_COMPATIBILITY_MODE
-            HTD_API TreeDecomposition & operator=(const htd::ITree & original) HTD_OVERRIDE;
+            HTD_API TreeDecomposition & operator=(const htd::ITree & original) override;
 
-            HTD_API TreeDecomposition & operator=(const htd::ILabeledTree & original) HTD_OVERRIDE;
+            HTD_API TreeDecomposition & operator=(const htd::ILabeledTree & original) override;
 
-            HTD_API TreeDecomposition & operator=(const htd::ITreeDecomposition & original) HTD_OVERRIDE;
+            HTD_API TreeDecomposition & operator=(const htd::ITreeDecomposition & original) override;
 #else
             HTD_API TreeDecomposition & operator=(const htd::ITree & original);
 
@@ -277,11 +277,11 @@ namespace htd
 
             HTD_API TreeDecomposition & operator=(const htd::ITreeDecomposition & original);
 
-            HTD_API void assign(const htd::ITree & original) HTD_OVERRIDE;
+            HTD_API void assign(const htd::ITree & original) override;
 
-            HTD_API void assign(const htd::ILabeledTree & original) HTD_OVERRIDE;
+            HTD_API void assign(const htd::ILabeledTree & original) override;
 
-            HTD_API void assign(const htd::ITreeDecomposition & original) HTD_OVERRIDE;
+            HTD_API void assign(const htd::ITreeDecomposition & original) override;
 #endif
 
         protected:

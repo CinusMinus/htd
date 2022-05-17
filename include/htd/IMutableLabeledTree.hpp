@@ -162,7 +162,7 @@ namespace htd
              *
              *  @return A new IMutableLabeledTree object identical to the current mutable labeled tree.
              */
-            virtual IMutableLabeledTree * clone(void) const HTD_OVERRIDE = 0;
+            virtual IMutableLabeledTree * clone(void) const override = 0;
 #else
             /**
              *  Create a deep copy of the current mutable labeled tree.

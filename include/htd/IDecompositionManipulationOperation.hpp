@@ -43,7 +43,7 @@ namespace htd
              *
              *  @return The associated management class.
              */
-            virtual const htd::LibraryInstance * managementInstance(void) const HTD_NOEXCEPT = 0;
+            virtual const htd::LibraryInstance * managementInstance(void) const noexcept = 0;
 
             /**
              *  Set a new management class for the library object.

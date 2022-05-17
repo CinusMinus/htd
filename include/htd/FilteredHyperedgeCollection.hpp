@@ -232,7 +232,7 @@ namespace htd
             /**
              *  Constructor for a FilteredHyperedgeCollection object representing an empty collection.
              */
-            HTD_API FilteredHyperedgeCollection(void) HTD_NOEXCEPT;
+            HTD_API FilteredHyperedgeCollection(void) noexcept;
 
             /**
              *  Constructor for a FilteredHyperedgeCollection.
@@ -287,14 +287,14 @@ namespace htd
              *
              *  @param[in] original  The original FilteredHyperedgeCollection object.
              */
-            HTD_API FilteredHyperedgeCollection(const FilteredHyperedgeCollection & original) HTD_NOEXCEPT;
+            HTD_API FilteredHyperedgeCollection(const FilteredHyperedgeCollection & original) noexcept;
 
             /**
              *  Move constructor for a FilteredHyperedgeCollection object.
              *
              *  @param[in] original  The original FilteredHyperedgeCollection object.
              */
-            HTD_API FilteredHyperedgeCollection(FilteredHyperedgeCollection && original) HTD_NOEXCEPT;
+            HTD_API FilteredHyperedgeCollection(FilteredHyperedgeCollection && original) noexcept;
 
             /**
              *  Destructor for a FilteredHyperedgeCollection object.
@@ -306,35 +306,35 @@ namespace htd
              *
              *  @return The size of the collection.
              */
-            HTD_API std::size_t size(void) const HTD_NOEXCEPT;
+            HTD_API std::size_t size(void) const noexcept;
 
             /**
              *  Getter for the iterator to the first element in the collection.
              *
              *  @return An iterator to the first element in the collection.
              */
-            HTD_API FilteredHyperedgeCollectionConstIterator begin(void) const HTD_NOEXCEPT;
+            HTD_API FilteredHyperedgeCollectionConstIterator begin(void) const noexcept;
 
             /**
              *  Getter for the iterator to the end of the collection.
              *
              *  @return An iterator to the end of the collection.
              */
-            HTD_API FilteredHyperedgeCollectionConstIterator end(void) const HTD_NOEXCEPT;
+            HTD_API FilteredHyperedgeCollectionConstIterator end(void) const noexcept;
 
             /**
              *  Copy assignment operator for a FilteredHyperedgeCollection object.
              *
              *  @param[in] original  The original FilteredHyperedgeCollection object.
              */
-            HTD_API FilteredHyperedgeCollection & operator=(const FilteredHyperedgeCollection & original) HTD_NOEXCEPT;
+            HTD_API FilteredHyperedgeCollection & operator=(const FilteredHyperedgeCollection & original) noexcept;
 
             /**
              *  Move assignment operator for a FilteredHyperedgeCollection object.
              *
              *  @param[in] original  The original FilteredHyperedgeCollection object.
              */
-            HTD_API FilteredHyperedgeCollection & operator=(FilteredHyperedgeCollection && original) HTD_NOEXCEPT;
+            HTD_API FilteredHyperedgeCollection & operator=(FilteredHyperedgeCollection && original) noexcept;
 
             /**
              *  Equality operator for a hyperedge collection.
@@ -343,7 +343,7 @@ namespace htd
              *
              *  @return True if the hyperedge collection is equal to the hyperedge collection at the right-hand side of the operator, false otherwise.
              */
-            HTD_API bool operator==(const FilteredHyperedgeCollection & rhs) const HTD_NOEXCEPT;
+            HTD_API bool operator==(const FilteredHyperedgeCollection & rhs) const noexcept;
 
             /**
              *  Inequality operator for a hyperedge collection.
@@ -352,7 +352,7 @@ namespace htd
              *
              *  @return True if the hyperedge collection is not equal to the hyperedge collection at the right-hand side of the operator, false otherwise.
              */
-            HTD_API bool operator!=(const FilteredHyperedgeCollection & rhs) const HTD_NOEXCEPT;
+            HTD_API bool operator!=(const FilteredHyperedgeCollection & rhs) const noexcept;
 
             /**
              *  Remove all hyperedges from the collection which contain also other vertices than those provided to this method.
