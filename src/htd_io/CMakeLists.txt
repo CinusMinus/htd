@@ -28,7 +28,7 @@ set_target_properties(htd_io PROPERTIES
 
 
 # https://www.foonathan.net/2018/10/cmake-warnings/
-target_compile_options(htd PRIVATE
+target_compile_options(htd_io PRIVATE
      $<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>,$<CXX_COMPILER_ID:GNU>>:
           -Wall>
      $<$<CXX_COMPILER_ID:MSVC>:
