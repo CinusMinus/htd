@@ -89,7 +89,7 @@ namespace htd
     };
 
     template <typename T>
-    inline IteratorBase<T>::~IteratorBase<T>() { }
+    inline IteratorBase<T>::~IteratorBase() { }
 }
 
 #endif /* HTD_HTD_ITERATORBASE_HPP */
