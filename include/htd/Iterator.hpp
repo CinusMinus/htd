@@ -101,7 +101,7 @@ namespace htd
              *
              *  @param[in] original  The original iterator.
              */
-            Iterator<T>(const Iterator<T> & original) : baseIterator_(nullptr)
+            Iterator(const Iterator & original) : baseIterator_(nullptr)
             {
                 if (original.baseIterator_ != nullptr)
                 {
@@ -114,7 +114,7 @@ namespace htd
              *
              *  @param[in] original  The original iterator.
              */
-            Iterator<T>(Iterator<T> && original) : baseIterator_(nullptr)
+            Iterator(Iterator && original) : baseIterator_(nullptr)
             {
                 if (original.baseIterator_ != nullptr)
                 {
@@ -137,7 +137,7 @@ namespace htd
                 }
             }
 
-            Iterator<T> & operator++(void) override
+            Iterator & operator++(void) override
             {
                 if (baseIterator_!= nullptr)
                 {
@@ -152,9 +152,9 @@ namespace htd
              *
              *  @return A copy of the iterator reflecting the state before the increment operation took place.
              */
-            Iterator<T> operator++(int)
+            Iterator operator++(int)
             {
-                Iterator<T> ret(*baseIterator_);
+                Iterator ret(*baseIterator_);
 
                 operator++();
 
@@ -166,7 +166,7 @@ namespace htd
              *
              *  @param[in] original  The original iterator.
              */
-            Iterator<T> & operator=(const Iterator<T> & original)
+            Iterator & operator=(const Iterator & original)
             {
                 if (baseIterator_!= nullptr)
                 {
@@ -186,7 +186,7 @@ namespace htd
              *
              *  @param[in] original  The original iterator.
              */
-            Iterator<T> & operator=(Iterator<T> && original)
+            Iterator & operator=(Iterator && original)
             {
                 if (baseIterator_!= nullptr)
                 {
@@ -228,7 +228,7 @@ namespace htd
              *
              *  @return True if the iterator points to the same element as the iterator at the right-hand side of the operator, false otherwise.
              */
-            bool operator==(const Iterator<T> & rhs) const
+            bool operator==(const Iterator & rhs) const
             {
                 bool ret = false;
 
@@ -248,7 +248,7 @@ namespace htd
             {
                 bool ret = false;
 
-                const Iterator<T> * o = static_cast<const Iterator<T> *>(&rhs);
+                const Iterator * o = static_cast<const Iterator *>(&rhs);
 
                 if (baseIterator_ == nullptr)
                 {
@@ -269,7 +269,7 @@ namespace htd
              *
              *  @return True if the iterator does not point to the same element as the iterator at the right-hand side of the operator, false otherwise.
              */
-            bool operator!=(const Iterator<T> & rhs) const
+            bool operator!=(const Iterator & rhs) const
             {
                 bool ret = false;
 
@@ -315,17 +315,17 @@ namespace htd
                 return baseIterator_->operator*();
             }
 
-            Iterator<T> * clone(void) const override
+            Iterator * clone(void) const override
             {
-                Iterator<T> * ret = nullptr;
+                Iterator * ret = nullptr;
 
                 if (baseIterator_ == nullptr)
                 {
-                    return new Iterator<T>();
+                    return new Iterator();
                 }
                 else
                 {
-                    return new Iterator<T>(*this);
+                    return new Iterator(*this);
                 }
 
                 return ret;
@@ -334,7 +334,7 @@ namespace htd
         private:
             htd::IteratorBase<T> * baseIterator_;
 
-            Iterator<T>(const htd::IteratorBase<T> & original) : baseIterator_(original.clone())
+            Iterator(const htd::IteratorBase<T> & original) : baseIterator_(original.clone())
             {
 
             }

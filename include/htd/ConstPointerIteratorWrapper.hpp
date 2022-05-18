@@ -54,7 +54,7 @@ namespace htd
              *
              *  @param[in] original  The original iterator wrapper.
              */
-            ConstPointerIteratorWrapper<Iter, T>(const ConstPointerIteratorWrapper<Iter, T> & original) noexcept : baseIterator_(original.baseIterator_)
+            ConstPointerIteratorWrapper(const ConstPointerIteratorWrapper & original) noexcept : baseIterator_(original.baseIterator_)
             {
 
             }
@@ -64,7 +64,7 @@ namespace htd
              *
              *  @param[in] original  The original iterator wrapper.
              */
-            ConstPointerIteratorWrapper<Iter, T>(ConstPointerIteratorWrapper<Iter, T> && original) noexcept : baseIterator_(std::move(original.baseIterator_))
+            ConstPointerIteratorWrapper(ConstPointerIteratorWrapper && original) noexcept : baseIterator_(std::move(original.baseIterator_))
             {
 
             }
@@ -86,7 +86,7 @@ namespace htd
                 return *this;
             }
 
-            ConstPointerIteratorWrapper<Iter, T> & operator++(void) noexcept override
+            ConstPointerIteratorWrapper & operator++(void) noexcept override
             {
                 ++baseIterator_;
 
@@ -98,9 +98,9 @@ namespace htd
              *
              *  @return A copy of the iterator reflecting the state before the increment operation took place.
              */
-            ConstPointerIteratorWrapper<Iter, T> operator++(int)
+            ConstPointerIteratorWrapper operator++(int)
             {
-                ConstPointerIteratorWrapper<Iter, T> ret(*this);
+                ConstPointerIteratorWrapper ret(*this);
 
                 operator++();
 
@@ -109,7 +109,7 @@ namespace htd
 
             bool operator==(const htd::ConstIteratorBase<T> & rhs) const noexcept override
             {
-                return baseIterator_ == static_cast<const ConstPointerIteratorWrapper<Iter, T> *>(&rhs)->baseIterator_;
+                return baseIterator_ == static_cast<const ConstPointerIteratorWrapper *>(&rhs)->baseIterator_;
             }
 
             /**
@@ -119,14 +119,14 @@ namespace htd
              *
              *  @return True if the iterator points to the same element as the iterator at the right-hand side of the operator, false otherwise.
              */
-            bool operator==(const ConstPointerIteratorWrapper<Iter, T> & rhs) const
+            bool operator==(const ConstPointerIteratorWrapper & rhs) const
             {
                 return baseIterator_ == rhs.baseIterator_;
             }
 
             bool operator!=(const htd::ConstIteratorBase<T> & rhs) const noexcept override
             {
-                return baseIterator_ != static_cast<const ConstPointerIteratorWrapper<Iter, T> *>(&rhs)->baseIterator_;
+                return baseIterator_ != static_cast<const ConstPointerIteratorWrapper *>(&rhs)->baseIterator_;
             }
 
             /**
@@ -136,7 +136,7 @@ namespace htd
              *
              *  @return True if the iterator does not point to the same element as the iterator at the right-hand side of the operator, false otherwise.
              */
-            bool operator!=(const ConstPointerIteratorWrapper<Iter, T> & rhs) const
+            bool operator!=(const ConstPointerIteratorWrapper & rhs) const
             {
                 return baseIterator_ != rhs.baseIterator_;
             }
@@ -151,9 +151,9 @@ namespace htd
                 return *(*baseIterator_);
             }
 
-            ConstPointerIteratorWrapper<Iter, T> * clone(void) const noexcept override
+            ConstPointerIteratorWrapper * clone(void) const noexcept override
             {
-                return new ConstPointerIteratorWrapper<Iter, T>(*this);
+                return new ConstPointerIteratorWrapper(*this);
             }
 
         private:

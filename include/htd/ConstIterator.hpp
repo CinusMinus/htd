@@ -114,7 +114,7 @@ namespace htd
              *
              *  @param[in] original  The original iterator.
              */
-            ConstIterator<T>(const ConstIterator<T> & original) noexcept : baseIterator_(nullptr)
+            ConstIterator(const ConstIterator & original) noexcept : baseIterator_(nullptr)
             {
                 if (original.baseIterator_ != nullptr)
                 {
@@ -127,7 +127,7 @@ namespace htd
              *
              *  @param[in] original  The original iterator.
              */
-            ConstIterator<T>(ConstIterator<T> && original) noexcept : baseIterator_(nullptr)
+            ConstIterator(ConstIterator && original) noexcept : baseIterator_(nullptr)
             {
                 if (original.baseIterator_ != nullptr)
                 {
@@ -150,7 +150,7 @@ namespace htd
                 }
             }
 
-            ConstIterator<T> & operator++(void) noexcept override
+            ConstIterator & operator++(void) noexcept override
             {
                 if (baseIterator_!= nullptr)
                 {
@@ -165,9 +165,9 @@ namespace htd
              *
              *  @return A copy of the iterator reflecting the state before the increment operation took place.
              */
-            ConstIterator<T> operator++(int) noexcept
+            ConstIterator operator++(int) noexcept
             {
-                ConstIterator<T> ret(*baseIterator_);
+                ConstIterator ret(*baseIterator_);
 
                 operator++();
 
@@ -179,7 +179,7 @@ namespace htd
              *
              *  @param[in] original  The original iterator.
              */
-            ConstIterator<T> & operator=(const ConstIterator<T> & original) noexcept
+            ConstIterator & operator=(const ConstIterator & original) noexcept
             {
                 if (baseIterator_!= nullptr)
                 {
@@ -201,7 +201,7 @@ namespace htd
              *
              *  @param[in] original  The original iterator.
              */
-            ConstIterator<T> & operator=(ConstIterator<T> && original) noexcept
+            ConstIterator & operator=(ConstIterator && original) noexcept
             {
                 if (baseIterator_!= nullptr)
                 {
@@ -224,7 +224,7 @@ namespace htd
             {
                 bool ret = false;
 
-                const ConstIterator<T> * o = static_cast<const ConstIterator<T> *>(&rhs);
+                const ConstIterator * o = static_cast<const ConstIterator *>(&rhs);
 
                 if (baseIterator_ == nullptr)
                 {
@@ -245,7 +245,7 @@ namespace htd
              *
              *  @return True if the iterator points to the same element as the iterator at the right-hand side of the operator, false otherwise.
              */
-            bool operator==(const ConstIterator<T> & rhs) const noexcept
+            bool operator==(const ConstIterator & rhs) const noexcept
             {
                 bool ret = false;
 
@@ -265,7 +265,7 @@ namespace htd
             {
                 bool ret = false;
 
-                const ConstIterator<T> * o = static_cast<const ConstIterator<T> *>(&rhs);
+                const ConstIterator * o = static_cast<const ConstIterator *>(&rhs);
 
                 if (baseIterator_ == nullptr)
                 {
@@ -286,7 +286,7 @@ namespace htd
              *
              *  @return True if the iterator does not point to the same element as the iterator at the right-hand side of the operator, false otherwise.
              */
-            bool operator!=(const ConstIterator<T> & rhs) const noexcept
+            bool operator!=(const ConstIterator & rhs) const noexcept
             {
                 bool ret = false;
 
@@ -312,17 +312,17 @@ namespace htd
                 return baseIterator_->operator*();
             }
 
-            ConstIterator<T> * clone(void) const noexcept override
+            ConstIterator * clone(void) const noexcept override
             {
-                ConstIterator<T> * ret = nullptr;
+                ConstIterator * ret = nullptr;
 
                 if (baseIterator_ == nullptr)
                 {
-                    return new ConstIterator<T>();
+                    return new ConstIterator();
                 }
                 else
                 {
-                    return new ConstIterator<T>(*this);
+                    return new ConstIterator(*this);
                 }
 
                 return ret;
@@ -331,7 +331,7 @@ namespace htd
         private:
             htd::ConstIteratorBase<T> * baseIterator_;
 
-            ConstIterator<T>(const htd::ConstIteratorBase<T> & original) : baseIterator_(original.clone())
+            ConstIterator(const htd::ConstIteratorBase<T> & original) : baseIterator_(original.clone())
             {
 
             }

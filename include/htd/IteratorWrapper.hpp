@@ -56,7 +56,7 @@ namespace htd
              *
              *  @param[in] original  The original iterator wrapper.
              */
-            IteratorWrapper<Iter, T>(const IteratorWrapper<Iter, T> & original) : baseIterator_(original.baseIterator_)
+            IteratorWrapper(const IteratorWrapper & original) : baseIterator_(original.baseIterator_)
             {
 
             }
@@ -66,7 +66,7 @@ namespace htd
              *
              *  @param[in] original  The original iterator wrapper.
              */
-            IteratorWrapper<Iter, T>(IteratorWrapper<Iter, T> && original) : baseIterator_(std::move(original.baseIterator_))
+            IteratorWrapper(IteratorWrapper && original) : baseIterator_(std::move(original.baseIterator_))
             {
 
             }
@@ -88,7 +88,7 @@ namespace htd
                 return *this;
             }
 
-            IteratorWrapper<Iter, T> & operator++(void) override
+            IteratorWrapper & operator++(void) override
             {
                 ++baseIterator_;
 
@@ -100,9 +100,9 @@ namespace htd
              *
              *  @return A copy of the iterator reflecting the state before the increment operation took place.
              */
-            IteratorWrapper<Iter, T> operator++(int)
+            IteratorWrapper operator++(int)
             {
-                IteratorWrapper<Iter, T> ret(*this);
+                IteratorWrapper ret(*this);
 
                 operator++();
 
@@ -111,7 +111,7 @@ namespace htd
 
             bool operator==(const htd::IteratorBase<T> & rhs) const override
             {
-                return baseIterator_ == static_cast<const IteratorWrapper<Iter, T> *>(&rhs)->baseIterator_;
+                return baseIterator_ == static_cast<const IteratorWrapper *>(&rhs)->baseIterator_;
             }
 
             /**
@@ -121,14 +121,14 @@ namespace htd
              *
              *  @return True if the iterator points to the same element as the iterator at the right-hand side of the operator, false otherwise.
              */
-            bool operator==(const IteratorWrapper<Iter, T> & rhs) const
+            bool operator==(const IteratorWrapper & rhs) const
             {
                 return baseIterator_ == rhs.baseIterator_;
             }
 
             bool operator!=(const htd::IteratorBase<T> & rhs) const override
             {
-                return baseIterator_ != static_cast<const IteratorWrapper<Iter, T> *>(&rhs)->baseIterator_;
+                return baseIterator_ != static_cast<const IteratorWrapper *>(&rhs)->baseIterator_;
             }
 
             /**
@@ -138,7 +138,7 @@ namespace htd
              *
              *  @return True if the iterator does not point to the same element as the iterator at the right-hand side of the operator, false otherwise.
              */
-            bool operator!=(const IteratorWrapper<Iter, T> & rhs) const
+            bool operator!=(const IteratorWrapper & rhs) const
             {
                 return baseIterator_ != rhs.baseIterator_;
             }
@@ -173,9 +173,9 @@ namespace htd
                 return *baseIterator_;
             }
 
-            IteratorWrapper<Iter, T> * clone(void) const override
+            IteratorWrapper * clone(void) const override
             {
-                return new IteratorWrapper<Iter, T>(*this);
+                return new IteratorWrapper(*this);
             }
 
         private:
