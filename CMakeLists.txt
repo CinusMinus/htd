@@ -78,8 +78,18 @@ configure_file(
     "${PROJECT_BINARY_DIR}/cmake_uninstall.cmake"
     IMMEDIATE @ONLY)
 
-find_package(Doxygen)
-if(DOXYGEN_FOUND)
+get_directory_property(HTD_PARENT_DIRECTORY PARENT_DIRECTORY)
+mark_as_advanced(HTD_PARENT_DIRECTORY)
+set(HTD_CREATE_DOC On CACHE BOOL "add documentation target")
+if(HTD_PARENT_DIRECTORY)
+    set(SETGRAPH_CREATE_DOC Off)
+endif()
+if(HTD_CREATE_DOC)
+    find_package(Doxygen)
+    set(DOXYGEN_JAVADOC_AUTOBRIEF ON)
+    doxygen_add_docs(doc include)
+endif()
+if(DOXYGEN_FOUND and HTD_CREATE_DOC)
     configure_file("${PROJECT_SOURCE_DIR}/cmake/templates/Doxyfile.in"
                    "${PROJECT_BINARY_DIR}/Doxyfile" @ONLY)
 
