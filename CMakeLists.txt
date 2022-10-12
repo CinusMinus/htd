@@ -82,23 +82,15 @@ get_directory_property(HTD_PARENT_DIRECTORY PARENT_DIRECTORY)
 mark_as_advanced(HTD_PARENT_DIRECTORY)
 set(HTD_CREATE_DOC On CACHE BOOL "add documentation target")
 if(HTD_PARENT_DIRECTORY)
-    set(SETGRAPH_CREATE_DOC Off)
+    set(HTD_CREATE_DOC Off)
 endif()
 if(HTD_CREATE_DOC)
     find_package(Doxygen)
     set(DOXYGEN_JAVADOC_AUTOBRIEF ON)
-    doxygen_add_docs(doc include)
-endif()
-if(DOXYGEN_FOUND and HTD_CREATE_DOC)
     configure_file("${PROJECT_SOURCE_DIR}/cmake/templates/Doxyfile.in"
                    "${PROJECT_BINARY_DIR}/Doxyfile" @ONLY)
-
-    add_custom_target(doc
-        ${DOXYGEN_EXECUTABLE} ${PROJECT_BINARY_DIR}/Doxyfile
-        WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
-        COMMENT "Generate API documentation" VERBATIM
-)
-endif(DOXYGEN_FOUND)
+    doxygen_add_docs(doc include)
+endif()
 
 if(MSVC)
     set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG "${CMAKE_BINARY_DIR}/build/debug")
