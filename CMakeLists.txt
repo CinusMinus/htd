@@ -72,6 +72,7 @@ add_subdirectory(src/htd_cli)
 add_subdirectory(src/htd_main)
 
 add_subdirectory(test)
+enable_testing()
 
 configure_file(
     "${PROJECT_SOURCE_DIR}/cmake/templates/cmake_uninstall.cmake.in"
